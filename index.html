@@ -1,0 +1,366 @@
+<!doctype html><meta charset=utf-8>
+<title>IndexTTS route-i — 版本與情緒強度對照</title>
+<style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px 24px 64px; background: #0e0f13; color: #e6e6ea;
+       font: 14px/1.5 ui-sans-serif, system-ui, -apple-system, "Noto Sans TC", sans-serif; }
+h1 { font-size: 20px; margin: 0 0 4px; font-weight: 650; letter-spacing: -0.01em; }
+.sub { color: #8b8b96; font-size: 13px; margin-bottom: 20px; max-width: 106ch; }
+.sub code { background: #1a1c22; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+.sub b { color: #cfd0da; }
+.legend { border: 1px solid #23252d; border-radius: 12px; background: #14161b;
+          padding: 4px 0; margin-bottom: 32px; }
+.legend div { display: grid; grid-template-columns: 190px 1fr; gap: 14px;
+              padding: 9px 18px; border-bottom: 1px solid #1e2027; }
+.legend div:last-child { border-bottom: none; }
+.legend dt { font-weight: 620; color: #cfd0da; font-size: 13px; }
+.legend dt small { display: block; color: #6f7078; font-weight: 400;
+                   font-family: ui-monospace, monospace; font-size: 11px; }
+.legend dd { margin: 0; color: #9a9ba6; font-size: 12.5px; }
+.legend dd em { color: #e0af68; font-style: normal; }
+.warn { border: 1px solid #5c4420; background: #241c10; color: #e0af68;
+        border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; font-size: 12.5px; }
+details { margin-bottom: 14px; border: 1px solid #23252d; border-radius: 12px;
+          overflow: hidden; background: #14161b;
+          /* The jump bar is sticky and ~47px tall, so an anchor jump would land the
+             character name underneath it — the one thing the jump needs to confirm. */
+          scroll-margin-top: 60px; }
+html { scroll-behavior: smooth; }
+summary { padding: 14px 18px 14px 40px; background: #191c22; cursor: pointer;
+          display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;
+          position: relative; list-style: none; user-select: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "▸"; position: absolute; left: 18px; top: 14px;
+                  color: #6f7078; font-size: 12px; transition: transform .12s; }
+details[open] > summary::before { transform: rotate(90deg); }
+details[open] > summary { border-bottom: 1px solid #23252d; }
+summary:hover { background: #1d2129; }
+summary:hover::before { color: #cfd0da; }
+.count { color: #6f7078; font-size: 12px; margin-left: auto; white-space: nowrap;
+         padding-top: 2px; }
+.cbody { padding: 12px 18px; border-bottom: 1px solid #1e2027; }
+.who { flex: 1 1 30ch; min-width: 26ch; }
+.anchorbox .lbl { color: #7d8ea8; font-size: 11px; font-weight: 600;
+                  letter-spacing: 0.04em; text-transform: uppercase;
+                  margin-bottom: 4px; }
+.cid { font-weight: 650; font-size: 15px; margin: 0; }
+.crole { color: #8b8b96; font-size: 12.5px; margin-top: 3px; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px; margin: -8px 0 28px;
+       position: sticky; top: 0; z-index: 3; background: #0e0f13;
+       padding: 10px 0; border-bottom: 1px solid #1e2027; }
+.nav a { color: #7d8ea8; text-decoration: none; font-size: 12px;
+         border: 1px solid #23252d; border-radius: 999px; padding: 3px 11px; }
+.nav a:hover { color: #cfd0da; border-color: #3a3d47; background: #191c22; }
+.nav .allbtn { cursor: pointer; }
+details:target .cid { color: #e0af68; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; vertical-align: top;
+         border-bottom: 1px solid #1e2027; }
+th { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em;
+     color: #8b8b96; font-weight: 600; background: #16181e; white-space: nowrap; }
+tr:last-child td { border-bottom: none; }
+
+td.line { color: #c9c9d4; min-width: 22ch; max-width: 34ch; }
+td.lid { color: #6f7078; font-variant-numeric: tabular-nums; width: 1%;
+         white-space: nowrap; }
+audio { height: 32px; width: 210px; display: block; }
+.missing { color: #4d4f57; font-size: 12px; }
+.dur { color: #6f7078; font-size: 11.5px; font-variant-numeric: tabular-nums;
+       margin: 2px 0 0; white-space: nowrap; }
+.dur b { color: #8b8b96; font-weight: 500; }
+.emo { color: #7d7e88; font-size: 12px; margin-top: 6px; }
+.emo b { color: #9a9ba6; font-weight: 500; }
+.vec { font-family: ui-monospace, monospace; font-size: 11.5px; color: #7d8ea8; }
+</style>
+<h1>IndexTTS route-i — 版本與情緒強度對照</h1>
+<div class="sub">reference wav 是唯一契約，每欄換掉的只有內容層 · refs <code>refs_chinese</code> / <code>refs_roles</code><br><code>2.0 a0.6</code> 74 句（3 run 合併）<br>reference 每個角色只有一個，放在角色標頭處（不重複在每一列）；<b>點角色標頭可收起／展開該角色的音檔</b>。左欄的情緒向量是 Qwen 分類器實際從 <code>emotion_desc</code> 讀出的結果，也就是被調的那個量；每格數字是與參考音的音色相似度。</div>
+<div class="legend">
+<div><dt>2.0 a0.6<small>pipeline_new3_i_a06, pipeline_roles3_i_a06, pipeline_el2_i_a06</small></dt><dd>IndexTTS-2.0 · mode <code>emotext</code> · emo_alpha <code>0.6</code> · 情緒向量 <em>raw</em>（未正規化） · 繁體經 opencc 轉簡體</dd></div>
+</div>
+<div class="nav">
+<a href="#yuan_neutral">yuan_neutral</a>
+<a href="#robot_el">robot_el</a>
+<a href="#joker_el">joker_el</a>
+<a href="#clk_0016">clk_0016</a>
+<a href="#clk_0019">clk_0019</a>
+<a href="#clk_0037">clk_0037</a>
+<a href="#catgirl_el">catgirl_el</a>
+<a href="#tigerman_el">tigerman_el</a>
+<a class="allbtn" onclick="toggleAll(true)">全部展開</a><a class="allbtn" onclick="toggleAll(false)">全部收起</a></div>
+<details id="yuan_neutral" open>
+<summary class="chead"><div class="who"><h2 class="cid">yuan_neutral</h2><div class="crole">中性人聲基準 — 音高偏高（f0 中位 362 Hz）、語調幅度大（12.8 st）；測「情緒通道能不能在正常人聲上分離控制」</div></div><span class="count">10 句</span></summary><div class="cbody"><div class="anchorbox"><div class="lbl">reference (timbre anchor)</div><audio controls preload="none" src="assets/refs_chinese/yuan_neutral.wav"></audio></div></div>
+<div class="scroll"><table><tr><th></th><th>line</th>
+<th>2.0 a0.6</th>
+</tr>
+<tr><td class="lid">l01</td><td class="line">這件事我想我們得先講清楚，不然後面會更麻煩。<div class="emo"><b>emo_text</b> 我心情平稳，就是很自然地在说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.90 喜 0.10 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l01.wav"></audio><div class="dur"><b>4.58s</b> · sim 0.9861</div></td>
+</tr>
+<tr><td class="lid">l02</td><td class="line">太好了，我等這個消息等了整整一個月！<div class="emo"><b>emo_text</b> 我真的好开心，这个消息让我兴奋得想跳起来。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.04 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l02.wav"></audio><div class="dur"><b>2.82s</b> · sim 0.9837</div></td>
+</tr>
+<tr><td class="lid">l03</td><td class="line">你確定嗎？我覺得這裡面還有一些沒說出口的東西。<div class="emo"><b>emo_text</b> 我心情平稳，就是很自然地在说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.90 喜 0.10 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l03.wav"></audio><div class="dur"><b>3.99s</b> · sim 0.9950</div></td>
+</tr>
+<tr><td class="lid">l04</td><td class="line">我不想再重複第三次了，請你認真聽我說。<div class="emo"><b>emo_text</b> 我真的很生气，你一直不听让我火大。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">怒 0.85 懼 0.05 厭 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l04.wav"></audio><div class="dur"><b>3.07s</b> · sim 0.9892</div></td>
+</tr>
+<tr><td class="lid">l05</td><td class="line">她走的那天，天氣好得有點不合理。<div class="emo"><b>emo_text</b> 我心里很难过，想起来就觉得空空的。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">哀 0.95 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l05.wav"></audio><div class="dur"><b>2.98s</b> · sim 0.9800</div></td>
+</tr>
+<tr><td class="lid">l06</td><td class="line">等一下，你剛才說的那個數字，再念一次好嗎？<div class="emo"><b>emo_text</b> 我好惊讶，完全没想到会是这样。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">驚 0.99 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l06.wav"></audio><div class="dur"><b>3.54s</b> · sim 0.9803</div></td>
+</tr>
+<tr><td class="lid">l07</td><td class="line">報告我放在桌上了，需要修改的地方我標了紅線。<div class="emo"><b>emo_text</b> 我心情平稳，就是很自然地在说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.90 喜 0.10 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l07.wav"></audio><div class="dur"><b>4.18s</b> · sim 0.9911</div></td>
+</tr>
+<tr><td class="lid">l08</td><td class="line">拜託你不要進去，那裡面真的很危險。<div class="emo"><b>emo_text</b> 我非常害怕，怕到声音都在抖。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">懼 0.90 怒 0.05 鬱 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l08.wav"></audio><div class="dur"><b>3.14s</b> · sim 0.9911</div></td>
+</tr>
+<tr><td class="lid">l09</td><td class="line">說實話，這個味道讓我有點受不了。<div class="emo"><b>emo_text</b> 我觉得很恶心，实在不想再靠近。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">厭 0.60 怒 0.20 懼 0.10 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l09.wav"></audio><div class="dur"><b>2.44s</b> · sim 0.9848</div></td>
+</tr>
+<tr><td class="lid">l10</td><td class="line">沒關係，慢慢來就好，我在這裡等你。<div class="emo"><b>emo_text</b> 我心情平稳，就是很自然地在说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.90 喜 0.10 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/yuan_neutral_l10.wav"></audio><div class="dur"><b>3.60s</b> · sim 0.9888</div></td>
+</tr>
+</table></div></details>
+<details id="robot_el" open>
+<summary class="chead"><div class="who"><h2 class="cid">robot_el</h2><div class="crole">極低頻機械音 — f0 中位僅 65 Hz、語調幅度只有 4.3 st（近單調）；測「參考音本身幾乎沒有語調時，情緒向量會不會硬把它拉高而破壞機械感」</div></div><span class="count">10 句</span></summary><div class="cbody"><div class="anchorbox"><div class="lbl">reference (timbre anchor)</div><audio controls preload="none" src="assets/refs_chinese/robot_el.wav"></audio></div></div>
+<div class="scroll"><table><tr><th></th><th>line</th>
+<th>2.0 a0.6</th>
+</tr>
+<tr><td class="lid">l01</td><td class="line">系統啟動完成。目前狀態，正常。<div class="emo"><b>emo_text</b> 我没有情绪模块，语气完全平坦，只是在输出结果。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l01.wav"></audio><div class="dur"><b>3.49s</b> · sim 0.9927</div></td>
+</tr>
+<tr><td class="lid">l02</td><td class="line">偵測到未登記的生命體，正在比對資料庫。<div class="emo"><b>emo_text</b> 我没有情绪模块，语气完全平坦，只是在输出结果。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l02.wav"></audio><div class="dur"><b>3.54s</b> · sim 0.9894</div></td>
+</tr>
+<tr><td class="lid">l03</td><td class="line">警告。第三號閘門的壓力已經超過安全值。<div class="emo"><b>emo_text</b> 情况非常危急，我感到强烈的不安。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">懼 0.80 怒 0.10 厭 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l03.wav"></audio><div class="dur"><b>3.29s</b> · sim 0.9907</div></td>
+</tr>
+<tr><td class="lid">l04</td><td class="line">我的動力來源剩下百分之十二，請儘快處理。<div class="emo"><b>emo_text</b> 我没有情绪模块，语气完全平坦，只是在输出结果。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l04.wav"></audio><div class="dur"><b>4.02s</b> · sim 0.9870</div></td>
+</tr>
+<tr><td class="lid">l05</td><td class="line">指令無法執行，你沒有這一層的權限。<div class="emo"><b>emo_text</b> 我很不满，你的要求让我感到抗拒。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">怒 0.85 懼 0.05 厭 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l05.wav"></audio><div class="dur"><b>4.08s</b> · sim 0.9929</div></td>
+</tr>
+<tr><td class="lid">l06</td><td class="line">這段記憶已經損毀，我無法還原它的內容。<div class="emo"><b>emo_text</b> 我觉得很失落，好像失去了很重要的东西。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">哀 0.70 鬱 0.10 怒 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l06.wav"></audio><div class="dur"><b>5.11s</b> · sim 0.9881</div></td>
+</tr>
+<tr><td class="lid">l07</td><td class="line">維修紀錄顯示，我上次接受檢查是四十年前。<div class="emo"><b>emo_text</b> 我没有情绪模块，语气完全平坦，只是在输出结果。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l07.wav"></audio><div class="dur"><b>4.52s</b> · sim 0.9922</div></td>
+</tr>
+<tr><td class="lid">l08</td><td class="line">任務完成。感謝你的協助，這讓我運作得更順利。<div class="emo"><b>emo_text</b> 我很高兴，这个结果让我觉得满足。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l08.wav"></audio><div class="dur"><b>4.66s</b> · sim 0.9967</div></td>
+</tr>
+<tr><td class="lid">l09</td><td class="line">請退到黃線之後，我要開始移動了。<div class="emo"><b>emo_text</b> 我没有情绪模块，语气完全平坦，只是在输出结果。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l09.wav"></audio><div class="dur"><b>3.20s</b> · sim 0.9909</div></td>
+</tr>
+<tr><td class="lid">l10</td><td class="line">關機程序啟動。再見。<div class="emo"><b>emo_text</b> 我没有情绪模块，语气完全平坦，只是在输出结果。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/robot_el_l10.wav"></audio><div class="dur"><b>2.07s</b> · sim 0.9968</div></td>
+</tr>
+</table></div></details>
+<details id="joker_el" open>
+<summary class="chead"><div class="who"><h2 class="cid">joker_el</h2><div class="crole">明亮沙啞的癲狂音 — f0 中位 353 Hz、頻譜重心 3295 Hz（最亮）、zcr 0.188（最沙啞）；測「參考音自帶戲劇性時，情緒通道會不會疊加過頭」</div></div><span class="count">10 句</span></summary><div class="cbody"><div class="anchorbox"><div class="lbl">reference (timbre anchor)</div><audio controls preload="none" src="assets/refs_chinese/joker_el.wav"></audio></div></div>
+<div class="scroll"><table><tr><th></th><th>line</th>
+<th>2.0 a0.6</th>
+</tr>
+<tr><td class="lid">l01</td><td class="line">你終於來了，我還以為你不敢出現呢。<div class="emo"><b>emo_text</b> 我觉得这一切都荒谬得好笑，心里有种说不出的兴奋。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.90 驚 0.05 靜 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l01.wav"></audio><div class="dur"><b>3.08s</b> · sim 0.9832</div></td>
+</tr>
+<tr><td class="lid">l02</td><td class="line">哈，太精彩了，這齣戲比我想的還要好看！<div class="emo"><b>emo_text</b> 我实在太开心了，忍不住想大笑出来。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l02.wav"></audio><div class="dur"><b>4.19s</b> · sim 0.9848</div></td>
+</tr>
+<tr><td class="lid">l03</td><td class="line">你知道最好笑的是什麼嗎？你居然相信我。<div class="emo"><b>emo_text</b> 我觉得这一切都荒谬得好笑，心里有种说不出的兴奋。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.90 驚 0.05 靜 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l03.wav"></audio><div class="dur"><b>4.65s</b> · sim 0.9938</div></td>
+</tr>
+<tr><td class="lid">l04</td><td class="line">別再碰那個開關。我說了，別再碰它。<div class="emo"><b>emo_text</b> 我非常愤怒，你这样做让我快要爆炸。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">怒 0.90 厭 0.05 懼 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l04.wav"></audio><div class="dur"><b>4.34s</b> · sim 0.9863</div></td>
+</tr>
+<tr><td class="lid">l05</td><td class="line">說真的，有時候我也會覺得很累。<div class="emo"><b>emo_text</b> 我心里很沉重，有一种深深的疲倦和悲哀。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">哀 0.95 鬱 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l05.wav"></audio><div class="dur"><b>4.63s</b> · sim 0.9878</div></td>
+</tr>
+<tr><td class="lid">l06</td><td class="line">等等，這不在計畫裡面，這完全不在計畫裡面。<div class="emo"><b>emo_text</b> 我好害怕，事情失控让我全身发冷。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">懼 0.85 怒 0.10 厭 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l06.wav"></audio><div class="dur"><b>4.06s</b> · sim 0.9756</div></td>
+</tr>
+<tr><td class="lid">l07</td><td class="line">你們每個人都戴著面具，只有我承認自己戴了。<div class="emo"><b>emo_text</b> 我觉得这一切都荒谬得好笑，心里有种说不出的兴奋。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.90 驚 0.05 靜 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l07.wav"></audio><div class="dur"><b>3.85s</b> · sim 0.9774</div></td>
+</tr>
+<tr><td class="lid">l08</td><td class="line">噢？你居然自己走進來了，真是意外。<div class="emo"><b>emo_text</b> 我非常惊讶，完全没料到会这样。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">驚 0.99 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l08.wav"></audio><div class="dur"><b>4.08s</b> · sim 0.9895</div></td>
+</tr>
+<tr><td class="lid">l09</td><td class="line">這個地方的味道，讓我想起我最討厭的那個人。<div class="emo"><b>emo_text</b> 我觉得很恶心，光想到就反胃。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">厭 0.80 怒 0.10 懼 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l09.wav"></audio><div class="dur"><b>4.08s</b> · sim 0.9826</div></td>
+</tr>
+<tr><td class="lid">l10</td><td class="line">好了，遊戲結束。下次換你當主角。<div class="emo"><b>emo_text</b> 我觉得这一切都荒谬得好笑，心里有种说不出的兴奋。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.90 驚 0.05 靜 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_new3_i_a06/joker_el_l10.wav"></audio><div class="dur"><b>3.69s</b> · sim 0.9915</div></td>
+</tr>
+</table></div></details>
+<details id="clk_0016" open>
+<summary class="chead"><div class="who"><h2 class="cid">clk_0016</h2><div class="crole">虎面（SSR，45 歲男，前摔角明星）— 測「音量需求改寫成音色需求」能不能成立</div></div><span class="count">8 句</span></summary><div class="cbody"><div class="anchorbox"><div class="lbl">reference (timbre anchor)</div><audio controls preload="none" src="assets/refs_roles/clk_0016.wav"></audio></div></div>
+<div class="scroll"><table><tr><th></th><th>line</th>
+<th>2.0 a0.6</th>
+</tr>
+<tr><td class="lid">l01</td><td class="line">哈哈，體格不錯啊！<div class="emo"><b>emo_text</b> 哈哈，我心情超好的！看到你真是太痛快了！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0016_l01.wav"></audio><div class="dur"><b>1.54s</b> · sim 0.9822</div></td>
+</tr>
+<tr><td class="lid">l02</td><td class="line">來啊，站上來！讓我看看你的力氣！<div class="emo"><b>emo_text</b> 我超级兴奋的，来吧，我等不及了！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.04 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0016_l02.wav"></audio><div class="dur"><b>3.72s</b> · sim 0.9866</div></td>
+</tr>
+<tr><td class="lid">l03</td><td class="line">我在這個擂台上，站了二十年。<div class="emo"><b>emo_text</b> 哈哈，我心情超好的！看到你真是太痛快了！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0016_l03.wav"></audio><div class="dur"><b>3.00s</b> · sim 0.9892</div></td>
+</tr>
+<tr><td class="lid">l04</td><td class="line">大聲一點！我聽不見你的聲音！<div class="emo"><b>emo_text</b> 我很激动，也有点不耐烦，快点回答我！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">驚 0.35 喜 0.20 怒 0.10 · Σ0.90</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0016_l04.wav"></audio><div class="dur"><b>2.50s</b> · sim 0.9875</div></td>
+</tr>
+<tr><td class="lid">l05</td><td class="line">這面具，我戴著它贏過三十七場。<div class="emo"><b>emo_text</b> 哈哈，我心情超好的！看到你真是太痛快了！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0016_l05.wav"></audio><div class="dur"><b>3.26s</b> · sim 0.9942</div></td>
+</tr>
+<tr><td class="lid">l06</td><td class="line">別跟他們說我在這裡打工，好嗎？<div class="emo"><b>emo_text</b> 我有点不好意思，声音压低了下来。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0016_l06.wav"></audio><div class="dur"><b>2.73s</b> · sim 0.9907</div></td>
+</tr>
+<tr><td class="lid">l07</td><td class="line">歡迎光臨！要不要試試新出的雞胸肉？<div class="emo"><b>emo_text</b> 哈哈，我心情超好的！看到你真是太痛快了！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0016_l07.wav"></audio><div class="dur"><b>3.12s</b> · sim 0.9935</div></td>
+</tr>
+<tr><td class="lid">l08</td><td class="line">明天早上六點，操場見。不准遲到。<div class="emo"><b>emo_text</b> 哈哈，我心情超好的！看到你真是太痛快了！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0016_l08.wav"></audio><div class="dur"><b>3.17s</b> · sim 0.9915</div></td>
+</tr>
+</table></div></details>
+<details id="clk_0019" open>
+<summary class="chead"><div class="who"><h2 class="cid">clk_0019</h2><div class="crole">汪汪隊長（R，24 歲男，動物保護志工）— 測極短句的音色穩定度</div></div><span class="count">8 句</span></summary><div class="cbody"><div class="anchorbox"><div class="lbl">reference (timbre anchor)</div><audio controls preload="none" src="assets/refs_roles/clk_0019.wav"></audio></div></div>
+<div class="scroll"><table><tr><th></th><th>line</th>
+<th>2.0 a0.6</th>
+</tr>
+<tr><td class="lid">l01</td><td class="line">嗯。<div class="emo"><b>emo_text</b> 我很严肃，也很坚定，我不想多说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.50 鬱 0.20 怒 0.10 · Σ1.15</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0019_l01.wav"></audio><div class="dur"><b>0.34s</b> · sim 0.9314</div></td>
+</tr>
+<tr><td class="lid">l02</td><td class="line">不行。<div class="emo"><b>emo_text</b> 我很严肃，也很坚定，我不想多说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.50 鬱 0.20 怒 0.10 · Σ1.15</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0019_l02.wav"></audio><div class="dur"><b>0.45s</b> · sim 0.9848</div></td>
+</tr>
+<tr><td class="lid">l03</td><td class="line">走吧。<div class="emo"><b>emo_text</b> 我很严肃，也很坚定，我不想多说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.50 鬱 0.20 怒 0.10 · Σ1.15</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0019_l03.wav"></audio><div class="dur"><b>0.61s</b> · sim 0.9645</div></td>
+</tr>
+<tr><td class="lid">l04</td><td class="line">這隻狗，我帶走。<div class="emo"><b>emo_text</b> 我很严肃，也很坚定，我不想多说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.50 鬱 0.20 怒 0.10 · Σ1.15</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0019_l04.wav"></audio><div class="dur"><b>2.04s</b> · sim 0.9881</div></td>
+</tr>
+<tr><td class="lid">l05</td><td class="line">牠的腳受傷了，需要包紮。<div class="emo"><b>emo_text</b> 我很严肃，也很坚定，我不想多说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.50 鬱 0.20 怒 0.10 · Σ1.15</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0019_l05.wav"></audio><div class="dur"><b>2.34s</b> · sim 0.9887</div></td>
+</tr>
+<tr><td class="lid">l06</td><td class="line">巧克力不行，會死。<div class="emo"><b>emo_text</b> 我很严肃，也很坚定，我不想多说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.50 鬱 0.20 怒 0.10 · Σ1.15</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0019_l06.wav"></audio><div class="dur"><b>1.83s</b> · sim 0.9885</div></td>
+</tr>
+<tr><td class="lid">l07</td><td class="line">我不是英雄。我只是不想再看牠們痛下去。<div class="emo"><b>emo_text</b> 我心里很难过，也压着一股火。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">哀 0.70 怒 0.10 懼 0.10 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0019_l07.wav"></audio><div class="dur"><b>3.58s</b> · sim 0.9846</div></td>
+</tr>
+<tr><td class="lid">l08</td><td class="line">晚上十點，後門。<div class="emo"><b>emo_text</b> 我很严肃，也很坚定，我不想多说话。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 0.50 鬱 0.20 怒 0.10 · Σ1.15</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0019_l08.wav"></audio><div class="dur"><b>2.27s</b> · sim 0.9846</div></td>
+</tr>
+</table></div></details>
+<details id="clk_0037" open>
+<summary class="chead"><div class="who"><h2 class="cid">clk_0037</h2><div class="crole">蝸牛星人（R，女性，次元觀察者）— 測刪節號會不會被讀成真正的停頓</div></div><span class="count">8 句</span></summary><div class="cbody"><div class="anchorbox"><div class="lbl">reference (timbre anchor)</div><audio controls preload="none" src="assets/refs_roles/clk_0037.wav"></audio></div></div>
+<div class="scroll"><table><tr><th></th><th>line</th>
+<th>2.0 a0.6</th>
+</tr>
+<tr><td class="lid">l01</td><td class="line">慢……慢……來……<div class="emo"><b>emo_text</b> 我很平静，一点都不着急，慢慢来就好。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0037_l01.wav"></audio><div class="dur"><b>1.61s</b> · sim 0.9786</div></td>
+</tr>
+<tr><td class="lid">l02</td><td class="line">慢慢來。<div class="emo"><b>emo_text</b> 我很平静，一点都不着急，慢慢来就好。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0037_l02.wav"></audio><div class="dur"><b>0.81s</b> · sim 0.9692</div></td>
+</tr>
+<tr><td class="lid">l03</td><td class="line">歡迎……光臨……<div class="emo"><b>emo_text</b> 我很平静，一点都不着急，慢慢来就好。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0037_l03.wav"></audio><div class="dur"><b>2.27s</b> · sim 0.9821</div></td>
+</tr>
+<tr><td class="lid">l04</td><td class="line">歡迎光臨。<div class="emo"><b>emo_text</b> 我很平静，一点都不着急，慢慢来就好。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0037_l04.wav"></audio><div class="dur"><b>0.84s</b> · sim 0.9753</div></td>
+</tr>
+<tr><td class="lid">l05</td><td class="line">這個……我需要一點時間……才能找到……<div class="emo"><b>emo_text</b> 我很平静，一点都不着急，慢慢来就好。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0037_l05.wav"></audio><div class="dur"><b>3.26s</b> · sim 0.9930</div></td>
+</tr>
+<tr><td class="lid">l06</td><td class="line">這個我需要一點時間才能找到。<div class="emo"><b>emo_text</b> 我很平静，一点都不着急，慢慢来就好。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0037_l06.wav"></audio><div class="dur"><b>1.92s</b> · sim 0.9848</div></td>
+</tr>
+<tr><td class="lid">l07</td><td class="line">你們地球人……為什麼……要走得那麼快呢？<div class="emo"><b>emo_text</b> 我觉得很困惑，完全不明白这是为什么。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">鬱 0.30 哀 0.20 驚 0.15 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0037_l07.wav"></audio><div class="dur"><b>5.28s</b> · sim 0.9823</div></td>
+</tr>
+<tr><td class="lid">l08</td><td class="line">我在觀察你們的行為，並且記錄下來。<div class="emo"><b>emo_text</b> 我很平静，一点都不着急，慢慢来就好。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_roles3_i_a06/clk_0037_l08.wav"></audio><div class="dur"><b>2.96s</b> · sim 0.9952</div></td>
+</tr>
+</table></div></details>
+<details id="catgirl_el" open>
+<summary class="chead"><div class="who"><h2 class="cid">catgirl_el</h2><div class="crole">冷淡貓女 — f0 中位 229 Hz、語調幅度只有 7.4 st（偏平）、頻譜重心 3151 Hz（偏亮）、zcr 0.088（偏乾淨）；測「參考音本身語調很平時，情緒通道能不能在不破壞冷淡感的前提下加上起伏」</div></div><span class="count">10 句</span></summary><div class="cbody"><div class="anchorbox"><div class="lbl">reference (timbre anchor)</div><audio controls preload="none" src="assets/refs_chinese/catgirl_el.wav"></audio></div></div>
+<div class="scroll"><table><tr><th></th><th>line</th>
+<th>2.0 a0.6</th>
+</tr>
+<tr><td class="lid">l01</td><td class="line">喔，你來啦。我沒什麼特別想說的。<div class="emo"><b>emo_text</b> 我没什么特别的感觉，就这样淡淡地说。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l01.wav"></audio><div class="dur"><b>2.65s</b> · sim 0.9763</div></td>
+</tr>
+<tr><td class="lid">l02</td><td class="line">哇，這個居然是真的，我有點意外耶。<div class="emo"><b>emo_text</b> 我其实挺开心的，只是懒得表现出来。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.90 驚 0.05 靜 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l02.wav"></audio><div class="dur"><b>3.66s</b> · sim 0.9836</div></td>
+</tr>
+<tr><td class="lid">l03</td><td class="line">隨便你吧，反正跟我也沒什麼關係。<div class="emo"><b>emo_text</b> 我没什么特别的感觉，就这样淡淡地说。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l03.wav"></audio><div class="dur"><b>2.79s</b> · sim 0.9778</div></td>
+</tr>
+<tr><td class="lid">l04</td><td class="line">你再這樣煩我，我可要生氣了喔。<div class="emo"><b>emo_text</b> 我开始不耐烦了，有点火气上来。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">怒 0.85 懼 0.05 厭 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l04.wav"></audio><div class="dur"><b>3.79s</b> · sim 0.9920</div></td>
+</tr>
+<tr><td class="lid">l05</td><td class="line">牠昨天還在這裡曬太陽的，現在不見了。<div class="emo"><b>emo_text</b> 我心里有点空空的，说不上来的难过。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">哀 0.95 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l05.wav"></audio><div class="dur"><b>4.69s</b> · sim 0.9842</div></td>
+</tr>
+<tr><td class="lid">l06</td><td class="line">咦，你什麼時候站在那邊的？我完全沒發現。<div class="emo"><b>emo_text</b> 我吓了一跳，完全没料到你在。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">懼 0.90 驚 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l06.wav"></audio><div class="dur"><b>4.71s</b> · sim 0.9955</div></td>
+</tr>
+<tr><td class="lid">l07</td><td class="line">冰箱裡還有布丁，你要吃就自己拿。<div class="emo"><b>emo_text</b> 我没什么特别的感觉，就这样淡淡地说。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l07.wav"></audio><div class="dur"><b>2.90s</b> · sim 0.9849</div></td>
+</tr>
+<tr><td class="lid">l08</td><td class="line">別過去那邊，那裡真的不太對勁。<div class="emo"><b>emo_text</b> 我有点害怕，那个地方让我发毛。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">懼 0.80 怒 0.10 厭 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l08.wav"></audio><div class="dur"><b>3.07s</b> · sim 0.9898</div></td>
+</tr>
+<tr><td class="lid">l09</td><td class="line">這味道……我實在受不了，可以拿走嗎？<div class="emo"><b>emo_text</b> 我觉得很恶心，闻到就反胃。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">厭 0.80 怒 0.10 懼 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l09.wav"></audio><div class="dur"><b>3.89s</b> · sim 0.9840</div></td>
+</tr>
+<tr><td class="lid">l10</td><td class="line">嗯，就這樣吧，我要去睡午覺了。<div class="emo"><b>emo_text</b> 我没什么特别的感觉，就这样淡淡地说。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">靜 1.00 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/catgirl_el_l10.wav"></audio><div class="dur"><b>2.83s</b> · sim 0.9856</div></td>
+</tr>
+</table></div></details>
+<details id="tigerman_el" open>
+<summary class="chead"><div class="who"><h2 class="cid">tigerman_el</h2><div class="crole">虎面人台灣腔 — f0 中位 165 Hz、語調幅度大（19 st）、頻譜重心 2144 Hz（偏暗厚）；測「參考音自帶台灣腔與大起伏時，opencc 轉簡體與情緒通道會不會壓掉口音特徵」</div></div><span class="count">10 句</span></summary><div class="cbody"><div class="anchorbox"><div class="lbl">reference (timbre anchor)</div><audio controls preload="none" src="assets/refs_chinese/tigerman_el.wav"></audio></div></div>
+<div class="scroll"><table><tr><th></th><th>line</th>
+<th>2.0 a0.6</th>
+</tr>
+<tr><td class="lid">l01</td><td class="line">來來來，坐啦，別跟我客氣。<div class="emo"><b>emo_text</b> 哈哈，我今天心情很好，讲起话来特别带劲！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l01.wav"></audio><div class="dur"><b>2.42s</b> · sim 0.9863</div></td>
+</tr>
+<tr><td class="lid">l02</td><td class="line">太讚了啦，這樣我們就穩了，哈哈！<div class="emo"><b>emo_text</b> 我超级开心的，整个人都嗨起来了。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l02.wav"></audio><div class="dur"><b>4.01s</b> · sim 0.9765</div></td>
+</tr>
+<tr><td class="lid">l03</td><td class="line">這件事啊，我跟你講，沒那麼簡單。<div class="emo"><b>emo_text</b> 哈哈，我今天心情很好，讲起话来特别带劲！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l03.wav"></audio><div class="dur"><b>3.22s</b> · sim 0.9889</div></td>
+</tr>
+<tr><td class="lid">l04</td><td class="line">你這樣搞是什麼意思？我火都上來了！<div class="emo"><b>emo_text</b> 我非常生气，被你气到不行。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">怒 0.90 厭 0.05 懼 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l04.wav"></audio><div class="dur"><b>3.46s</b> · sim 0.9841</div></td>
+</tr>
+<tr><td class="lid">l05</td><td class="line">唉，老朋友都走得差不多了，剩沒幾個。<div class="emo"><b>emo_text</b> 我心里很难过，想到就觉得很沉重。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">哀 0.95 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l05.wav"></audio><div class="dur"><b>3.70s</b> · sim 0.9885</div></td>
+</tr>
+<tr><td class="lid">l06</td><td class="line">蛤？你說什麼？這也差太多了吧！<div class="emo"><b>emo_text</b> 我吓了一大跳，完全出乎意料。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">懼 0.80 怒 0.10 驚 0.10 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l06.wav"></audio><div class="dur"><b>3.17s</b> · sim 0.9748</div></td>
+</tr>
+<tr><td class="lid">l07</td><td class="line">東西我都準備好了，你放心啦。<div class="emo"><b>emo_text</b> 哈哈，我今天心情很好，讲起话来特别带劲！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l07.wav"></audio><div class="dur"><b>3.05s</b> · sim 0.9879</div></td>
+</tr>
+<tr><td class="lid">l08</td><td class="line">欸欸欸，別亂動那個，很危險的！<div class="emo"><b>emo_text</b> 我很紧张害怕，怕你出事。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">懼 0.85 怒 0.10 厭 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l08.wav"></audio><div class="dur"><b>3.55s</b> · sim 0.9806</div></td>
+</tr>
+<tr><td class="lid">l09</td><td class="line">這什麼東西啊，怎麼這麼難聞。<div class="emo"><b>emo_text</b> 我觉得有够恶心，实在受不了。</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">厭 0.65 怒 0.30 鬱 0.05 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l09.wav"></audio><div class="dur"><b>2.39s</b> · sim 0.9756</div></td>
+</tr>
+<tr><td class="lid">l10</td><td class="line">好啦好啦，天色不早了，早點回去吧。<div class="emo"><b>emo_text</b> 哈哈，我今天心情很好，讲起话来特别带劲！</div><div class="emo"><b>2.0 a0.6</b> <span class="vec">喜 0.95 驚 0.03 靜 0.02 · Σ1.00</span></div></td>
+<td><audio controls preload="none" src="assets/pipeline_el2_i_a06/tigerman_el_l10.wav"></audio><div class="dur"><b>2.91s</b> · sim 0.9715</div></td>
+</tr>
+</table></div></details>
+<script>
+function toggleAll(v){document.querySelectorAll('details').forEach(d=>d.open=v);}
+document.querySelectorAll('.nav a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const t=document.getElementById(decodeURIComponent(a.hash.slice(1)));if(t)t.open=true;}));
+if(location.hash){const t=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(t){t.open=true;t.scrollIntoView();}}
+</script>
