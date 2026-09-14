@@ -18,6 +18,17 @@ python3 -m http.server 8000
 Settings → Pages → Source 選 `main` 分支的根目錄即可。`.nojekyll` 已加，避免 Jekyll
 處理打亂 `assets/` 底下的檔名。
 
+## 頁面
+
+| 路徑 | 內容 |
+|---|---|
+| `/` | IndexTTS-2.0 語音克隆 ＋ 情緒控制試聽（8 角色） |
+| `/convenientstore_m_poc/` | 便利商店 NPC 選角（菲菲／紙袋君／虎面，各 1 基準音 ＋ 喜怒哀） |
+
+`convenientstore_m_poc/` 由 emotts repo 的 `scripts/build_casting_page.py` 產生：把 studio 的
+選角頁靜態化，state 內嵌在 HTML、音檔與立繪複製到 `assets/`，並移除生成按鈕——公開頁面不該
+有能花掉 API 額度的入口。音檔用 24 kHz WAV 母帶而不是 48 kbps M4A，因為這個頁面就是要聽音色。
+
 ## 內容
 
 | 目錄 | 來源 |
