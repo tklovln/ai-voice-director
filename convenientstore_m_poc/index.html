@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8">
+<meta name="viewport" content="width=1240">
+<title>便利商店 AI NPC Voice</title>
+<meta name="description" content="菲菲、紙袋君、虎面的角色選角與情緒語音試聽（ElevenLabs）。">
+<style>
+:root { --ink:#314c40; --muted:#818778; --line:#dce0d3; --accent:#af6246; }
+* { box-sizing:border-box; }
+body { margin:0; min-width:1100px; min-height:100svh; background:#f6f5ee; color:var(--ink);
+  background-image:radial-gradient(#4557440a .6px, transparent .6px); background-size:6px 6px;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; }
+button { font:inherit; color:inherit; cursor:pointer; }
+button:disabled { cursor:default; opacity:.48; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline:3px solid #759b82; outline-offset:5px; }
+.shell { width:min(1240px, calc(100% - 96px)); min-height:100svh; margin:0 auto; padding:26px 0; display:flex; flex-direction:column; }
+.header { display:flex; align-items:center; padding-bottom:22px; border-bottom:1px solid var(--line); }
+.brand { display:flex; align-items:center; gap:12px; }
+.brand h1 { margin:0; font-size:19px; letter-spacing:.12em; font-weight:700; }
+main { display:flex; flex:1; flex-direction:column; justify-content:center; padding:28px 0 8px; }
+.casting { display:grid; grid-template-columns:minmax(0,1.06fr) minmax(0,1fr); align-items:center; gap:64px; }
+.stage { height:clamp(310px,42vh,420px); position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
+.halo { height:85%; aspect-ratio:1; border-radius:50%; position:absolute; left:50%; top:50%;
+  transform:translate(-50%,-50%); background:color-mix(in srgb, var(--accent) 10%, #f0efe6); transition:background 350ms; }
+.halo::after { content:""; position:absolute; inset:-14px; border:1px solid color-mix(in srgb, var(--accent) 12%, transparent); border-radius:inherit; }
+.scene { position:absolute; width:100%; height:100%; color:var(--accent); opacity:.14; }
+.floor { position:absolute; width:150px; height:12px; bottom:16px; left:50%; transform:translateX(-50%);
+  background:#314c4023; border-radius:50%; filter:blur(7px); }
+.hero { position:absolute; left:50%; bottom:0; transform:translateX(-50%); width:100%; max-width:420px; height:100%;
+  display:grid; place-items:end center; animation:arrival 400ms ease-out; }
+.hero img { max-width:100%; max-height:100%; object-fit:contain; filter:drop-shadow(0 8px 10px #30442c0c); }
+.hero.speaking img { animation:breathe 3s ease-in-out infinite; }
+.identity { display:flex; align-items:center; padding:18px 0; gap:12px; animation:fade 300ms ease-out; }
+.identity h2 { margin:0; font-weight:650; letter-spacing:.09em; font-size:30px; line-height:1.4; }
+.rarity { font-size:10px; letter-spacing:.1em; font-weight:600; color:#9a7b41; border:1px solid #d9cfb5; padding:3px 7px; border-radius:4px; }
+.roster { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.card { position:relative; text-align:left; background:#fcfcf7; border:1.5px solid #e0e3d7; border-radius:11px;
+  overflow:hidden; padding:0; transition:border-color 180ms, transform 180ms, box-shadow 180ms; }
+.card:hover { transform:translateY(-3px); border-color:#acb8a4; }
+.card[aria-pressed="true"] { border-color:var(--ink); box-shadow:0 4px 10px #30442c0b; }
+.check { display:none; place-items:center; position:absolute; right:8px; top:8px; z-index:1; width:17px; height:17px;
+  background:var(--ink); color:#fff; border-radius:50%; }
+.card[aria-pressed="true"] .check { display:grid; }
+.thumb { display:grid; place-items:center; height:96px; overflow:hidden; }
+.thumb img { height:104px; margin-top:4px; object-fit:contain; }
+.cardname { display:block; text-align:center; padding:9px 11px; font-size:12px; letter-spacing:.04em; }
+.voice { min-width:0; }
+.reference { display:block; width:100%; border:1px solid #dce2d3; background:#fffef9; padding:20px 22px 16px;
+  border-radius:12px; transition:border-color 180ms, background 180ms; }
+.reference:hover { background:#f9fbf3; border-color:#8ea17f; }
+.reference[aria-pressed="true"] { border-color:#a7b598; }
+.reftop { display:flex; align-items:center; gap:12px; text-align:left; }
+.reficon { display:grid; place-items:center; width:42px; height:42px; flex-shrink:0; background:#e8eddf; color:#5d754c; border-radius:50%; }
+.reftitle { font-size:13px; letter-spacing:.05em; font-weight:600; }
+.dur { margin-left:auto; font-size:10px; color:#859277; font-variant-numeric:tabular-nums; }
+.wave { height:23px; display:flex; align-items:center; gap:3px; margin-top:14px; color:#b2bda1; }
+.wave i { display:block; flex:1; min-width:1px; border-radius:3px; background:currentColor; }
+.wave.active { color:#73895e; }
+.quote { padding:32px 0; text-align:center; }
+.quote blockquote { margin:0; font-size:clamp(22px,1.7vw,24px); line-height:1.65; letter-spacing:.045em;
+  font-family:"Noto Serif TC","Songti TC","PMingLiU",serif; animation:fade 250ms ease-out; }
+.quote blockquote::before { content:"「"; margin-left:-.12em; color:#b5bd9f; }
+.quote blockquote::after { content:"」"; color:#b5bd9f; }
+.emotions { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.emotion { padding:18px 14px 12px; display:flex; align-items:center; flex-direction:column; border-radius:10px;
+  border:1px solid #dfe3d7; background:#fffef9; transition:transform 160ms, border-color 160ms, background 160ms; }
+.emotion:hover { transform:translateY(-3px); border-color:var(--emotion); }
+.emotion[aria-pressed="true"] { border-color:var(--emotion); background:color-mix(in srgb, var(--emotion) 9%, #fffef9);
+  box-shadow:inset 0 0 0 .5px var(--emotion); }
+.glyph { font-family:"Noto Serif TC","Songti TC","PMingLiU",serif; font-size:32px; line-height:1.3; color:var(--emotion); }
+.wave.small { width:100%; height:13px; margin-top:14px; gap:2px; color:var(--emotion); opacity:.5; }
+.wave.small.active { opacity:1; }
+.ebottom { margin-top:10px; display:flex; align-items:center; justify-content:space-between; width:100%;
+  font-size:8px; color:#919582; font-variant-numeric:tabular-nums; }
+.ebottom svg { color:var(--emotion); }
+.player { background:#eeefe4; border:1px solid #e3e6d9; border-radius:11px; padding:16px 15px 13px; margin-top:24px; }
+.ptop { display:flex; align-items:center; gap:9px; }
+.play { width:36px; height:36px; display:grid; place-items:center; flex-shrink:0; border-radius:50%;
+  background:var(--ink); color:#fffdf3; border:0; transition:background 160ms; }
+.play:hover { background:#4d6750; }
+.now { flex:1; min-width:0; margin-left:5px; font-size:12px; font-weight:500; }
+.icon { display:grid; place-items:center; width:26px; height:30px; color:#849077; background:none; border:0; flex-shrink:0; border-radius:4px; }
+.icon:hover { color:var(--ink); background:#dfe5d4; }
+input[type=range] { accent-color:#819374; cursor:pointer; }
+.volume { width:60px; height:3px; }
+.timeline { display:flex; align-items:center; gap:8px; margin-top:12px; }
+.timeline span { font-size:8px; font-variant-numeric:tabular-nums; color:#8a947b; }
+.timeline input { appearance:none; flex:1; min-width:0; height:3px; border-radius:4px;
+  background:linear-gradient(to right,#728666 var(--progress,0%), #d7decb var(--progress,0%)); }
+.timeline input::-webkit-slider-thumb { appearance:none; width:8px; height:8px; border-radius:50%; background:#728666; }
+.timeline input::-moz-range-thumb { border:0; width:8px; height:8px; border-radius:50%; background:#728666; }
+.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@keyframes arrival { from { opacity:0; transform:translateX(-50%) translateY(9px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+@keyframes fade { from { opacity:.2; } to { opacity:1; } }
+@keyframes breathe { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
+</style>
+<body style="--accent:#af6246">
+<div class="shell">
+  <header class="header"><div class="brand"><svg width="38" height="38" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+<rect width="40" height="40" rx="12" fill="#314c40"/>
+<path d="M10 19v11h20V19M9 17l3-7h16l3 7M17 30v-8h6v8" stroke="#f6f3e9" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M9 17c0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0M16 10l-1.5 7M24 10l1.5 7" stroke="#f6f3e9" stroke-width="1.5"/></svg><h1>便利商店 AI NPC Voice</h1></div></header>
+  <main>
+    <div class="casting">
+      <section aria-label="角色選擇">
+        <div class="stage">
+          <div class="halo"></div><svg class="scene" viewBox="0 0 500 400" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+<path d="M64 352V122h372v230M58 122l22-41h339l23 41M101 81l-16 41m60-41-11 41m55-41-6 41m51-41v41m44-41 5 41m39-41 10 41m34-41 15 41m29-41 18 41"/>
+<path d="M58 122q16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0 16 28 32 0"/>
+<path d="M83 207h135m-135 66h135m76-66h124m-124 66h124M83 163v153m135-153v153m76-153v153m124-153v153M38 352h424"/>
+<rect x="95" y="176" width="25" height="31" rx="3"/><rect x="132" y="166" width="17" height="41" rx="3"/>
+<rect x="158" y="182" width="38" height="25" rx="3"/><path d="M306 207v-30q0-6 6-6h10q6 0 6 6v30m13 0v-23q0-6 6-6h10q6 0 6 6v23m14-27h28v27h-28Z"/>
+<rect x="94" y="242" width="44" height="31" rx="3"/><rect x="148" y="248" width="51" height="25" rx="3"/>
+<path d="M307 237h33v36h-33Zm43 7h17v29h-17Zm27-9h30v38h-30Z"/></svg><div class="floor"></div>
+          <div class="hero" id="hero"><img id="portrait" alt=""></div>
+        </div>
+        <div class="identity"><h2 id="name"></h2><span class="rarity" id="rarity"></span></div>
+        <div class="roster" id="roster" role="group" aria-label="選擇角色"></div>
+      </section>
+      <section class="voice" aria-label="聲音檔案">
+        <button class="reference" id="reference">
+          <span class="reftop">
+            <span class="reficon" id="reficon"></span>
+            <span class="reftitle">基準音</span>
+            <span class="dur" id="refdur"></span>
+          </span>
+          <span class="wave" id="refwave"></span>
+        </button>
+        <div class="quote"><blockquote id="quote"></blockquote></div>
+        <div class="emotions" id="emotions" role="group" aria-label="情緒試聽"></div>
+        <div class="player">
+          <div class="ptop">
+            <button class="play" id="mainplay"></button>
+            <span class="now" id="nowplaying"></span>
+            <span class="sr" id="state" aria-live="polite"></span>
+            <button class="icon" id="volicon"></button>
+            <input class="volume" id="vol" type="range" min="0" max="1" step="0.05" value="0.85" aria-label="音量">
+            <a class="icon" id="download" download><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></svg></a>
+          </div>
+          <div class="timeline">
+            <span id="at">0:00</span>
+            <input id="seek" type="range" min="0" max="1" step="0.01" value="0" aria-label="播放進度">
+            <span id="total">0:00</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+<audio id="player" preload="metadata"></audio>
+<script>
+const DATA = [{"character_id": "clk_0001", "name": "菲菲", "rarity": "SR", "color": "#af6246", "catchphrases": "時間就是最好的魔法！", "portraits": {"normal": "assets/figure/clk_0001_normal.png", "happy": "assets/figure/clk_0001_happy.png", "angry": "assets/figure/clk_0001_angry.png", "sad": "assets/figure/clk_0001_sad.png"}, "reference": {"url": "assets/audio/clk_0001_reference.wav", "duration_s": 38.229, "waveform": [0.9649999737739563, 0.6930000185966492, 0.5640000104904175, 0.7789999842643738, 0.6190000176429749, 0.8500000238418579, 0.8479999899864197, 0.5479999780654907, 0.7020000219345093, 0.8859999775886536, 0.9789999723434448, 0.875, 0.9729999899864197, 0.3330000042915344, 0.16300000250339508, 0.8949999809265137, 0.7559999823570251, 0.9160000085830688, 0.8320000171661377, 0.8579999804496765, 0.8489999771118164, 0.9520000219345093, 0.6460000276565552, 0.9129999876022339, 0.8009999990463257, 0.0, 0.8389999866485596, 0.9390000104904175, 0.34599998593330383, 0.8259999752044678, 0.9210000038146973, 0.48899999260902405, 0.906000018119812, 0.906000018119812, 0.7639999985694885, 0.5220000147819519, 0.9430000185966492, 0.847000002861023, 0.5320000052452087, 1.0, 0.8330000042915344, 0.38600000739097595, 0.6899999976158142, 0.9330000281333923, 0.6039999723434448, 0.8999999761581421, 0.8019999861717224, 0.8519999980926514, 0.8209999799728394, 0.925000011920929, 0.9079999923706055, 0.5070000290870667, 0.753000020980835, 0.878000020980835, 0.5130000114440918, 0.4950000047683716, 0.7099999785423279, 0.9440000057220459, 0.9089999794960022, 0.9940000176429749, 0.925000011920929, 0.9129999876022339, 0.6380000114440918, 0.6269999742507935], "text": "哈囉，我是菲菲！這間店……嗯，是阿嬤以前顧的啦。欸，你等我一下喔——這一箱先放這邊。好，可以了。你看這本舊雜誌，超可愛的對不對？我從小就……欸，我剛剛講到哪裡了？啊，對啦，就是說，你願意陪我一起顧店，我真的很開心耶。那我們先把櫃檯整理一下，垃圾拿去門口那邊放就好。等一下人少的時候，我再帶你去看看地下室，那邊有一個……嘿嘿，先不要說，你自己來看。下個星期也要來喔！"}, "emotions": [{"emotion_id": "delight", "label": "喜", "text": "根本就沒有食神，或者人人都是食神……只要有心，人人都可以是食神！", "expression": "happy", "color": "#a87929", "audio": {"url": "assets/audio/clk_0001_delight.wav", "duration_s": 10.389, "waveform": [0.9340000152587891, 0.9100000262260437, 1.0, 0.4359999895095825, 0.421999990940094, 0.7540000081062317, 0.2919999957084656, 0.2070000022649765, 0.3370000123977661, 0.7940000295639038, 0.8500000238418579, 0.15199999511241913, 0.004000000189989805, 0.17499999701976776, 0.8659999966621399, 0.15800000727176666, 0.26899999380111694, 0.03799999877810478, 0.28700000047683716, 0.2669999897480011, 0.9039999842643738, 0.8339999914169312, 0.9829999804496765, 0.4749999940395355, 0.5099999904632568, 0.27900001406669617, 0.34599998593330383, 0.9350000023841858, 0.9359999895095825, 0.20000000298023224, 0.003000000026077032, 0.10999999940395355, 0.2199999988079071, 0.6520000100135803, 0.28999999165534973, 0.28999999165534973, 0.6439999938011169, 0.4970000088214874, 0.004000000189989805, 0.003000000026077032, 0.45100000500679016, 0.3529999852180481, 0.8889999985694885, 0.13899999856948853, 0.8730000257492065, 0.8619999885559082, 0.878000020980835, 0.3959999978542328, 0.3959999978542328, 0.3479999899864197, 0.40299999713897705, 0.9629999995231628, 0.9610000252723694, 0.9079999923706055, 0.13600000739097595, 0.2639999985694885, 0.5690000057220459, 0.2849999964237213, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0729999989271164], "text": "根本就沒有食神，或者人人都是食神……只要有心，人人都可以是食神！"}}, {"emotion_id": "anger", "label": "怒", "text": "你殺了我，還有千千萬萬個我！！", "expression": "angry", "color": "#b36354", "audio": {"url": "assets/audio/clk_0001_anger.wav", "duration_s": 5.365, "waveform": [0.3970000147819519, 0.8460000157356262, 0.7570000290870667, 0.013000000268220901, 0.013000000268220901, 0.013000000268220901, 0.00800000037997961, 0.6320000290870667, 0.5870000123977661, 0.7419999837875366, 0.9120000004768372, 0.9750000238418579, 0.8960000276565552, 0.8500000238418579, 0.8019999861717224, 0.4480000138282776, 0.34599998593330383, 0.30399999022483826, 0.05999999865889549, 0.0020000000949949026, 0.0, 0.0, 0.0, 0.24199999868869781, 0.40299999713897705, 0.17399999499320984, 0.006000000052154064, 0.010999999940395355, 0.023000000044703484, 0.023000000044703484, 0.18700000643730164, 0.9240000247955322, 0.9649999737739563, 0.753000020980835, 0.9399999976158142, 0.30399999022483826, 0.6050000190734863, 0.6150000095367432, 0.847000002861023, 0.8100000023841858, 0.3790000081062317, 0.5910000205039978, 0.7689999938011169, 0.8130000233650208, 0.4860000014305115, 0.9900000095367432, 0.9520000219345093, 0.8240000009536743, 0.23399999737739563, 0.9629999995231628, 0.9620000123977661, 0.753000020980835, 0.3889999985694885, 0.8379999995231628, 0.7799999713897705, 0.2540000081062317, 0.8970000147819519, 0.9629999995231628, 0.9300000071525574, 1.0, 0.9760000109672546, 0.9169999957084656, 0.5559999942779541, 0.1289999932050705], "text": "你殺了我，還有千千萬萬個我！！"}}, {"emotion_id": "sorrow", "label": "哀", "text": "人，一旦習慣了孤獨，那才是比悲傷更悲傷的事。", "expression": "sad", "color": "#668296", "audio": {"url": "assets/audio/clk_0001_sorrow.wav", "duration_s": 9.28, "waveform": [0.3400000035762787, 0.31200000643730164, 0.11100000143051147, 0.029999999329447746, 0.5960000157356262, 0.9480000138282776, 0.6190000176429749, 0.25, 0.03500000014901161, 0.10300000011920929, 0.02500000037252903, 0.6740000247955322, 1.0, 0.9829999804496765, 0.21299999952316284, 0.3930000066757202, 0.8619999885559082, 0.6700000166893005, 0.23499999940395355, 0.17599999904632568, 0.13899999856948853, 0.16699999570846558, 0.1080000028014183, 0.02500000037252903, 0.0, 0.050999999046325684, 0.004999999888241291, 0.2280000001192093, 0.6840000152587891, 0.7929999828338623, 0.9769999980926514, 0.1509999930858612, 0.17399999499320984, 0.07599999755620956, 0.13099999725818634, 0.2879999876022339, 0.0, 0.0010000000474974513, 0.2150000035762787, 0.2240000069141388, 0.7799999713897705, 0.42100000381469727, 0.7409999966621399, 0.9950000047683716, 0.23800000548362732, 0.6919999718666077, 0.628000020980835, 0.027000000700354576, 0.4790000021457672, 0.23999999463558197, 0.15800000727176666, 0.9629999995231628, 0.5070000290870667, 0.3089999854564667, 0.17299999296665192, 0.1340000033378601, 0.11900000274181366, 0.2460000067949295, 0.20600000023841858, 0.16200000047683716, 0.0689999982714653, 0.0, 0.2460000067949295, 0.24899999797344208], "text": "人，一旦習慣了孤獨，那才是比悲傷更悲傷的事。"}}]}, {"character_id": "clk_0003", "name": "紙袋君", "rarity": "SSR", "color": "#667447", "catchphrases": "根據我的觀察。行銷方案需要與時俱進！", "portraits": {"normal": "assets/figure/clk_0003_normal.png", "happy": "assets/figure/clk_0003_happy.png", "angry": "assets/figure/clk_0003_angry.png", "sad": "assets/figure/clk_0003_sad.png"}, "reference": {"url": "assets/audio/clk_0003_reference.wav", "duration_s": 40.192, "waveform": [0.8999999761581421, 0.9079999923706055, 0.996999979019165, 0.9940000176429749, 0.7139999866485596, 0.19699999690055847, 0.5619999766349792, 1.0, 0.7300000190734863, 0.7459999918937683, 0.9909999966621399, 0.8970000147819519, 0.9480000138282776, 0.9929999709129333, 0.9980000257492065, 0.7979999780654907, 0.8870000243186951, 0.9950000047683716, 0.9369999766349792, 0.9850000143051147, 0.6439999938011169, 0.8420000076293945, 0.984000027179718, 0.7110000252723694, 0.847000002861023, 0.7979999780654907, 0.8579999804496765, 0.8999999761581421, 0.8769999742507935, 0.765999972820282, 0.8610000014305115, 0.7039999961853027, 0.8690000176429749, 0.7940000295639038, 0.578000009059906, 0.875, 0.7250000238418579, 0.7590000033378601, 0.8220000267028809, 0.7730000019073486, 0.949999988079071, 0.9570000171661377, 0.5640000104904175, 0.8560000061988831, 0.8730000257492065, 0.8429999947547913, 0.9359999895095825, 0.9309999942779541, 0.8899999856948853, 0.12800000607967377, 0.9990000128746033, 0.8569999933242798, 0.6010000109672546, 0.9210000038146973, 0.6800000071525574, 0.8560000061988831, 0.9639999866485596, 0.8889999985694885, 0.8999999761581421, 0.9340000152587891, 0.9660000205039978, 1.0, 0.9110000133514404, 0.7170000076293945], "text": "根據我的觀察。行銷方案需要與時俱進！嗯……我是紙袋君。以前是做行銷的，現在嘛，比較喜歡待在這種小店裡。欸，不用緊張，我頭上這個袋子……啊，這個之後再說。有什麼問題都可以問我。根據我的觀察，我們先看客人比較常買什麼，然後——嗯，等一下，我先記一下。好，然後再想商品要放哪裡。一件一件來就好，不用急。垃圾等一下我拿去門口。下個星期我們再看看數字有沒有變好，我覺得……應該會的。根據我的觀察。行銷方案需要與時俱進！"}, "emotions": [{"emotion_id": "delight", "label": "喜", "text": "根本就沒有食神，或者人人都是食神……只要有心，人人都可以是食神！", "expression": "happy", "color": "#a87929", "audio": {"url": "assets/audio/clk_0003_delight.wav", "duration_s": 8.416, "waveform": [0.4180000126361847, 1.0, 0.9710000157356262, 0.1459999978542328, 0.25099998712539673, 0.0430000014603138, 0.8069999814033508, 0.6600000262260437, 0.847000002861023, 0.5230000019073486, 0.6800000071525574, 0.6629999876022339, 0.8360000252723694, 0.20600000023841858, 0.6330000162124634, 0.8669999837875366, 0.8500000238418579, 0.4059999883174896, 0.06499999761581421, 0.9160000085830688, 0.7599999904632568, 0.7940000295639038, 0.9309999942779541, 0.8640000224113464, 0.6399999856948853, 0.8190000057220459, 0.765999972820282, 0.8730000257492065, 0.6489999890327454, 0.5580000281333923, 0.6389999985694885, 0.5580000281333923, 0.9800000190734863, 0.3449999988079071, 0.08100000023841858, 0.7710000276565552, 0.8889999985694885, 0.7680000066757202, 0.753000020980835, 0.4410000145435333, 0.8619999885559082, 0.7009999752044678, 0.3149999976158142, 0.17599999904632568, 0.9150000214576721, 0.5419999957084656, 0.8619999885559082, 0.38100001215934753, 0.9150000214576721, 0.6690000295639038, 0.9120000004768372, 0.46700000762939453, 0.6639999747276306, 0.5189999938011169, 0.5759999752044678, 0.4690000116825104, 0.9580000042915344, 0.7429999709129333, 0.414000004529953, 0.1469999998807907, 0.9259999990463257, 0.7379999756813049, 0.18400000035762787, 0.3970000147819519], "text": "根本就沒有食神，或者人人都是食神……只要有心，人人都可以是食神！"}}, {"emotion_id": "anger", "label": "怒", "text": "你殺了我，還有千千萬萬個我！！", "expression": "angry", "color": "#b36354", "audio": {"url": "assets/audio/clk_0003_anger.wav", "duration_s": 4.128, "waveform": [0.050999999046325684, 0.42500001192092896, 0.40700000524520874, 0.10100000351667404, 0.013000000268220901, 0.6980000138282776, 0.6800000071525574, 0.2290000021457672, 0.11100000143051147, 1.0, 0.878000020980835, 0.7950000166893005, 0.7129999995231628, 0.6309999823570251, 0.4259999990463257, 0.5759999752044678, 0.4620000123977661, 0.16699999570846558, 0.11299999803304672, 0.009999999776482582, 0.10999999940395355, 0.6299999952316284, 0.8889999985694885, 0.5799999833106995, 0.5400000214576721, 0.13899999856948853, 0.42399999499320984, 0.33399999141693115, 0.9259999990463257, 0.8669999837875366, 0.5360000133514404, 0.503000020980835, 0.4230000078678131, 0.19900000095367432, 0.19499999284744263, 0.9279999732971191, 0.5759999752044678, 0.5120000243186951, 0.5009999871253967, 0.6320000290870667, 0.9729999899864197, 0.843999981880188, 0.3269999921321869, 0.3930000066757202, 0.40799999237060547, 0.9679999947547913, 0.9290000200271606, 0.4259999990463257, 0.5019999742507935, 0.6539999842643738, 0.9430000185966492, 0.5379999876022339, 0.6209999918937683, 0.8859999775886536, 0.8960000276565552, 0.8019999861717224, 0.8360000252723694, 0.8650000095367432, 0.7379999756813049, 0.7860000133514404, 0.6549999713897705, 0.22300000488758087, 0.10899999737739563, 0.10999999940395355], "text": "你殺了我，還有千千萬萬個我！！"}}, {"emotion_id": "sorrow", "label": "哀", "text": "人，一旦習慣了孤獨，那才是比悲傷更悲傷的事。", "expression": "sad", "color": "#668296", "audio": {"url": "assets/audio/clk_0003_sorrow.wav", "duration_s": 7.552, "waveform": [0.5019999742507935, 0.3889999985694885, 0.289000004529953, 0.20800000429153442, 0.09200000017881393, 0.2930000126361847, 0.9520000219345093, 0.9440000057220459, 0.4909999966621399, 0.640999972820282, 0.10700000077486038, 0.0860000029206276, 0.5170000195503235, 0.8270000219345093, 0.8349999785423279, 0.3970000147819519, 0.7049999833106995, 1.0, 0.6460000276565552, 0.6349999904632568, 0.6110000014305115, 0.4779999852180481, 0.460999995470047, 0.4560000002384186, 0.42899999022483826, 0.041999999433755875, 0.003000000026077032, 0.16200000047683716, 0.2029999941587448, 0.04100000113248825, 0.026000000536441803, 0.984000027179718, 0.9980000257492065, 0.9700000286102295, 0.44699999690055847, 0.42500001192092896, 0.6209999918937683, 0.42800000309944153, 0.13899999856948853, 0.06700000166893005, 0.44999998807907104, 0.6259999871253967, 0.8090000152587891, 0.6240000128746033, 0.25999999046325684, 0.9800000190734863, 0.5849999785423279, 0.3199999928474426, 0.009999999776482582, 0.718999981880188, 0.6679999828338623, 0.34200000762939453, 0.8610000014305115, 0.5260000228881836, 0.9490000009536743, 0.9449999928474426, 0.47099998593330383, 0.5640000104904175, 0.23800000548362732, 0.19099999964237213, 0.5350000262260437, 0.5289999842643738, 0.45100000500679016, 0.10499999672174454], "text": "人，一旦習慣了孤獨，那才是比悲傷更悲傷的事。"}}]}, {"character_id": "clk_0016", "name": "虎面", "rarity": "SSR", "color": "#546f83", "catchphrases": "哈哈，體格不錯啊！", "portraits": {"normal": "assets/figure/clk_0016_normal.png", "happy": "assets/figure/clk_0016_happy.png", "angry": "assets/figure/clk_0016_angry.png", "sad": "assets/figure/clk_0016_sad.png"}, "reference": {"url": "assets/audio/clk_0016_reference.wav", "duration_s": 26.507, "waveform": [0.9900000095367432, 0.42100000381469727, 0.8650000095367432, 0.9200000166893005, 0.7020000219345093, 0.9769999980926514, 0.781000018119812, 0.6439999938011169, 0.19300000369548798, 0.8209999799728394, 0.5720000267028809, 0.11699999868869781, 0.09600000083446503, 1.0, 0.9919999837875366, 0.675000011920929, 0.578000009059906, 0.6150000095367432, 0.8539999723434448, 1.0, 0.35199999809265137, 0.8999999761581421, 1.0, 0.3720000088214874, 1.0, 0.9440000057220459, 0.5389999747276306, 0.6710000038146973, 0.5339999794960022, 1.0, 0.45500001311302185, 0.4699999988079071, 1.0, 0.7940000295639038, 0.6269999742507935, 0.5770000219345093, 0.3529999852180481, 1.0, 0.47200000286102295, 0.996999979019165, 0.4659999907016754, 0.8230000138282776, 1.0, 0.609000027179718, 0.29600000381469727, 0.8849999904632568, 0.4740000069141388, 0.4869999885559082, 0.9169999957084656, 0.7580000162124634, 0.5329999923706055, 0.8650000095367432, 0.7429999709129333, 0.8980000019073486, 1.0, 1.0, 0.6480000019073486, 0.9990000128746033, 0.48500001430511475, 0.8479999899864197, 0.5130000114440918, 0.6240000128746033, 0.9869999885559082, 1.0], "text": "哈哈！我是虎面啦。以前在擂台上摔角的，現在……嗯，有空就來店裡幫忙。欸，那一箱交給我就好——你走道先讓一下。好，這樣就可以了。你看，一下子就整理完了嘛。垃圾記得拿去門口那邊，等一下有人來收。練體格啊，重點是耐心，顧店也一樣，今天多做一點……明天就會更順。喔對了，下個星期我要去看那些準備出國比賽的孩子，你要不要一起？"}, "emotions": [{"emotion_id": "delight", "label": "喜", "text": "根本就沒有食神，或者人人都是食神……只要有心，人人都可以是食神！", "expression": "happy", "color": "#a87929", "audio": {"url": "assets/audio/clk_0016_delight.wav", "duration_s": 7.627, "waveform": [0.05299999937415123, 0.7630000114440918, 0.753000020980835, 0.7450000047683716, 0.28700000047683716, 0.01899999938905239, 0.023000000044703484, 1.0, 0.9990000128746033, 1.0, 0.8109999895095825, 0.6209999918937683, 0.5199999809265137, 0.49799999594688416, 0.13699999451637268, 0.10199999809265137, 0.1340000033378601, 0.07500000298023224, 0.027000000700354576, 0.9890000224113464, 0.9319999814033508, 0.28999999165534973, 0.02800000086426735, 0.949999988079071, 0.9929999709129333, 0.2240000069141388, 1.0, 0.5979999899864197, 0.6779999732971191, 0.46399998664855957, 0.2329999953508377, 0.15000000596046448, 0.10400000214576721, 0.09399999678134918, 0.050999999046325684, 0.013000000268220901, 0.06700000166893005, 0.27900001406669617, 0.32199999690055847, 0.08299999684095383, 0.12300000339746475, 0.6240000128746033, 0.5210000276565552, 0.010999999940395355, 0.8510000109672546, 0.765999972820282, 0.9179999828338623, 0.8080000281333923, 0.07900000363588333, 0.9309999942779541, 0.515999972820282, 0.2770000100135803, 0.5299999713897705, 0.3109999895095825, 0.15800000727176666, 0.1340000033378601, 0.1120000034570694, 0.08900000154972076, 0.041999999433755875, 0.012000000104308128, 0.5350000262260437, 0.3569999933242798, 0.3409999907016754, 0.15399999916553497], "text": "根本就沒有食神，或者人人都是食神……只要有心，人人都可以是食神！"}}, {"emotion_id": "anger", "label": "怒", "text": "你殺了我，還有千千萬萬個我！！", "expression": "angry", "color": "#b36354", "audio": {"url": "assets/audio/clk_0016_anger.wav", "duration_s": 4.629, "waveform": [0.02800000086426735, 0.0430000014603138, 0.03799999877810478, 0.0020000000949949026, 0.0020000000949949026, 0.0020000000949949026, 0.0010000000474974513, 0.07400000095367432, 0.09799999743700027, 0.11299999803304672, 0.18299999833106995, 0.21400000154972076, 0.15600000321865082, 0.6840000152587891, 0.3479999899864197, 0.4779999852180481, 0.2879999876022339, 0.16200000047683716, 0.029999999329447746, 0.01899999938905239, 0.014000000432133675, 0.006000000052154064, 0.0010000000474974513, 0.0010000000474974513, 0.0020000000949949026, 0.0020000000949949026, 0.0020000000949949026, 0.0010000000474974513, 0.009999999776482582, 0.09000000357627869, 0.9760000109672546, 0.8989999890327454, 0.33399999141693115, 0.10300000011920929, 0.10000000149011612, 0.30000001192092896, 0.3019999861717224, 0.5789999961853027, 0.8009999990463257, 0.44699999690055847, 0.18400000035762787, 0.30000001192092896, 0.6150000095367432, 0.5519999861717224, 0.3199999928474426, 0.09000000357627869, 0.9779999852180481, 1.0, 0.5120000243186951, 0.29499998688697815, 0.9860000014305115, 0.9710000157356262, 0.3050000071525574, 0.4950000047683716, 0.5239999890327454, 0.2680000066757202, 0.3779999911785126, 0.777999997138977, 0.5630000233650208, 0.9419999718666077, 0.9860000014305115, 0.9599999785423279, 0.7120000123977661, 0.029999999329447746], "text": "你殺了我，還有千千萬萬個我！！"}}, {"emotion_id": "sorrow", "label": "哀", "text": "人，一旦習慣了孤獨，那才是比悲傷更悲傷的事。", "expression": "sad", "color": "#668296", "audio": {"url": "assets/audio/clk_0016_sorrow.wav", "duration_s": 8.971, "waveform": [0.19200000166893005, 0.1599999964237213, 0.029999999329447746, 0.003000000026077032, 0.4009999930858612, 0.7139999866485596, 0.3409999907016754, 0.08799999952316284, 0.0020000000949949026, 0.004000000189989805, 0.0010000000474974513, 0.0, 0.7450000047683716, 1.0, 0.5899999737739563, 0.46299999952316284, 0.7789999842643738, 0.3199999928474426, 0.24500000476837158, 0.16200000047683716, 0.10700000077486038, 0.0, 0.0, 0.0010000000474974513, 0.12200000137090683, 0.05900000035762787, 0.0, 0.0, 0.2759999930858612, 0.9980000257492065, 0.4300000071525574, 0.3230000138282776, 0.32499998807907104, 0.1420000046491623, 0.0, 0.0, 0.0, 0.0, 0.0020000000949949026, 0.3880000114440918, 1.0, 1.0, 0.9990000128746033, 0.7440000176429749, 0.010999999940395355, 0.0, 0.4189999997615814, 1.0, 0.17800000309944153, 0.9480000138282776, 0.2879999876022339, 0.6039999723434448, 0.20600000023841858, 0.2669999897480011, 0.3840000033378601, 0.1469999998807907, 0.07599999755620956, 0.0, 0.10100000351667404, 0.4059999883174896, 0.27300000190734863, 0.10899999737739563, 0.06400000303983688, 0.20200000703334808], "text": "人，一旦習慣了孤獨，那才是比悲傷更悲傷的事。"}}]}];
+const ICON = {"play16": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 11 7-11 7Z\" fill=\"currentColor\"/></svg>", "play21": "<svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 11 7-11 7Z\" fill=\"currentColor\"/></svg>", "play22": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 11 7-11 7Z\" fill=\"currentColor\"/></svg>", "pause16": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5h3v14H8zM15 5h3v14h-3z\" fill=\"currentColor\"/></svg>", "pause21": "<svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5h3v14H8zM15 5h3v14h-3z\" fill=\"currentColor\"/></svg>", "pause22": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5h3v14H8zM15 5h3v14h-3z\" fill=\"currentColor\"/></svg>"};
+const CHECK = "<svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg>";
+const $ = id => document.getElementById(id);
+// A real <audio> element rather than `new Audio()`: it is what the page's own
+// controls drive, and it keeps the player inspectable from the page itself.
+const audio = $("player");
+let current = 0, track = "reference", volume = 0.85;
+audio.volume = volume;
+const character = () => DATA[current];
+const emotion = () => character().emotions.find(e => e.emotion_id === track);
+const clip = () => track === "reference" ? character().reference : emotion().audio;
+const fmt = s => { const v = Math.max(0, Math.floor(s || 0)); return `${Math.floor(v/60)}:${String(v%60).padStart(2,"0")}`; };
+
+function bars(peaks, step) {
+  return peaks.filter((_, i) => i % step === 0)
+    .map(p => `<i style="height:${Math.max(8, p * 100)}%"></i>`).join("");
+}
+
+function renderRoster() {
+  $("roster").innerHTML = DATA.map((c, i) => `
+    <button class="card" data-index="${i}" aria-label="選擇${c.name}" aria-pressed="${i === current}">
+      <span class="check">${CHECK}</span>
+      <span class="thumb" style="background:color-mix(in srgb, ${c.color} 7%, #f7f7f0)">
+        <img src="${c.portraits.normal || ""}" alt="">
+      </span>
+      <span class="cardname">${c.name}</span>
+    </button>`).join("");
+  for (const button of $("roster").children) {
+    button.onclick = () => select(+button.dataset.index);
+    button.onkeydown = event => {
+      const keys = { ArrowLeft: current - 1, ArrowRight: current + 1, Home: 0, End: DATA.length - 1 };
+      if (!(event.key in keys)) return;
+      event.preventDefault();
+      const next = (keys[event.key] + DATA.length) % DATA.length;
+      select(next);
+      $("roster").children[next].focus();
+    };
+  }
+}
+
+function renderEmotions() {
+  $("emotions").innerHTML = character().emotions.map(e => `
+    <button class="emotion" data-id="${e.emotion_id}" style="--emotion:${e.color}"
+            aria-label="試聽${character().name}的${e.label}" aria-pressed="${track === e.emotion_id}">
+      <span class="glyph">${e.label}</span>
+      <span class="wave small ${track === e.emotion_id && !audio.paused ? "active" : ""}">${bars(e.audio.waveform, 4)}</span>
+      <span class="ebottom"><span>${e.audio.duration_s.toFixed(1)}s</span>${track === e.emotion_id && !audio.paused ? ICON.pause16 : ICON.play16}</span>
+    </button>`).join("");
+  for (const button of $("emotions").children) button.onclick = () => play(button.dataset.id);
+}
+
+function render() {
+  const c = character();
+  document.body.style.setProperty("--accent", c.color);
+  const expression = track === "reference" ? "normal" : emotion().expression;
+  $("hero").className = "hero" + (audio.paused ? "" : " speaking");
+  $("portrait").src = c.portraits[expression] || c.portraits.normal || "";
+  $("portrait").alt = `${c.name}角色立繪`;
+  $("name").textContent = c.name;
+  $("rarity").textContent = c.rarity;
+  $("quote").textContent = track === "reference" ? c.catchphrases : emotion().text;
+  $("refdur").textContent = c.reference.duration_s.toFixed(1) + "s";
+  $("refwave").innerHTML = bars(c.reference.waveform, 1);
+  $("refwave").className = "wave" + (track === "reference" && !audio.paused ? " active" : "");
+  $("reference").setAttribute("aria-pressed", track === "reference");
+  $("reference").setAttribute("aria-label", `試聽${c.name}的基準聲線`);
+  $("reficon").innerHTML = track === "reference" && !audio.paused ? ICON.pause22 : ICON.play22;
+  $("nowplaying").textContent = track === "reference" ? "基準音" : emotion().label;
+  $("state").textContent = audio.paused ? (audio.src ? "已暫停" : "準備試聽") : "正在播放";
+  $("mainplay").innerHTML = audio.paused ? ICON.play21 : ICON.pause21;
+  $("mainplay").setAttribute("aria-label", audio.paused ? "播放目前語音" : "暫停播放");
+  $("volicon").innerHTML = volume ? "<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m11 4-6 5H2v6h3l6 5Z\"/><path d=\"M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14\"/></svg>" : "<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m11 4-6 5H2v6h3l6 5Z\"/><path d=\"m16 9 6 6m0-6-6 6\"/></svg>";
+  $("volicon").setAttribute("aria-label", volume ? "靜音" : "開啟聲音");
+  const label = track === "reference" ? "基準音" : emotion().label;
+  $("download").href = clip().url;
+  $("download").download = `${c.name}_${label}.wav`;
+  $("download").setAttribute("aria-label", `下載${c.name}的${label}`);
+  renderEmotions();
+  for (const button of $("roster").children) {
+    button.setAttribute("aria-pressed", +button.dataset.index === current);
+  }
+  progress();
+}
+
+function progress() {
+  const total = audio.duration || clip().duration_s || 0;
+  const at = audio.currentTime || 0;
+  $("at").textContent = fmt(at);
+  $("total").textContent = fmt(total);
+  $("seek").max = total || 1;
+  $("seek").value = Math.min(at, total || 1);
+  $("seek").disabled = !audio.duration;
+  $("seek").style.setProperty("--progress", `${total ? (at / total) * 100 : 0}%`);
+}
+
+function select(index) {
+  if (index === current) return;
+  audio.pause();
+  audio.removeAttribute("src");
+  audio.load();
+  current = index;
+  track = "reference";
+  render();
+}
+
+function play(next) {
+  const changed = next !== track;
+  track = next;
+  const source = new URL(clip().url, location.href).href;
+  if (!changed && audio.src === source && !audio.paused) { audio.pause(); return; }
+  if (audio.src !== source) { audio.src = source; }
+  if (audio.ended) audio.currentTime = 0;
+  audio.play().catch(() => render());
+  render();
+}
+
+$("reference").onclick = () => play("reference");
+$("mainplay").onclick = () => play(track);
+$("volicon").onclick = () => { volume = volume ? 0 : 0.85; audio.volume = volume; $("vol").value = volume; render(); };
+$("vol").oninput = event => { volume = +event.target.value; audio.volume = volume; render(); };
+$("seek").oninput = event => { if (audio.duration) { audio.currentTime = +event.target.value; progress(); } };
+audio.addEventListener("play", render);
+audio.addEventListener("pause", render);
+audio.addEventListener("ended", render);
+audio.addEventListener("timeupdate", progress);
+audio.addEventListener("loadedmetadata", progress);
+
+renderRoster();
+render();
+</script>
+</body>
+</html>
