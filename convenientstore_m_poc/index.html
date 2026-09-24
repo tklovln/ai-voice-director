@@ -17,7 +17,9 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline:3px solid #
 .header { display:flex; align-items:center; padding-bottom:22px; border-bottom:1px solid var(--line); }
 .brand { display:flex; align-items:center; gap:12px; }
 .brand h1 { margin:0; font-size:19px; letter-spacing:.12em; font-weight:700; }
-.nextpage { display:flex; align-items:center; gap:11px; margin-left:auto; padding:9px 14px; text-decoration:none;
+.nextpages { display:flex; align-items:center; gap:10px; margin-left:auto; }
+.npsection { font-size:10px; letter-spacing:.1em; color:#8b9280; text-transform:uppercase; }
+.nextpage { display:flex; align-items:center; gap:11px; padding:9px 14px; text-decoration:none;
   color:var(--ink); background:#fcfcf7; border:1.5px solid #dce2d3; border-radius:11px;
   transition:border-color 180ms, transform 180ms, box-shadow 180ms; }
 .nextpage:hover { border-color:var(--ink); transform:translateY(-2px); box-shadow:0 4px 10px #30442c0f; }
@@ -119,10 +121,13 @@ input[type=range] { accent-color:#819374; cursor:pointer; }
   <header class="header"><div class="brand"><svg width="38" height="38" viewBox="0 0 40 40" fill="none" aria-hidden="true">
 <rect width="40" height="40" rx="12" fill="#314c40"/>
 <path d="M10 19v11h20V19M9 17l3-7h16l3 7M17 30v-8h6v8" stroke="#f6f3e9" stroke-width="1.5" stroke-linejoin="round"/>
-<path d="M9 17c0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0M16 10l-1.5 7M24 10l1.5 7" stroke="#f6f3e9" stroke-width="1.5"/></svg><h1>便利商店 AI NPC Voice</h1></div><a class="nextpage" href="../story_tiger_s10/">
+<path d="M9 17c0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0 0 4 5.5 4 5.5 0M16 10l-1.5 7M24 10l1.5 7" stroke="#f6f3e9" stroke-width="1.5"/></svg><h1>便利商店 AI NPC Voice</h1></div><div class="nextpages"><span class="npsection">劇本展開</span><a class="nextpage" href="../story_tiger_s10/">
 <span class="npicon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h9l5 5v11H5Zm9 0v5h5"/><path d="M9 12h6m-6 4h4"/></svg></span>
-<span class="nptext"><b>劇本展開</b><small>虎面 S10 整幕對白 · 28 句</small></span>
-<span class="nparrow" aria-hidden="true">→</span></a></header>
+<span class="nptext"><b>虎面 S10</b><small>整幕對白 · 28 句</small></span>
+<span class="nparrow" aria-hidden="true">→</span></a><a class="nextpage" href="../story_paperbag_s1/">
+<span class="npicon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h9l5 5v11H5Zm9 0v5h5"/><path d="M9 12h6m-6 4h4"/></svg></span>
+<span class="nptext"><b>紙袋君 S1</b><small>整幕對白 · 31 句</small></span>
+<span class="nparrow" aria-hidden="true">→</span></a></div></header>
   <main>
     <div class="casting">
       <section aria-label="角色選擇">

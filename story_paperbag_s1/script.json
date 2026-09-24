@@ -1,0 +1,3087 @@
+{
+  "schema_version": "1.1",
+  "pipeline_version": "1.1",
+  "scene_id": "paperbag_s1",
+  "title": "S1 標題：XXX",
+  "display_title": "頭戴紙袋的應徵者",
+  "description": "門外站著一個頭戴紙袋的人。菲菲以為遇上搶劫，結果對方是來應徵的。",
+  "director_note": "一場誤會喜劇：從好奇、驚疑、慌張求饒，轉為困惑追問與吐槽，聽到「一半薪水」立刻翻臉答應，最後對聽不懂的專業術語心服口服。慌張要像真的害怕，但整場是好笑的，不是驚悚的。",
+  "casting_note": "本幕只有菲菲使用指定 ElevenLabs 聲線（fei_fei_final）；紙袋君與阿龐保留完整台詞，以字幕串場。",
+  "source_csv": "story/clean/紙袋君_鍾哥_scenes/01_S1_XXX.csv",
+  "authoring_script": "story/tts/paperbag_s1/scene.json",
+  "source_fingerprint": "d15bb02fc684b4c84dea",
+  "cast": {
+    "fei_fei": {
+      "name": "菲菲",
+      "character_id": "clk_0001",
+      "color": "#91d5ba",
+      "voice_alias": "fei_fei_final",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_source": "data/elevenlabs_poc.json → clk_0001",
+      "portraits": {
+        "normal": "data/figure/CLK_0001/clk0001_normal_512.png",
+        "happy": "data/figure/CLK_0001/clk0001_happy_512.png",
+        "suspicious": "data/figure/CLK_0001/clk0001_suspicious_512.png",
+        "panic": "data/figure/CLK_0001/clk0001_panic_512.png",
+        "smh": "data/figure/CLK_0001/clk0001_SMH_512.png",
+        "money": "data/figure/CLK_0001/clk0001_money_512.png",
+        "amazing": "data/figure/CLK_0001/clk0001_amazing_512.png",
+        "confidence": "data/figure/CLK_0001/clk0001_confidence_512.png"
+      }
+    },
+    "paper_bag": {
+      "name": "紙袋君",
+      "character_id": "clk_0003",
+      "color": "#cebc90",
+      "voice_id": null,
+      "portraits": {
+        "normal": "data/figure/CLK_0003/normal_512.png",
+        "happy": "data/figure/CLK_0003/happy_512.png",
+        "sad": "data/figure/CLK_0003/sad_512.png"
+      }
+    },
+    "a_pang": {
+      "name": "阿龐",
+      "color": "#92bcea",
+      "voice_id": null,
+      "portraits": {
+        "normal": "data/figure/CLK_0002/normal_512.png",
+        "happy": "data/figure/CLK_0002/happy_512.png",
+        "sad": "data/figure/CLK_0002/sad_512.png"
+      }
+    }
+  },
+  "page": {
+    "series": "紙袋君角色支線",
+    "scene_label": "SCENE 1",
+    "favicon_char": "袋"
+  },
+  "stage": {
+    "leads": [
+      "fei_fei",
+      "paper_bag"
+    ],
+    "narrator": null
+  },
+  "provider": {
+    "name": "elevenlabs",
+    "model_id": "eleven_v3",
+    "language_code": "zh",
+    "output_format": "mp3_44100_128",
+    "seed": 911,
+    "prefix_tags": [
+      "strong Taiwanese Mandarin accent"
+    ],
+    "voice_settings": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "speed": 1.0
+    }
+  },
+  "playback": {
+    "subtitle_chars_per_second": 6.5,
+    "subtitle_min_ms": 2200,
+    "subtitle_max_ms": 9000,
+    "pause_after_ms": 350
+  },
+  "tag_aliases": {
+    "pause": "short pause",
+    "surprise": "surprised",
+    "sigh": "sighs",
+    "laugh": "laughs"
+  },
+  "grouping": {
+    "method": "directed_adjacent",
+    "max_intensity_delta": 0.35,
+    "note": "依語意指定情緒接近的連續同角色台詞。同段只生成及正規化一次；字幕保留逐句時間軸。",
+    "groups": [
+      {
+        "utterance_id": "s1_u007_008",
+        "line_ids": [
+          "s1_007",
+          "s1_008"
+        ],
+        "emotion": "慌張求饒",
+        "reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
+        "voice_settings": {
+          "speed": 1.08
+        }
+      },
+      {
+        "utterance_id": "s1_u010_011",
+        "line_ids": [
+          "s1_010",
+          "s1_011"
+        ],
+        "emotion": "困惑追問",
+        "reason": "確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。"
+      },
+      {
+        "utterance_id": "s1_u030_031",
+        "line_ids": [
+          "s1_030",
+          "s1_031"
+        ],
+        "emotion": "服氣下令",
+        "reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
+        "voice_settings": {
+          "speed": 1.02
+        }
+      },
+      {
+        "utterance_id": "s1_u021_022",
+        "line_ids": [
+          "s1_021",
+          "s1_022"
+        ],
+        "emotion": "含糊到舉例",
+        "reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。"
+      },
+      {
+        "utterance_id": "s1_u024_027",
+        "line_ids": [
+          "s1_024",
+          "s1_025",
+          "s1_026",
+          "s1_027"
+        ],
+        "emotion": "專業簡報",
+        "reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。"
+      },
+      {
+        "utterance_id": "s1_u028_029",
+        "line_ids": [
+          "s1_028",
+          "s1_029"
+        ],
+        "emotion": "被術語淹沒",
+        "reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。"
+      }
+    ]
+  },
+  "utterances": [
+    {
+      "utterance_id": "s1_001",
+      "line_ids": [
+        "s1_001"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "subtitle_only",
+      "emotion": "不安通報",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "菲菲，店門口外一直站著一個人，在那邊盯著我們看耶……",
+      "spoken_text": "菲菲， 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_002",
+      "line_ids": [
+        "s1_002"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "期待客人",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "是客人嗎？那快請他進來啊！",
+      "spoken_text": "是客人嗎？  那快請他進來啊！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [curious] 是客人嗎？[short pause] [excited] 那快請他進來啊！",
+      "line_spans": [],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [curious] 是客人嗎？[short pause] [excited] 那快請他進來啊！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 912
+        }
+      },
+      "fingerprint": "023b5709960ef1a7be27"
+    },
+    {
+      "utterance_id": "s1_003",
+      "line_ids": [
+        "s1_003"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "subtitle_only",
+      "emotion": "難以形容",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "應該不是，因為他……頭戴著一個紙袋。",
+      "spoken_text": "應該不是，因為他... 頭戴著一個紙袋。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_004",
+      "line_ids": [
+        "s1_004"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "驚疑",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "頭戴紙袋！？該不會是——",
+      "spoken_text": "頭戴紙袋！？ 該不會是——",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+      "line_spans": [],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.06
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.06
+          },
+          "seed": 914
+        }
+      },
+      "fingerprint": "6e1bd1456f9dfe0655f1"
+    },
+    {
+      "utterance_id": "s1_005",
+      "line_ids": [
+        "s1_005"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "平靜打斷",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "——不好意思。",
+      "spoken_text": "——不好意思。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] ——不好意思。",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_006",
+      "line_ids": [
+        "s1_006"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "subtitle_only",
+      "emotion": "驚叫",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "他進來啦！！！",
+      "spoken_text": "他進來啦！！！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 他進來啦！！！",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_u007_008",
+      "line_ids": [
+        "s1_007",
+        "s1_008"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "慌張求饒",
+      "reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
+      "source_text": "那個先生，我們這間店很窮啦。\n你你你你要搶劫的話，看要不要考慮其他便利商店……",
+      "spoken_text": "那個先生... 我們這間店很窮啦。\n你你你你要搶劫的話， 看要不要考慮其他便利商店...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "line_spans": [
+        {
+          "line_id": "s1_007",
+          "start_char": 35,
+          "end_char": 75
+        },
+        {
+          "line_id": "s1_008",
+          "start_char": 76,
+          "end_char": 128
+        }
+      ],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.08
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.08
+          },
+          "seed": 917
+        }
+      },
+      "fingerprint": "5c107064169c6c5956c7"
+    },
+    {
+      "utterance_id": "s1_009",
+      "line_ids": [
+        "s1_009"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "澄清誤會",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "……不好意思，我是來應徵的。",
+      "spoken_text": "...不好意思， 我是來應徵的。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] ...不好意思，[short pause] 我是來應徵的。",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_u010_011",
+      "line_ids": [
+        "s1_010",
+        "s1_011"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "困惑追問",
+      "reason": "確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。",
+      "source_text": "不是搶劫？\n應徵的話，你幹嘛戴著紙袋？",
+      "spoken_text": "不是...搶劫？\n應徵的話， 你幹嘛戴著紙袋？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "line_spans": [
+        {
+          "line_id": "s1_010",
+          "start_char": 35,
+          "end_char": 55
+        },
+        {
+          "line_id": "s1_011",
+          "start_char": 56,
+          "end_char": 93
+        }
+      ],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 920
+        }
+      },
+      "fingerprint": "8247417cadad25163bef"
+    },
+    {
+      "utterance_id": "s1_012",
+      "line_ids": [
+        "s1_012"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "含糊帶過",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "呃……這樣臉不會弄髒，比較方便。",
+      "spoken_text": "呃... 這樣臉不會弄髒，比較方便。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_013",
+      "line_ids": [
+        "s1_013"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "subtitle_only",
+      "emotion": "無言沉默",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "………",
+      "spoken_text": "………",
+      "tts_text": "[strong Taiwanese Mandarin accent] ………",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_014",
+      "line_ids": [
+        "s1_014"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "無力吐槽",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "不，你這理由實在是太可疑了……",
+      "spoken_text": "不， 你這理由實在是太可疑了...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 不，[short pause] 你這理由實在是太可疑了...",
+      "line_spans": [],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.97
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [amused] 不，[short pause] 你這理由實在是太可疑了...",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.97
+          },
+          "seed": 924
+        }
+      },
+      "fingerprint": "82f6f4b6b50d67c5eb64"
+    },
+    {
+      "utterance_id": "s1_015",
+      "line_ids": [
+        "s1_015"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "平靜讓步",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "不然我只要一半薪水就好。",
+      "spoken_text": "不然... 我只要一半薪水就好。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 不然...[short pause] 我只要一半薪水就好。",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_016",
+      "line_ids": [
+        "s1_016"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "秒變熱情",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "好的，歡迎你加入我們這個大家庭。",
+      "spoken_text": "好的！  歡迎你加入我們這個大家庭。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 好的！[short pause] [warmly] 歡迎你加入我們這個大家庭。",
+      "line_spans": [],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.05
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [excited] 好的！[short pause] [warmly] 歡迎你加入我們這個大家庭。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.05
+          },
+          "seed": 926
+        }
+      },
+      "fingerprint": "c20a47ce984e00e75fa9"
+    },
+    {
+      "utterance_id": "s1_017",
+      "line_ids": [
+        "s1_017"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "簡短道謝",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "謝謝妳。",
+      "spoken_text": "謝謝妳。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [warmly] 謝謝妳。",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_018",
+      "line_ids": [
+        "s1_018"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "subtitle_only",
+      "emotion": "好心提醒",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "大哥你想清楚，我們本來的薪水就不高了耶。",
+      "spoken_text": "大哥，你想清楚... 我們本來的薪水就不高了耶。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_019",
+      "line_ids": [
+        "s1_019"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "自報稱呼",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "叫我紙袋君就可以了，所以是立刻上班嗎？",
+      "spoken_text": "叫我紙袋君就可以了， 所以...是立刻上班嗎？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_020",
+      "line_ids": [
+        "s1_020"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "興頭上追問",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "可以當然最好了，你的專長是什麼？",
+      "spoken_text": "可以當然最好了！  你的專長是什麼？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 可以當然最好了！[short pause] [curious] 你的專長是什麼？",
+      "line_spans": [],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [excited] 可以當然最好了！[short pause] [curious] 你的專長是什麼？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 930
+        }
+      },
+      "fingerprint": "491329caa461d0f72fe7"
+    },
+    {
+      "utterance_id": "s1_u021_022",
+      "line_ids": [
+        "s1_021",
+        "s1_022"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "含糊到舉例",
+      "reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。",
+      "source_text": "唔嗯……很難仔細說明。\n舉例來說，照那個貨架的擺法，商品的轉換率會差 12%。",
+      "spoken_text": "唔嗯... 很難仔細說明。\n舉例來說， 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。\n[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "line_spans": [
+        {
+          "line_id": "s1_021",
+          "start_char": 35,
+          "end_char": 74
+        },
+        {
+          "line_id": "s1_022",
+          "start_char": 75,
+          "end_char": 128
+        }
+      ],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_023",
+      "line_ids": [
+        "s1_023"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "subtitle_only",
+      "emotion": "跟不上",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "⋯⋯什麼是轉換率？",
+      "spoken_text": "⋯⋯什麼是轉換率？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [curious] ⋯⋯什麼是轉換率？",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_u024_027",
+      "line_ids": [
+        "s1_024",
+        "s1_025",
+        "s1_026",
+        "s1_027"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "專業簡報",
+      "reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "source_text": "就是每天來店的顧客轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度大概 5 mm左右。\n這樣會與消費族群女性顧客的平均視線高度對齊。\n會顯得比較親近無距離，推估可以提高8%的轉換率。",
+      "spoken_text": "就是每天來店的顧客， 轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度， 大概 5 mm左右。\n這樣會與消費族群女性顧客的... 平均視線高度對齊。\n會顯得比較親近無距離， 推估可以提高8%的轉換率。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "line_spans": [
+        {
+          "line_id": "s1_024",
+          "start_char": 35,
+          "end_char": 75
+        },
+        {
+          "line_id": "s1_025",
+          "start_char": 76,
+          "end_char": 130
+        },
+        {
+          "line_id": "s1_026",
+          "start_char": 131,
+          "end_char": 177
+        },
+        {
+          "line_id": "s1_027",
+          "start_char": 178,
+          "end_char": 228
+        }
+      ],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_u028_029",
+      "line_ids": [
+        "s1_028",
+        "s1_029"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "subtitle_only",
+      "emotion": "被術語淹沒",
+      "reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。",
+      "source_text": "………\n菲菲，妳聽得懂他在說什麼嗎？",
+      "spoken_text": "………\n菲菲， 妳聽得懂他在說什麼嗎？",
+      "tts_text": "[strong Taiwanese Mandarin accent] ………\n[hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
+      "line_spans": [
+        {
+          "line_id": "s1_028",
+          "start_char": 35,
+          "end_char": 38
+        },
+        {
+          "line_id": "s1_029",
+          "start_char": 39,
+          "end_char": 78
+        }
+      ],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s1_u030_031",
+      "line_ids": [
+        "s1_030",
+        "s1_031"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "服氣下令",
+      "reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
+      "source_text": "聽不懂，但感覺很厲害。\n都照紙袋君的話去調整！",
+      "spoken_text": "聽不懂... 但感覺很厲害。\n都照紙袋君的話... 去調整！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+      "line_spans": [
+        {
+          "line_id": "s1_030",
+          "start_char": 35,
+          "end_char": 71
+        },
+        {
+          "line_id": "s1_031",
+          "start_char": 72,
+          "end_char": 112
+        }
+      ],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.02
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.02
+          },
+          "seed": 940
+        }
+      },
+      "fingerprint": "feccca1587f615193e9d"
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "s1_001",
+      "source_row": 2,
+      "speaker": "a_pang",
+      "source_text": "菲菲，店門口外一直站著一個人，在那邊盯著我們看耶……",
+      "text": "[hesitant] 菲菲，[pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "emotion": "不安通報",
+      "intensity": 0.45,
+      "expression": "normal",
+      "direction": "壓低聲音通報，句尾拉長帶著不安。",
+      "pause_after_ms": 300,
+      "order": 1,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "菲菲， 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "model_text": "[hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "hesitant",
+          "provider_tag": "hesitant"
+        },
+        {
+          "type": "text",
+          "text": " 菲菲，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 店門口外一直站著一個人...在那邊盯著我們看耶..."
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 3385,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_001",
+      "utterance_line_ids": [
+        "s1_001"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "不安通報",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_002",
+      "source_row": 3,
+      "speaker": "fei_fei",
+      "source_text": "是客人嗎？那快請他進來啊！",
+      "text": "[curious] 是客人嗎？[pause] [excited] 那快請他進來啊！",
+      "emotion": "期待客人",
+      "intensity": 0.6,
+      "expression": "happy",
+      "direction": "完全沒在意外面的異狀，只想到有生意上門。",
+      "order": 2,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "是客人嗎？  那快請他進來啊！",
+      "model_text": "[curious] 是客人嗎？[short pause] [excited] 那快請他進來啊！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [curious] 是客人嗎？[short pause] [excited] 那快請他進來啊！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "curious",
+          "provider_tag": "curious"
+        },
+        {
+          "type": "text",
+          "text": " 是客人嗎？"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " "
+        },
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 那快請他進來啊！"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [curious] 是客人嗎？[short pause] [excited] 那快請他進來啊！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 912
+        }
+      },
+      "fingerprint": "023b5709960ef1a7be27",
+      "utterance_id": "s1_002",
+      "utterance_line_ids": [
+        "s1_002"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "期待客人",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] 是客人嗎？[short pause] [excited] 那快請他進來啊！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_003",
+      "source_row": 4,
+      "speaker": "a_pang",
+      "source_text": "應該不是，因為他……頭戴著一個紙袋。",
+      "text": "[hesitant] 應該不是，因為他...[pause] 頭戴著一個紙袋。",
+      "emotion": "難以形容",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "停頓是在想怎麼描述，最後老實說出紙袋。",
+      "pause_after_ms": 250,
+      "order": 3,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "應該不是，因為他... 頭戴著一個紙袋。",
+      "model_text": "[hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "hesitant",
+          "provider_tag": "hesitant"
+        },
+        {
+          "type": "text",
+          "text": " 應該不是，因為他..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 頭戴著一個紙袋。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_003",
+      "utterance_line_ids": [
+        "s1_003"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "難以形容",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_004",
+      "source_row": 5,
+      "speaker": "fei_fei",
+      "source_text": "頭戴紙袋！？該不會是——",
+      "text": "[surprise] 頭戴紙袋！？[pause] 該不會是——",
+      "emotion": "驚疑",
+      "intensity": 0.8,
+      "expression": "panic",
+      "direction": "拔尖地重複關鍵字，後半句往最壞的方向猜，被打斷。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.06
+      },
+      "pause_after_ms": 120,
+      "order": 4,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "頭戴紙袋！？ 該不會是——",
+      "model_text": "[surprised] 頭戴紙袋！？[short pause] 該不會是——",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "surprise",
+          "provider_tag": "surprised"
+        },
+        {
+          "type": "text",
+          "text": " 頭戴紙袋！？"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 該不會是——"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "subtitle_duration_ms": 2200,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.06
+          },
+          "seed": 914
+        }
+      },
+      "fingerprint": "6e1bd1456f9dfe0655f1",
+      "utterance_id": "s1_004",
+      "utterance_line_ids": [
+        "s1_004"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "驚疑",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.06
+      }
+    },
+    {
+      "line_id": "s1_005",
+      "source_row": 6,
+      "speaker": "paper_bag",
+      "source_text": "——不好意思。",
+      "text": "[calm] ——不好意思。",
+      "emotion": "平靜打斷",
+      "intensity": 0.3,
+      "expression": "normal",
+      "direction": "語氣意外地平常，與菲菲的驚慌形成對比。",
+      "pause_after_ms": 200,
+      "order": 5,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "——不好意思。",
+      "model_text": "[calm] ——不好意思。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] ——不好意思。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "calm",
+          "provider_tag": "calm"
+        },
+        {
+          "type": "text",
+          "text": " ——不好意思。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_005",
+      "utterance_line_ids": [
+        "s1_005"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "平靜打斷",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] ——不好意思。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_006",
+      "source_row": 7,
+      "speaker": "a_pang",
+      "source_text": "他進來啦！！！",
+      "text": "[excited] 他進來啦！！！",
+      "emotion": "驚叫",
+      "intensity": 0.9,
+      "expression": "sad",
+      "direction": "整場音量最高的一句，純粹是嚇到大叫。",
+      "pause_after_ms": 150,
+      "order": 6,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "他進來啦！！！",
+      "model_text": "[excited] 他進來啦！！！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 他進來啦！！！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 他進來啦！！！"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_006",
+      "utterance_line_ids": [
+        "s1_006"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "驚叫",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 他進來啦！！！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_007",
+      "source_row": 8,
+      "speaker": "fei_fei",
+      "source_text": "那個先生，我們這間店很窮啦。",
+      "text": "[nervous] 那個先生...[pause] 我們這間店很窮啦。",
+      "emotion": "緊張求饒",
+      "intensity": 0.7,
+      "expression": "panic",
+      "direction": "先客氣稱呼再自曝家貧，想勸退對方；害怕但還在講道理。",
+      "order": 7,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "那個先生... 我們這間店很窮啦。",
+      "model_text": "[nervous] 那個先生...[short pause] 我們這間店很窮啦。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "nervous",
+          "provider_tag": "nervous"
+        },
+        {
+          "type": "text",
+          "text": " 那個先生..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 我們這間店很窮啦。"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.08
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.08
+          },
+          "seed": 917
+        }
+      },
+      "fingerprint": "5c107064169c6c5956c7",
+      "utterance_id": "s1_u007_008",
+      "utterance_line_ids": [
+        "s1_007",
+        "s1_008"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 2,
+      "utterance_emotion": "慌張求饒",
+      "utterance_reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_008",
+      "source_row": 9,
+      "speaker": "fei_fei",
+      "source_text": "你你你你要搶劫的話，看要不要考慮其他便利商店……",
+      "text": "[stammering] 你你你你要搶劫的話，[pause] 看要不要考慮其他便利商店...",
+      "emotion": "慌張推薦",
+      "intensity": 0.75,
+      "expression": "panic",
+      "direction": "結巴照原稿唸出來，句尾越說越小聲，像真心在幫忙介紹別家。",
+      "pause_after_ms": 250,
+      "order": 8,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "你你你你要搶劫的話， 看要不要考慮其他便利商店...",
+      "model_text": "[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "stammering",
+          "provider_tag": "stammering"
+        },
+        {
+          "type": "text",
+          "text": " 你你你你要搶劫的話，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 看要不要考慮其他便利商店..."
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.08
+      },
+      "subtitle_duration_ms": 3231,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.08
+          },
+          "seed": 917
+        }
+      },
+      "fingerprint": "5c107064169c6c5956c7",
+      "utterance_id": "s1_u007_008",
+      "utterance_line_ids": [
+        "s1_007",
+        "s1_008"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 2,
+      "utterance_emotion": "慌張求饒",
+      "utterance_reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_009",
+      "source_row": 10,
+      "speaker": "paper_bag",
+      "source_text": "……不好意思，我是來應徵的。",
+      "text": "[calm] ...不好意思，[pause] 我是來應徵的。",
+      "emotion": "澄清誤會",
+      "intensity": 0.3,
+      "expression": "normal",
+      "direction": "依舊平穩，完全不因被當成搶匪而動氣。",
+      "pause_after_ms": 300,
+      "order": 9,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "...不好意思， 我是來應徵的。",
+      "model_text": "[calm] ...不好意思，[short pause] 我是來應徵的。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] ...不好意思，[short pause] 我是來應徵的。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "calm",
+          "provider_tag": "calm"
+        },
+        {
+          "type": "text",
+          "text": " ...不好意思，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 我是來應徵的。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_009",
+      "utterance_line_ids": [
+        "s1_009"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "澄清誤會",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] ...不好意思，[short pause] 我是來應徵的。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_010",
+      "source_row": 11,
+      "speaker": "fei_fei",
+      "source_text": "不是搶劫？",
+      "text": "[surprise] 不是...搶劫？",
+      "emotion": "半信半疑",
+      "intensity": 0.55,
+      "expression": "suspicious",
+      "direction": "鬆一口氣但還沒完全相信，句尾上揚。",
+      "order": 10,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "不是...搶劫？",
+      "model_text": "[surprised] 不是...搶劫？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "surprise",
+          "provider_tag": "surprised"
+        },
+        {
+          "type": "text",
+          "text": " 不是...搶劫？"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 920
+        }
+      },
+      "fingerprint": "8247417cadad25163bef",
+      "utterance_id": "s1_u010_011",
+      "utterance_line_ids": [
+        "s1_010",
+        "s1_011"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 2,
+      "utterance_emotion": "困惑追問",
+      "utterance_reason": "確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_011",
+      "source_row": 12,
+      "speaker": "fei_fei",
+      "source_text": "應徵的話，你幹嘛戴著紙袋？",
+      "text": "[curious] 應徵的話，[pause] 你幹嘛戴著紙袋？",
+      "emotion": "直接追問",
+      "intensity": 0.55,
+      "expression": "suspicious",
+      "direction": "回到店長模式，把最想問的問題直接問出來。",
+      "order": 11,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "應徵的話， 你幹嘛戴著紙袋？",
+      "model_text": "[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "curious",
+          "provider_tag": "curious"
+        },
+        {
+          "type": "text",
+          "text": " 應徵的話，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 你幹嘛戴著紙袋？"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 920
+        }
+      },
+      "fingerprint": "8247417cadad25163bef",
+      "utterance_id": "s1_u010_011",
+      "utterance_line_ids": [
+        "s1_010",
+        "s1_011"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 2,
+      "utterance_emotion": "困惑追問",
+      "utterance_reason": "確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_012",
+      "source_row": 13,
+      "speaker": "paper_bag",
+      "source_text": "呃……這樣臉不會弄髒，比較方便。",
+      "text": "[hesitant] 呃...[pause] 這樣臉不會弄髒，比較方便。",
+      "emotion": "含糊帶過",
+      "intensity": 0.35,
+      "expression": "normal",
+      "direction": "明顯在敷衍，但講得很認真，笑點在這裡。",
+      "pause_after_ms": 400,
+      "order": 12,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "呃... 這樣臉不會弄髒，比較方便。",
+      "model_text": "[hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "hesitant",
+          "provider_tag": "hesitant"
+        },
+        {
+          "type": "text",
+          "text": " 呃..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 這樣臉不會弄髒，比較方便。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_012",
+      "utterance_line_ids": [
+        "s1_012"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "含糊帶過",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_013",
+      "source_row": 14,
+      "speaker": "fei_fei",
+      "source_text": "………",
+      "text": "………",
+      "voiced": false,
+      "voiced_note": "整句只有刪節號，是沉默的空拍；不送進 TTS，改以字幕停一拍呈現。",
+      "emotion": "無言沉默",
+      "intensity": 0.2,
+      "expression": "smh",
+      "direction": "留白一拍，讓觀眾感覺到菲菲正在消化這個理由。",
+      "pause_after_ms": 200,
+      "order": 13,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "………",
+      "model_text": "………",
+      "tts_text": "[strong Taiwanese Mandarin accent] ………",
+      "segments": [
+        {
+          "type": "text",
+          "text": "………"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_013",
+      "utterance_line_ids": [
+        "s1_013"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "無言沉默",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] ………",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_014",
+      "source_row": 15,
+      "speaker": "fei_fei",
+      "source_text": "不，你這理由實在是太可疑了……",
+      "text": "[amused] 不，[pause] 你這理由實在是太可疑了...",
+      "emotion": "無力吐槽",
+      "intensity": 0.5,
+      "expression": "smh",
+      "direction": "像朋友間翻白眼吐槽，不是嚴厲指控；句尾放掉。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.97
+      },
+      "order": 14,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "不， 你這理由實在是太可疑了...",
+      "model_text": "[amused] 不，[short pause] 你這理由實在是太可疑了...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 不，[short pause] 你這理由實在是太可疑了...",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "amused",
+          "provider_tag": "amused"
+        },
+        {
+          "type": "text",
+          "text": " 不，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 你這理由實在是太可疑了..."
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [amused] 不，[short pause] 你這理由實在是太可疑了...",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.97
+          },
+          "seed": 924
+        }
+      },
+      "fingerprint": "82f6f4b6b50d67c5eb64",
+      "utterance_id": "s1_014",
+      "utterance_line_ids": [
+        "s1_014"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "無力吐槽",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [amused] 不，[short pause] 你這理由實在是太可疑了...",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.97
+      }
+    },
+    {
+      "line_id": "s1_015",
+      "source_row": 16,
+      "speaker": "paper_bag",
+      "source_text": "不然我只要一半薪水就好。",
+      "text": "[calm] 不然...[pause] 我只要一半薪水就好。",
+      "emotion": "平靜讓步",
+      "intensity": 0.35,
+      "expression": "normal",
+      "direction": "像在報一個早就算好的數字，語氣沒有懇求。",
+      "pause_after_ms": 150,
+      "order": 15,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "不然... 我只要一半薪水就好。",
+      "model_text": "[calm] 不然...[short pause] 我只要一半薪水就好。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 不然...[short pause] 我只要一半薪水就好。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "calm",
+          "provider_tag": "calm"
+        },
+        {
+          "type": "text",
+          "text": " 不然..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 我只要一半薪水就好。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_015",
+      "utterance_line_ids": [
+        "s1_015"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "平靜讓步",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 不然...[short pause] 我只要一半薪水就好。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_016",
+      "source_row": 17,
+      "speaker": "fei_fei",
+      "source_text": "好的，歡迎你加入我們這個大家庭。",
+      "text": "[excited] 好的！[pause] [warmly] 歡迎你加入我們這個大家庭。",
+      "emotion": "秒變熱情",
+      "intensity": 0.8,
+      "expression": "money",
+      "direction": "翻臉般立刻答應，前一句的懷疑完全消失；轉折越快越好笑。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.05
+      },
+      "order": 16,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "好的！  歡迎你加入我們這個大家庭。",
+      "model_text": "[excited] 好的！[short pause] [warmly] 歡迎你加入我們這個大家庭。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 好的！[short pause] [warmly] 歡迎你加入我們這個大家庭。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 好的！"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " "
+        },
+        {
+          "type": "tag",
+          "tag": "warmly",
+          "provider_tag": "warmly"
+        },
+        {
+          "type": "text",
+          "text": " 歡迎你加入我們這個大家庭。"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [excited] 好的！[short pause] [warmly] 歡迎你加入我們這個大家庭。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.05
+          },
+          "seed": 926
+        }
+      },
+      "fingerprint": "c20a47ce984e00e75fa9",
+      "utterance_id": "s1_016",
+      "utterance_line_ids": [
+        "s1_016"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "秒變熱情",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 好的！[short pause] [warmly] 歡迎你加入我們這個大家庭。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.05
+      }
+    },
+    {
+      "line_id": "s1_017",
+      "source_row": 18,
+      "speaker": "paper_bag",
+      "source_text": "謝謝妳。",
+      "text": "[warmly] 謝謝妳。",
+      "emotion": "簡短道謝",
+      "intensity": 0.35,
+      "expression": "happy",
+      "direction": "短而誠懇，第一次露出一點溫度。",
+      "pause_after_ms": 250,
+      "order": 17,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "謝謝妳。",
+      "model_text": "[warmly] 謝謝妳。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [warmly] 謝謝妳。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "warmly",
+          "provider_tag": "warmly"
+        },
+        {
+          "type": "text",
+          "text": " 謝謝妳。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_017",
+      "utterance_line_ids": [
+        "s1_017"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "簡短道謝",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [warmly] 謝謝妳。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_018",
+      "source_row": 19,
+      "speaker": "a_pang",
+      "source_text": "大哥你想清楚，我們本來的薪水就不高了耶。",
+      "text": "[hesitant] 大哥，你想清楚...[pause] 我們本來的薪水就不高了耶。",
+      "emotion": "好心提醒",
+      "intensity": 0.45,
+      "expression": "sad",
+      "direction": "站在同事立場替對方著想，帶一點自嘲。",
+      "order": 18,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "大哥，你想清楚... 我們本來的薪水就不高了耶。",
+      "model_text": "[hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "hesitant",
+          "provider_tag": "hesitant"
+        },
+        {
+          "type": "text",
+          "text": " 大哥，你想清楚..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 我們本來的薪水就不高了耶。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2769,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_018",
+      "utterance_line_ids": [
+        "s1_018"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "好心提醒",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_019",
+      "source_row": 20,
+      "speaker": "paper_bag",
+      "source_text": "叫我紙袋君就可以了，所以是立刻上班嗎？",
+      "text": "[calm] 叫我紙袋君就可以了，[pause] 所以...是立刻上班嗎？",
+      "emotion": "自報稱呼",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "跳過薪水話題，直接問上班時間，顯得很急著開始工作。",
+      "order": 19,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "叫我紙袋君就可以了， 所以...是立刻上班嗎？",
+      "model_text": "[calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "calm",
+          "provider_tag": "calm"
+        },
+        {
+          "type": "text",
+          "text": " 叫我紙袋君就可以了，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 所以...是立刻上班嗎？"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2615,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_019",
+      "utterance_line_ids": [
+        "s1_019"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "自報稱呼",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_020",
+      "source_row": 21,
+      "speaker": "fei_fei",
+      "source_text": "可以當然最好了，你的專長是什麼？",
+      "text": "[excited] 可以當然最好了！[pause] [curious] 你的專長是什麼？",
+      "emotion": "興頭上追問",
+      "intensity": 0.65,
+      "expression": "happy",
+      "direction": "前半句是佔到便宜的高興，後半句轉為正式的面試問題。",
+      "order": 20,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "可以當然最好了！  你的專長是什麼？",
+      "model_text": "[excited] 可以當然最好了！[short pause] [curious] 你的專長是什麼？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 可以當然最好了！[short pause] [curious] 你的專長是什麼？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 可以當然最好了！"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " "
+        },
+        {
+          "type": "tag",
+          "tag": "curious",
+          "provider_tag": "curious"
+        },
+        {
+          "type": "text",
+          "text": " 你的專長是什麼？"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [excited] 可以當然最好了！[short pause] [curious] 你的專長是什麼？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 930
+        }
+      },
+      "fingerprint": "491329caa461d0f72fe7",
+      "utterance_id": "s1_020",
+      "utterance_line_ids": [
+        "s1_020"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "興頭上追問",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 可以當然最好了！[short pause] [curious] 你的專長是什麼？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_021",
+      "source_row": 22,
+      "speaker": "paper_bag",
+      "source_text": "唔嗯……很難仔細說明。",
+      "text": "[thoughtful] 唔嗯...[pause] 很難仔細說明。",
+      "emotion": "含糊其詞",
+      "intensity": 0.35,
+      "expression": "normal",
+      "direction": "像在想怎麼開口，不是不會答。",
+      "order": 21,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "唔嗯... 很難仔細說明。",
+      "model_text": "[thoughtful] 唔嗯...[short pause] 很難仔細說明。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。\n[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "thoughtful",
+          "provider_tag": "thoughtful"
+        },
+        {
+          "type": "text",
+          "text": " 唔嗯..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 很難仔細說明。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_u021_022",
+      "utterance_line_ids": [
+        "s1_021",
+        "s1_022"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 2,
+      "utterance_emotion": "含糊到舉例",
+      "utterance_reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_022",
+      "source_row": 23,
+      "speaker": "paper_bag",
+      "source_text": "舉例來說，照那個貨架的擺法，商品的轉換率會差 12%。",
+      "text": "[confident] 舉例來說，[pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "emotion": "專業舉例",
+      "intensity": 0.45,
+      "expression": "normal",
+      "direction": "一開口就變成另一個人，數字說得很順、很篤定。",
+      "pause_after_ms": 250,
+      "order": 22,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "舉例來說， 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "model_text": "[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。\n[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "confident",
+          "provider_tag": "confident"
+        },
+        {
+          "type": "text",
+          "text": " 舉例來說，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 照那個貨架的擺法，商品的轉換率會差 12%。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 3385,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_u021_022",
+      "utterance_line_ids": [
+        "s1_021",
+        "s1_022"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 2,
+      "utterance_emotion": "含糊到舉例",
+      "utterance_reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_023",
+      "source_row": 24,
+      "speaker": "a_pang",
+      "source_text": "⋯⋯什麼是轉換率？",
+      "text": "[curious] ⋯⋯什麼是轉換率？",
+      "emotion": "跟不上",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "老實舉手發問，代替觀眾問出這個字。",
+      "pause_after_ms": 200,
+      "order": 23,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "⋯⋯什麼是轉換率？",
+      "model_text": "[curious] ⋯⋯什麼是轉換率？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [curious] ⋯⋯什麼是轉換率？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "curious",
+          "provider_tag": "curious"
+        },
+        {
+          "type": "text",
+          "text": " ⋯⋯什麼是轉換率？"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_023",
+      "utterance_line_ids": [
+        "s1_023"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "跟不上",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] ⋯⋯什麼是轉換率？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_024",
+      "source_row": 25,
+      "speaker": "paper_bag",
+      "source_text": "就是每天來店的顧客轉化成消費的比率。",
+      "text": "[calm] 就是每天來店的顧客，[pause] 轉化成消費的比率。",
+      "emotion": "耐心解釋",
+      "intensity": 0.35,
+      "expression": "normal",
+      "direction": "像在教同事，語速平穩不炫技。",
+      "order": 24,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "就是每天來店的顧客， 轉化成消費的比率。",
+      "model_text": "[calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "calm",
+          "provider_tag": "calm"
+        },
+        {
+          "type": "text",
+          "text": " 就是每天來店的顧客，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 轉化成消費的比率。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2615,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_u024_027",
+      "utterance_line_ids": [
+        "s1_024",
+        "s1_025",
+        "s1_026",
+        "s1_027"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 4,
+      "utterance_emotion": "專業簡報",
+      "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_025",
+      "source_row": 26,
+      "speaker": "paper_bag",
+      "source_text": "還有建議降低女性用品貨架第二層高度大概 5 mm左右。",
+      "text": "[confident] 還有建議降低女性用品貨架第二層高度，[pause] 大概 5 mm左右。",
+      "emotion": "具體提案",
+      "intensity": 0.45,
+      "expression": "normal",
+      "direction": "把精確到毫米的建議講得像日常小事。",
+      "order": 25,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "還有建議降低女性用品貨架第二層高度， 大概 5 mm左右。",
+      "model_text": "[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "confident",
+          "provider_tag": "confident"
+        },
+        {
+          "type": "text",
+          "text": " 還有建議降低女性用品貨架第二層高度，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 大概 5 mm左右。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 3692,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_u024_027",
+      "utterance_line_ids": [
+        "s1_024",
+        "s1_025",
+        "s1_026",
+        "s1_027"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 4,
+      "utterance_emotion": "專業簡報",
+      "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_026",
+      "source_row": 27,
+      "speaker": "paper_bag",
+      "source_text": "這樣會與消費族群女性顧客的平均視線高度對齊。",
+      "text": "[calm] 這樣會與消費族群女性顧客的...[pause] 平均視線高度對齊。",
+      "emotion": "說明理由",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "接續上一句的邏輯，語氣不變，像在唸內部報告。",
+      "order": 26,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "這樣會與消費族群女性顧客的... 平均視線高度對齊。",
+      "model_text": "[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "calm",
+          "provider_tag": "calm"
+        },
+        {
+          "type": "text",
+          "text": " 這樣會與消費族群女性顧客的..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 平均視線高度對齊。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 3231,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_u024_027",
+      "utterance_line_ids": [
+        "s1_024",
+        "s1_025",
+        "s1_026",
+        "s1_027"
+      ],
+      "utterance_index": 2,
+      "utterance_size": 4,
+      "utterance_emotion": "專業簡報",
+      "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_027",
+      "source_row": 28,
+      "speaker": "paper_bag",
+      "source_text": "會顯得比較親近無距離，推估可以提高8%的轉換率。",
+      "text": "[confident] 會顯得比較親近無距離，[pause] 推估可以提高8%的轉換率。",
+      "emotion": "收束結論",
+      "intensity": 0.45,
+      "expression": "normal",
+      "direction": "用數字收尾，把整段提案講完。",
+      "pause_after_ms": 400,
+      "order": 27,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "會顯得比較親近無距離， 推估可以提高8%的轉換率。",
+      "model_text": "[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "confident",
+          "provider_tag": "confident"
+        },
+        {
+          "type": "text",
+          "text": " 會顯得比較親近無距離，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 推估可以提高8%的轉換率。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 3231,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_u024_027",
+      "utterance_line_ids": [
+        "s1_024",
+        "s1_025",
+        "s1_026",
+        "s1_027"
+      ],
+      "utterance_index": 3,
+      "utterance_size": 4,
+      "utterance_emotion": "專業簡報",
+      "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_028",
+      "source_row": 29,
+      "speaker": "a_pang",
+      "source_text": "………",
+      "text": "………",
+      "emotion": "完全當機",
+      "intensity": 0.2,
+      "expression": "normal",
+      "direction": "留白一拍，表示已經完全跟不上了。",
+      "pause_after_ms": 200,
+      "order": 28,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "………",
+      "model_text": "………",
+      "tts_text": "[strong Taiwanese Mandarin accent] ………\n[hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
+      "segments": [
+        {
+          "type": "text",
+          "text": "………"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_u028_029",
+      "utterance_line_ids": [
+        "s1_028",
+        "s1_029"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 2,
+      "utterance_emotion": "被術語淹沒",
+      "utterance_reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] ………",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_029",
+      "source_row": 30,
+      "speaker": "a_pang",
+      "source_text": "菲菲，妳聽得懂他在說什麼嗎？",
+      "text": "[hesitant] 菲菲，[pause] 妳聽得懂他在說什麼嗎？",
+      "emotion": "小聲求救",
+      "intensity": 0.45,
+      "expression": "normal",
+      "direction": "側身對菲菲小聲問，不想讓新人聽見。",
+      "order": 29,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "菲菲， 妳聽得懂他在說什麼嗎？",
+      "model_text": "[hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
+      "tts_text": "[strong Taiwanese Mandarin accent] ………\n[hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "hesitant",
+          "provider_tag": "hesitant"
+        },
+        {
+          "type": "text",
+          "text": " 菲菲，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 妳聽得懂他在說什麼嗎？"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voiced_note": "",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s1_u028_029",
+      "utterance_line_ids": [
+        "s1_028",
+        "s1_029"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 2,
+      "utterance_emotion": "被術語淹沒",
+      "utterance_reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_030",
+      "source_row": 31,
+      "speaker": "fei_fei",
+      "source_text": "聽不懂，但感覺很厲害。",
+      "text": "[amused] 聽不懂...[pause] 但感覺很厲害。",
+      "emotion": "誠實佩服",
+      "intensity": 0.5,
+      "expression": "amazing",
+      "direction": "坦白承認聽不懂，後半句是真心的佩服，帶笑意。",
+      "order": 30,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "聽不懂... 但感覺很厲害。",
+      "model_text": "[amused] 聽不懂...[short pause] 但感覺很厲害。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "amused",
+          "provider_tag": "amused"
+        },
+        {
+          "type": "text",
+          "text": " 聽不懂..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 但感覺很厲害。"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.02
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.02
+          },
+          "seed": 940
+        }
+      },
+      "fingerprint": "feccca1587f615193e9d",
+      "utterance_id": "s1_u030_031",
+      "utterance_line_ids": [
+        "s1_030",
+        "s1_031"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 2,
+      "utterance_emotion": "服氣下令",
+      "utterance_reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s1_031",
+      "source_row": 32,
+      "speaker": "fei_fei",
+      "source_text": "都照紙袋君的話去調整！",
+      "text": "[confident] 都照紙袋君的話...[pause] 去調整！",
+      "emotion": "果斷下令",
+      "intensity": 0.7,
+      "expression": "confidence",
+      "direction": "店長拍板定案，聲音抬起來，替整幕收尾。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.02
+      },
+      "pause_after_ms": 700,
+      "order": 31,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "都照紙袋君的話... 去調整！",
+      "model_text": "[confident] 都照紙袋君的話...[short pause] 去調整！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "confident",
+          "provider_tag": "confident"
+        },
+        {
+          "type": "text",
+          "text": " 都照紙袋君的話..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 去調整！"
+        }
+      ],
+      "mode": "tts",
+      "voiced_note": "",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "subtitle_duration_ms": 2200,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.02
+          },
+          "seed": 940
+        }
+      },
+      "fingerprint": "feccca1587f615193e9d",
+      "utterance_id": "s1_u030_031",
+      "utterance_line_ids": [
+        "s1_030",
+        "s1_031"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 2,
+      "utterance_emotion": "服氣下令",
+      "utterance_reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 都照紙袋君的話...[short pause] 去調整！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.03
+      }
+    }
+  ]
+}

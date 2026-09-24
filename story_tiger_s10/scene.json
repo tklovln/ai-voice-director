@@ -62,11 +62,27 @@
       }
     ]
   },
+  "page": {
+    "series": "虎面角色支線",
+    "scene_label": "SCENE 10",
+    "favicon_char": "虎"
+  },
+  "stage": {
+    "leads": [
+      "tiger",
+      "fei_fei"
+    ],
+    "narrator": "narrator"
+  },
   "site": {
     "dir": "demo-page/story_tiger_s10",
     "site_root": "../",
     "site_name": "AI Voice Director",
-    "url": "https://tklovln.github.io/ai-voice-director/story_tiger_s10/"
+    "url": "https://tklovln.github.io/ai-voice-director/story_tiger_s10/",
+    "sibling": {
+      "label": "紙袋君 S1",
+      "url": "../story_paperbag_s1/"
+    }
   },
   "utterances": [
     {

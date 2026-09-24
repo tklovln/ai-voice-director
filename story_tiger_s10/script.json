@@ -81,6 +81,18 @@
       "voice_id": null
     }
   },
+  "page": {
+    "series": "虎面角色支線",
+    "scene_label": "SCENE 10",
+    "favicon_char": "虎"
+  },
+  "stage": {
+    "leads": [
+      "tiger",
+      "fei_fei"
+    ],
+    "narrator": "narrator"
+  },
   "provider": {
     "name": "elevenlabs",
     "model_id": "eleven_v3",
@@ -975,6 +987,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1038,6 +1051,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1105,6 +1119,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1168,6 +1183,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -1254,6 +1270,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "subtitle_duration_ms": 2200,
@@ -1330,6 +1347,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "voice_settings": {
@@ -1410,6 +1428,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -1503,6 +1522,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "subtitle_duration_ms": 2308,
@@ -1584,6 +1604,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "subtitle_duration_ms": 3231,
@@ -1661,6 +1682,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -1743,6 +1765,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1798,6 +1821,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -1877,6 +1901,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1940,6 +1965,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -2021,6 +2047,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2084,6 +2111,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2148,6 +2176,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -2228,6 +2257,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2302,6 +2332,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "subtitle_duration_ms": 2200,
@@ -2368,6 +2399,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2430,6 +2462,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -2511,6 +2544,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2573,6 +2607,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2642,6 +2677,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "subtitle_duration_ms": 2200,
@@ -2716,6 +2752,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2782,6 +2819,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2846,6 +2884,7 @@
         }
       ],
       "mode": "subtitle_only",
+      "voiced_note": "",
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2912,6 +2951,7 @@
         }
       ],
       "mode": "tts",
+      "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
