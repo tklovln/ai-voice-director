@@ -1,0 +1,2958 @@
+{
+  "schema_version": "1.1",
+  "pipeline_version": "1.1",
+  "scene_id": "tiger_s10",
+  "title": "S10 傳奇片刻：傳承",
+  "display_title": "傳奇片刻：傳承",
+  "description": "虎面回到便利商店，把拚命證明自己，慢慢轉化成陪伴與傳承。",
+  "director_note": "前半場是休息後的釋懷與同事間的玩笑；徒弟進門時短暫驚喜，最後以真心為後輩驕傲的笑聲收尾。情緒隨句子轉折，不把每句都演成吶喊。",
+  "casting_note": "虎面與菲菲使用指定 ElevenLabs 聲線；其他七個角色保留完整台詞，以字幕串場。",
+  "source_csv": "story/clean/虎面_鍾哥_scenes/10_S10_傳奇片刻：傳承.csv",
+  "authoring_script": "story/tts/tiger_s10/scene.json",
+  "source_fingerprint": "baf1bf09d8a62416dcad",
+  "cast": {
+    "tiger": {
+      "name": "虎面",
+      "character_id": "clk_0016",
+      "color": "#e7a357",
+      "voice_alias": "tiger",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_source": "data/elevenlabs_poc.json → clk_0016",
+      "portraits": {
+        "normal": "data/figure/CLK_0016/normal_512.png",
+        "happy": "data/figure/CLK_0016/happy_512.png"
+      }
+    },
+    "fei_fei": {
+      "name": "菲菲",
+      "character_id": "clk_0001",
+      "color": "#91d5ba",
+      "voice_alias": "fei_fei_final",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_source": "data/elevenlabs_poc.json → clk_0001",
+      "portraits": {
+        "normal": "data/figure/CLK_0001/clk0001_normal_512.png",
+        "happy": "data/figure/CLK_0001/clk0001_happy_512.png",
+        "suspicious": "data/figure/CLK_0001/clk0001_suspicious_512.png"
+      }
+    },
+    "a_pang": {
+      "name": "阿龐",
+      "color": "#92bcea",
+      "voice_id": null,
+      "portraits": {
+        "normal": "data/figure/CLK_0002/normal_512.png",
+        "happy": "data/figure/CLK_0002/happy_512.png"
+      }
+    },
+    "protagonist": {
+      "name": "主角",
+      "color": "#cab7ed",
+      "voice_id": null
+    },
+    "paper_bag": {
+      "name": "紙袋君",
+      "color": "#cebc90",
+      "voice_id": null,
+      "portraits": {
+        "normal": "data/figure/CLK_0003/normal_512.png"
+      }
+    },
+    "count": {
+      "name": "伯爵",
+      "color": "#d5a1c4",
+      "voice_id": null
+    },
+    "apprentice": {
+      "name": "徒弟",
+      "color": "#e9b38d",
+      "voice_id": null
+    },
+    "young_man": {
+      "name": "年輕人",
+      "color": "#b4c786",
+      "voice_id": null
+    },
+    "narrator": {
+      "name": "旁白",
+      "color": "#bac4cc",
+      "voice_id": null
+    }
+  },
+  "provider": {
+    "name": "elevenlabs",
+    "model_id": "eleven_v3",
+    "language_code": "zh",
+    "output_format": "mp3_44100_128",
+    "seed": 731,
+    "prefix_tags": [
+      "strong Taiwanese Mandarin accent"
+    ],
+    "voice_settings": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "speed": 1.0
+    }
+  },
+  "playback": {
+    "subtitle_chars_per_second": 6.5,
+    "subtitle_min_ms": 2200,
+    "subtitle_max_ms": 9000,
+    "pause_after_ms": 350
+  },
+  "tag_aliases": {
+    "pause": "short pause",
+    "surprise": "surprised",
+    "sigh": "sighs",
+    "laugh": "laughs"
+  },
+  "grouping": {
+    "method": "directed_adjacent",
+    "max_intensity_delta": 0.35,
+    "note": "依語意指定情緒接近的連續同角色台詞。同段只生成及正規化一次；字幕保留逐句時間軸。",
+    "groups": [
+      {
+        "utterance_id": "s10_u004_005",
+        "line_ids": [
+          "s10_004",
+          "s10_005"
+        ],
+        "emotion": "溫暖關懷",
+        "reason": "笑著提醒小心身體，再補充量力而為，都是同一段溫暖關心。",
+        "voice_settings": {
+          "speed": 0.98
+        }
+      },
+      {
+        "utterance_id": "s10_u008_010",
+        "line_ids": [
+          "s10_008",
+          "s10_009",
+          "s10_010"
+        ],
+        "emotion": "釋懷分享",
+        "reason": "從放下逞強，到分享休息與訓練的體悟，再收束結論，都是沉穩釋懷的同一段話。",
+        "voice_settings": {
+          "speed": 0.97
+        }
+      },
+      {
+        "utterance_id": "s10_u015_016",
+        "line_ids": [
+          "s10_015",
+          "s10_016"
+        ],
+        "emotion": "鄭重請教",
+        "reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。"
+      },
+      {
+        "utterance_id": "s10_u025_027",
+        "line_ids": [
+          "s10_025",
+          "s10_026",
+          "s10_027"
+        ],
+        "emotion": "感謝與傳承",
+        "reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。"
+      }
+    ]
+  },
+  "utterances": [
+    {
+      "utterance_id": "s10_001",
+      "line_ids": [
+        "s10_001"
+      ],
+      "speaker": "narrator",
+      "character": "旁白",
+      "mode": "subtitle_only",
+      "emotion": "平靜開場",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "虎面好好休息後，終於回到便利商店。",
+      "spoken_text": "虎面好好休息後， 終於回到便利商店。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_002",
+      "line_ids": [
+        "s10_002"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "subtitle_only",
+      "emotion": "期待被肯定",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "虎面哥你看，我現在終於可以……",
+      "spoken_text": "虎面哥，你看！ 我現在終於可以...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_003",
+      "line_ids": [
+        "s10_003"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "subtitle_only",
+      "emotion": "用力又得意",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "唔嗯……一次拿起兩箱飲料……",
+      "spoken_text": "唔嗯... 一次拿起，兩箱飲料...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales]",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_u004_005",
+      "line_ids": [
+        "s10_004",
+        "s10_005"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "溫暖關懷",
+      "reason": "笑著提醒小心身體，再補充量力而為，都是同一段溫暖關心。",
+      "source_text": "哈哈哈，小心身體啊！\n凡事量力而為就好。",
+      "spoken_text": "哈哈哈， 小心身體啊！\n凡事... 量力而為就好。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[warmly] 小心身體啊！\n[reassuring] 凡事...[short pause] 量力而為就好。",
+      "line_spans": [
+        {
+          "line_id": "s10_004",
+          "start_char": 35,
+          "end_char": 65
+        },
+        {
+          "line_id": "s10_005",
+          "start_char": 66,
+          "end_char": 105
+        }
+      ],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.98
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[warmly] 小心身體啊！\n[reassuring] 凡事...[short pause] 量力而為就好。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.98
+          },
+          "seed": 734
+        }
+      },
+      "fingerprint": "c27b93f0a2feef76f0e1"
+    },
+    {
+      "utterance_id": "s10_006",
+      "line_ids": [
+        "s10_006"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "好奇打趣",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "欸，虎面這次不說「體格不錯」了嗎？",
+      "spoken_text": "欸？ 虎面這次不說「體格不錯」了嗎？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [curious] 欸？[short pause] 虎面這次不說「體格不錯」了嗎？",
+      "line_spans": [],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [curious] 欸？[short pause] 虎面這次不說「體格不錯」了嗎？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 736
+        }
+      },
+      "fingerprint": "a45f575102b3fdc873e3"
+    },
+    {
+      "utterance_id": "s10_007",
+      "line_ids": [
+        "s10_007"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "自在自嘲",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "哈哈哈，不了不了。",
+      "spoken_text": "哈哈哈， 不了、不了。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+      "line_spans": [],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 737
+        }
+      },
+      "fingerprint": "298092782c20a45e4211"
+    },
+    {
+      "utterance_id": "s10_u008_010",
+      "line_ids": [
+        "s10_008",
+        "s10_009",
+        "s10_010"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "釋懷分享",
+      "reason": "從放下逞強，到分享休息與訓練的體悟，再收束結論，都是沉穩釋懷的同一段話。",
+      "source_text": "我現在知道不必什麼都那麼拚了。\n好好休息、適度訓練、在現在的人生位置上好好做事。\n這才是每個人應該做的事。",
+      "spoken_text": "嗯...我現在知道， 不必什麼都那麼拚了。\n好好休息、適度訓練... 在現在的人生位置上，好好做事。\n這才是... 每個人應該做的事。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。\n[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。\n[reassuring] 這才是...[short pause] 每個人應該做的事。",
+      "line_spans": [
+        {
+          "line_id": "s10_008",
+          "start_char": 35,
+          "end_char": 77
+        },
+        {
+          "line_id": "s10_009",
+          "start_char": 78,
+          "end_char": 132
+        },
+        {
+          "line_id": "s10_010",
+          "start_char": 133,
+          "end_char": 175
+        }
+      ],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.97
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。\n[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。\n[reassuring] 這才是...[short pause] 每個人應該做的事。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.97
+          },
+          "seed": 738
+        }
+      },
+      "fingerprint": "3fa7540038396bc0aba2"
+    },
+    {
+      "utterance_id": "s10_011",
+      "line_ids": [
+        "s10_011"
+      ],
+      "speaker": "protagonist",
+      "character": "主角",
+      "mode": "subtitle_only",
+      "emotion": "順勢追問",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "那你現在的人生位置是什麼？",
+      "spoken_text": "那你現在的人生位置... 是什麼？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [curious] 那你現在的人生位置...[short pause] 是什麼？",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_012",
+      "line_ids": [
+        "s10_012"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "準備宣言",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "那當然是——",
+      "spoken_text": "那當然是——",
+      "tts_text": "[strong Taiwanese Mandarin accent] [confident] 那當然是——",
+      "line_spans": [],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [confident] 那當然是——",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 742
+        }
+      },
+      "fingerprint": "8a5f083c94762b5fd328"
+    },
+    {
+      "utterance_id": "s10_013",
+      "line_ids": [
+        "s10_013"
+      ],
+      "speaker": "paper_bag",
+      "character": "紙袋君",
+      "mode": "subtitle_only",
+      "emotion": "靦腆求助",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "虎面，我總覺得我沒什麼二頭肌，看起來很不MAN……",
+      "spoken_text": "虎面... 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_014",
+      "line_ids": [
+        "s10_014"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "親切答應",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "沒事，下班我教你怎麼練。",
+      "spoken_text": "沒事！ 下班，我教你怎麼練。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [warmly] 沒事！[short pause] 下班，我教你怎麼練。",
+      "line_spans": [],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [warmly] 沒事！[short pause] 下班，我教你怎麼練。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 744
+        }
+      },
+      "fingerprint": "67c4cfd9027a7b552e4e"
+    },
+    {
+      "utterance_id": "s10_u015_016",
+      "line_ids": [
+        "s10_015",
+        "s10_016"
+      ],
+      "speaker": "count",
+      "character": "伯爵",
+      "mode": "subtitle_only",
+      "emotion": "鄭重請教",
+      "reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。",
+      "source_text": "虎面教練，在下意識到光喝番茄汁似乎營養不均衡。\n有什麼營養均衡的膳食可傳授給我嗎？",
+      "spoken_text": "虎面教練， 在下意識到...光喝番茄汁，似乎營養不均衡。\n有什麼營養均衡的膳食， 可傳授給我嗎？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。\n[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
+      "line_spans": [
+        {
+          "line_id": "s10_015",
+          "start_char": 35,
+          "end_char": 85
+        },
+        {
+          "line_id": "s10_016",
+          "start_char": 86,
+          "end_char": 128
+        }
+      ],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_017",
+      "line_ids": [
+        "s10_017"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "爽快可靠",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "沒問題，等等告訴你。",
+      "spoken_text": "沒問題！ 等等告訴你。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+      "line_spans": [],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 747
+        }
+      },
+      "fingerprint": "0664d4b2f76c990864b4"
+    },
+    {
+      "utterance_id": "s10_018",
+      "line_ids": [
+        "s10_018"
+      ],
+      "speaker": "protagonist",
+      "character": "主角",
+      "mode": "subtitle_only",
+      "emotion": "笑著點破",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "喔〜看來虎面現在的位置，是認真傳授經驗吧〜",
+      "spoken_text": "喔～ 看來虎面現在的位置，是認真傳授經驗吧～",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 喔～[short pause] 看來虎面現在的位置，是認真傳授經驗吧～",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_019",
+      "line_ids": [
+        "s10_019"
+      ],
+      "speaker": "fei_fei",
+      "character": "菲菲",
+      "mode": "tts",
+      "emotion": "俏皮又欣慰",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "而且也不會過度燃燒自己了〜",
+      "spoken_text": "而且... 也不會過度燃燒自己了～",
+      "tts_text": "[strong Taiwanese Mandarin accent] [mischievously] 而且...[short pause] 也不會過度燃燒自己了～[chuckles]",
+      "line_spans": [],
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_name": "fei_fei_final",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.02
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [mischievously] 而且...[short pause] 也不會過度燃燒自己了～[chuckles]",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.02
+          },
+          "seed": 749
+        }
+      },
+      "fingerprint": "bb7728c8982ef7aff54f"
+    },
+    {
+      "utterance_id": "s10_020",
+      "line_ids": [
+        "s10_020"
+      ],
+      "speaker": "apprentice",
+      "character": "徒弟",
+      "mode": "subtitle_only",
+      "emotion": "興奮呼喚",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "教練！！",
+      "spoken_text": "教練！！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 教練！！",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_021",
+      "line_ids": [
+        "s10_021"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "意外驚喜",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "喔喔，你們怎麼突然來了？",
+      "spoken_text": "喔喔！？ 你們怎麼突然來了？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 喔喔！？[short pause] 你們怎麼突然來了？",
+      "line_spans": [],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 喔喔！？[short pause] 你們怎麼突然來了？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 751
+        }
+      },
+      "fingerprint": "d47b0d9d643fc2e43017"
+    },
+    {
+      "utterance_id": "s10_022",
+      "line_ids": [
+        "s10_022"
+      ],
+      "speaker": "apprentice",
+      "character": "徒弟",
+      "mode": "subtitle_only",
+      "emotion": "迫不及待",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "要來跟你報告好消息！",
+      "spoken_text": "要來跟你報告... 好消息！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 要來跟你報告...[short pause] 好消息！",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_023",
+      "line_ids": [
+        "s10_023"
+      ],
+      "speaker": "young_man",
+      "character": "年輕人",
+      "mode": "subtitle_only",
+      "emotion": "喜悅報喜",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "我們都被選上成為摔角聯盟的儲備選手了！",
+      "spoken_text": "我們都被選上... 成為摔角聯盟的儲備選手了！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！",
+      "line_spans": [],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_024",
+      "line_ids": [
+        "s10_024"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "為後輩驕傲",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "哈哈哈，幹得好啊你們！",
+      "spoken_text": "哈哈哈！ 幹得好啊，你們！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [laughs] 哈哈哈！[excited] 幹得好啊，你們！",
+      "line_spans": [],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.05
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [laughs] 哈哈哈！[excited] 幹得好啊，你們！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.05
+          },
+          "seed": 754
+        }
+      },
+      "fingerprint": "38156b79014874dc1bd4"
+    },
+    {
+      "utterance_id": "s10_u025_027",
+      "line_ids": [
+        "s10_025",
+        "s10_026",
+        "s10_027"
+      ],
+      "speaker": "young_man",
+      "character": "年輕人",
+      "mode": "subtitle_only",
+      "emotion": "感謝與傳承",
+      "reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
+      "source_text": "多謝教練平常的照顧和訓練！\n我們絕對不會忘記教練教導我們的話\n「在擂台上全力戰鬥、為觀眾帶來極具視覺張力的表演！」",
+      "spoken_text": "多謝教練， 平常的照顧和訓練！\n我們絕對不會忘記， 教練教導我們的話——\n「在擂台上全力戰鬥！ 為觀眾帶來極具視覺張力的表演！」",
+      "tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！\n[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——\n[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "line_spans": [
+        {
+          "line_id": "s10_025",
+          "start_char": 35,
+          "end_char": 74
+        },
+        {
+          "line_id": "s10_026",
+          "start_char": 75,
+          "end_char": 118
+        },
+        {
+          "line_id": "s10_027",
+          "start_char": 119,
+          "end_char": 171
+        }
+      ],
+      "voice_id": null,
+      "voice_name": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": null,
+      "fingerprint": null
+    },
+    {
+      "utterance_id": "s10_028",
+      "line_ids": [
+        "s10_028"
+      ],
+      "speaker": "tiger",
+      "character": "虎面",
+      "mode": "tts",
+      "emotion": "滿足的笑聲",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "沒錯，哈哈哈哈！",
+      "spoken_text": "沒錯！ 哈哈哈哈！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [proud] 沒錯！[laughs] 哈哈哈哈！",
+      "line_spans": [],
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_name": "Tiger",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [proud] 沒錯！[laughs] 哈哈哈哈！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 758
+        }
+      },
+      "fingerprint": "7365525893201d29acbd"
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "s10_001",
+      "source_row": 2,
+      "speaker": "narrator",
+      "source_text": "虎面好好休息後，終於回到便利商店。",
+      "text": "[calm] 虎面好好休息後，[pause] 終於回到便利商店。",
+      "emotion": "平靜開場",
+      "intensity": 0.25,
+      "expression": "normal",
+      "direction": "敘事帶著安心感，讓觀眾知道虎面已經休息好了。",
+      "pause_after_ms": 500,
+      "order": 1,
+      "character": "旁白",
+      "source_sprite": "",
+      "spoken_text": "虎面好好休息後， 終於回到便利商店。",
+      "model_text": "[calm] 虎面好好休息後，[short pause] 終於回到便利商店。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "calm",
+          "provider_tag": "calm"
+        },
+        {
+          "type": "text",
+          "text": " 虎面好好休息後，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 終於回到便利商店。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2308,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_001",
+      "utterance_line_ids": [
+        "s10_001"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "平靜開場",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_002",
+      "source_row": 3,
+      "speaker": "a_pang",
+      "source_text": "虎面哥你看，我現在終於可以……",
+      "text": "[excited] 虎面哥，你看！[pause] 我現在終於可以...",
+      "emotion": "期待被肯定",
+      "intensity": 0.65,
+      "expression": "happy",
+      "direction": "先興奮叫住虎面，再用未完成的句尾銜接搬貨動作。",
+      "pause_after_ms": 150,
+      "order": 2,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "虎面哥，你看！ 我現在終於可以...",
+      "model_text": "[excited] 虎面哥，你看！[short pause] 我現在終於可以...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 虎面哥，你看！"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 我現在終於可以..."
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_002",
+      "utterance_line_ids": [
+        "s10_002"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "期待被肯定",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_003",
+      "source_row": 4,
+      "speaker": "a_pang",
+      "source_text": "唔嗯……一次拿起兩箱飲料……",
+      "text": "[strained] 唔嗯...[pause] 一次拿起，兩箱飲料... [exhales]",
+      "emotion": "用力又得意",
+      "intensity": 0.6,
+      "expression": "normal",
+      "direction": "搬重物時分兩口氣說完，句尾吐氣，不演成痛苦尖叫。",
+      "order": 3,
+      "character": "阿龐",
+      "source_sprite": "",
+      "spoken_text": "唔嗯... 一次拿起，兩箱飲料...",
+      "model_text": "[strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales]",
+      "tts_text": "[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales]",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "strained",
+          "provider_tag": "strained"
+        },
+        {
+          "type": "text",
+          "text": " 唔嗯..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 一次拿起，兩箱飲料... "
+        },
+        {
+          "type": "tag",
+          "tag": "exhales",
+          "provider_tag": "exhales"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_003",
+      "utterance_line_ids": [
+        "s10_003"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "用力又得意",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales]",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_004",
+      "source_row": 5,
+      "speaker": "tiger",
+      "source_text": "哈哈哈，小心身體啊！",
+      "text": "[chuckles] 哈哈哈，[warmly] 小心身體啊！",
+      "emotion": "爽朗關心",
+      "intensity": 0.65,
+      "expression": "happy",
+      "direction": "先被逗笑，接著是真心提醒；重點落在『小心身體』。",
+      "order": 4,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "哈哈哈， 小心身體啊！",
+      "model_text": "[chuckles] 哈哈哈，[warmly] 小心身體啊！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[warmly] 小心身體啊！\n[reassuring] 凡事...[short pause] 量力而為就好。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "chuckles",
+          "provider_tag": "chuckles"
+        },
+        {
+          "type": "text",
+          "text": " 哈哈哈，"
+        },
+        {
+          "type": "tag",
+          "tag": "warmly",
+          "provider_tag": "warmly"
+        },
+        {
+          "type": "text",
+          "text": " 小心身體啊！"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.98
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[warmly] 小心身體啊！\n[reassuring] 凡事...[short pause] 量力而為就好。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.98
+          },
+          "seed": 734
+        }
+      },
+      "fingerprint": "c27b93f0a2feef76f0e1",
+      "utterance_id": "s10_u004_005",
+      "utterance_line_ids": [
+        "s10_004",
+        "s10_005"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 2,
+      "utterance_emotion": "溫暖關懷",
+      "utterance_reason": "笑著提醒小心身體，再補充量力而為，都是同一段溫暖關心。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[warmly] 小心身體啊！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_005",
+      "source_row": 6,
+      "speaker": "tiger",
+      "source_text": "凡事量力而為就好。",
+      "text": "[reassuring] 凡事...[pause] 量力而為就好。",
+      "emotion": "溫柔勸勉",
+      "intensity": 0.35,
+      "expression": "normal",
+      "direction": "把音量收回來，像教練拍拍後輩的肩膀，不像訓話。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.98
+      },
+      "order": 5,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "凡事... 量力而為就好。",
+      "model_text": "[reassuring] 凡事...[short pause] 量力而為就好。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[warmly] 小心身體啊！\n[reassuring] 凡事...[short pause] 量力而為就好。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "reassuring",
+          "provider_tag": "reassuring"
+        },
+        {
+          "type": "text",
+          "text": " 凡事..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 量力而為就好。"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[warmly] 小心身體啊！\n[reassuring] 凡事...[short pause] 量力而為就好。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.98
+          },
+          "seed": 734
+        }
+      },
+      "fingerprint": "c27b93f0a2feef76f0e1",
+      "utterance_id": "s10_u004_005",
+      "utterance_line_ids": [
+        "s10_004",
+        "s10_005"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 2,
+      "utterance_emotion": "溫暖關懷",
+      "utterance_reason": "笑著提醒小心身體，再補充量力而為，都是同一段溫暖關心。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 凡事...[short pause] 量力而為就好。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.96
+      }
+    },
+    {
+      "line_id": "s10_006",
+      "source_row": 7,
+      "speaker": "fei_fei",
+      "source_text": "欸，虎面這次不說「體格不錯」了嗎？",
+      "text": "[curious] 欸？[pause] 虎面這次不說「體格不錯」了嗎？",
+      "emotion": "好奇打趣",
+      "intensity": 0.6,
+      "expression": "suspicious",
+      "direction": "『欸』微微上揚，後半句帶笑意的疑問，沒有責備。",
+      "order": 6,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "欸？ 虎面這次不說「體格不錯」了嗎？",
+      "model_text": "[curious] 欸？[short pause] 虎面這次不說「體格不錯」了嗎？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [curious] 欸？[short pause] 虎面這次不說「體格不錯」了嗎？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "curious",
+          "provider_tag": "curious"
+        },
+        {
+          "type": "text",
+          "text": " 欸？"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 虎面這次不說「體格不錯」了嗎？"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [curious] 欸？[short pause] 虎面這次不說「體格不錯」了嗎？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 736
+        }
+      },
+      "fingerprint": "a45f575102b3fdc873e3",
+      "utterance_id": "s10_006",
+      "utterance_line_ids": [
+        "s10_006"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "好奇打趣",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] 欸？[short pause] 虎面這次不說「體格不錯」了嗎？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_007",
+      "source_row": 8,
+      "speaker": "tiger",
+      "source_text": "哈哈哈，不了不了。",
+      "text": "[chuckles] 哈哈哈，[pause] 不了、不了。",
+      "emotion": "自在自嘲",
+      "intensity": 0.5,
+      "expression": "happy",
+      "direction": "笑著承認自己變了，兩個『不了』自然搖頭式地接上。",
+      "order": 7,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "哈哈哈， 不了、不了。",
+      "model_text": "[chuckles] 哈哈哈，[short pause] 不了、不了。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "chuckles",
+          "provider_tag": "chuckles"
+        },
+        {
+          "type": "text",
+          "text": " 哈哈哈，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 不了、不了。"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 737
+        }
+      },
+      "fingerprint": "298092782c20a45e4211",
+      "utterance_id": "s10_007",
+      "utterance_line_ids": [
+        "s10_007"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "自在自嘲",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_008",
+      "source_row": 9,
+      "speaker": "tiger",
+      "source_text": "我現在知道不必什麼都那麼拚了。",
+      "text": "[sigh] 嗯...我現在知道，[pause] 不必什麼都那麼拚了。",
+      "text_edit_note": "開頭增加語助詞『嗯』，表現想通後的釋懷；其餘字詞保留。",
+      "interjections": [
+        {
+          "at": 0,
+          "text": "嗯"
+        }
+      ],
+      "emotion": "放下逞強",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "嘆氣是鬆一口氣，不是悲傷；『不必』後逐漸放鬆。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.97
+      },
+      "pause_after_ms": 450,
+      "order": 8,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "嗯...我現在知道， 不必什麼都那麼拚了。",
+      "model_text": "[sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。\n[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。\n[reassuring] 這才是...[short pause] 每個人應該做的事。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "sigh",
+          "provider_tag": "sighs"
+        },
+        {
+          "type": "text",
+          "text": " 嗯...我現在知道，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 不必什麼都那麼拚了。"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "subtitle_duration_ms": 2308,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。\n[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。\n[reassuring] 這才是...[short pause] 每個人應該做的事。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.97
+          },
+          "seed": 738
+        }
+      },
+      "fingerprint": "3fa7540038396bc0aba2",
+      "utterance_id": "s10_u008_010",
+      "utterance_line_ids": [
+        "s10_008",
+        "s10_009",
+        "s10_010"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 3,
+      "utterance_emotion": "釋懷分享",
+      "utterance_reason": "從放下逞強，到分享休息與訓練的體悟，再收束結論，都是沉穩釋懷的同一段話。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.96
+      }
+    },
+    {
+      "line_id": "s10_009",
+      "source_row": 10,
+      "speaker": "tiger",
+      "source_text": "好好休息、適度訓練、在現在的人生位置上好好做事。",
+      "text": "[thoughtful] 好好休息、適度訓練...[pause] 在現在的人生位置上，好好做事。",
+      "emotion": "沉穩分享",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "前兩項用生活化節奏列舉，停一下，再說出這一幕的核心。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.97
+      },
+      "order": 9,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "好好休息、適度訓練... 在現在的人生位置上，好好做事。",
+      "model_text": "[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。\n[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。\n[reassuring] 這才是...[short pause] 每個人應該做的事。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "thoughtful",
+          "provider_tag": "thoughtful"
+        },
+        {
+          "type": "text",
+          "text": " 好好休息、適度訓練..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 在現在的人生位置上，好好做事。"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "subtitle_duration_ms": 3231,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。\n[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。\n[reassuring] 這才是...[short pause] 每個人應該做的事。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.97
+          },
+          "seed": 738
+        }
+      },
+      "fingerprint": "3fa7540038396bc0aba2",
+      "utterance_id": "s10_u008_010",
+      "utterance_line_ids": [
+        "s10_008",
+        "s10_009",
+        "s10_010"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 3,
+      "utterance_emotion": "釋懷分享",
+      "utterance_reason": "從放下逞強，到分享休息與訓練的體悟，再收束結論，都是沉穩釋懷的同一段話。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.97
+      }
+    },
+    {
+      "line_id": "s10_010",
+      "source_row": 11,
+      "speaker": "tiger",
+      "source_text": "這才是每個人應該做的事。",
+      "text": "[reassuring] 這才是...[pause] 每個人應該做的事。",
+      "emotion": "真誠篤定",
+      "intensity": 0.45,
+      "expression": "normal",
+      "direction": "輕輕強調『這才是』，句尾落穩，像分享體悟。",
+      "order": 10,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "這才是... 每個人應該做的事。",
+      "model_text": "[reassuring] 這才是...[short pause] 每個人應該做的事。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。\n[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。\n[reassuring] 這才是...[short pause] 每個人應該做的事。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "reassuring",
+          "provider_tag": "reassuring"
+        },
+        {
+          "type": "text",
+          "text": " 這才是..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 每個人應該做的事。"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 0.97
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr/with-timestamps",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [sighs] 嗯...我現在知道，[short pause] 不必什麼都那麼拚了。\n[thoughtful] 好好休息、適度訓練...[short pause] 在現在的人生位置上，好好做事。\n[reassuring] 這才是...[short pause] 每個人應該做的事。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 0.97
+          },
+          "seed": 738
+        }
+      },
+      "fingerprint": "3fa7540038396bc0aba2",
+      "utterance_id": "s10_u008_010",
+      "utterance_line_ids": [
+        "s10_008",
+        "s10_009",
+        "s10_010"
+      ],
+      "utterance_index": 2,
+      "utterance_size": 3,
+      "utterance_emotion": "釋懷分享",
+      "utterance_reason": "從放下逞強，到分享休息與訓練的體悟，再收束結論，都是沉穩釋懷的同一段話。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 這才是...[short pause] 每個人應該做的事。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_011",
+      "source_row": 12,
+      "speaker": "protagonist",
+      "source_text": "那你現在的人生位置是什麼？",
+      "text": "[curious] 那你現在的人生位置...[pause] 是什麼？",
+      "emotion": "順勢追問",
+      "intensity": 0.45,
+      "expression": "normal",
+      "direction": "帶一點笑意地接話，替下一句做球。",
+      "order": 11,
+      "character": "主角",
+      "source_sprite": "",
+      "spoken_text": "那你現在的人生位置... 是什麼？",
+      "model_text": "[curious] 那你現在的人生位置...[short pause] 是什麼？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [curious] 那你現在的人生位置...[short pause] 是什麼？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "curious",
+          "provider_tag": "curious"
+        },
+        {
+          "type": "text",
+          "text": " 那你現在的人生位置..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 是什麼？"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_011",
+      "utterance_line_ids": [
+        "s10_011"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "順勢追問",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] 那你現在的人生位置...[short pause] 是什麼？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_012",
+      "source_row": 13,
+      "speaker": "tiger",
+      "source_text": "那當然是——",
+      "text": "[confident] 那當然是——",
+      "emotion": "準備宣言",
+      "intensity": 0.65,
+      "expression": "happy",
+      "direction": "正要得意地回答就被同事打斷，保留破折號的懸念。",
+      "pause_after_ms": 120,
+      "order": 12,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "那當然是——",
+      "model_text": "[confident] 那當然是——",
+      "tts_text": "[strong Taiwanese Mandarin accent] [confident] 那當然是——",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "confident",
+          "provider_tag": "confident"
+        },
+        {
+          "type": "text",
+          "text": " 那當然是——"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [confident] 那當然是——",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 742
+        }
+      },
+      "fingerprint": "8a5f083c94762b5fd328",
+      "utterance_id": "s10_012",
+      "utterance_line_ids": [
+        "s10_012"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "準備宣言",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 那當然是——",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_013",
+      "source_row": 14,
+      "speaker": "paper_bag",
+      "source_text": "虎面，我總覺得我沒什麼二頭肌，看起來很不MAN……",
+      "text": "[hesitant] 虎面...[pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "emotion": "靦腆求助",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "打斷時很認真，說到『不MAN』有點不好意思；英文保留原稿。",
+      "order": 13,
+      "character": "紙袋君",
+      "source_sprite": "",
+      "spoken_text": "虎面... 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "model_text": "[hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "hesitant",
+          "provider_tag": "hesitant"
+        },
+        {
+          "type": "text",
+          "text": " 虎面..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 我總覺得我沒什麼二頭肌，看起來很不MAN..."
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 3231,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_013",
+      "utterance_line_ids": [
+        "s10_013"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "靦腆求助",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_014",
+      "source_row": 15,
+      "speaker": "tiger",
+      "source_text": "沒事，下班我教你怎麼練。",
+      "text": "[warmly] 沒事！[pause] 下班，我教你怎麼練。",
+      "emotion": "親切答應",
+      "intensity": 0.55,
+      "expression": "happy",
+      "direction": "很自然地進入教練模式，『沒事』先讓對方安心。",
+      "order": 14,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "沒事！ 下班，我教你怎麼練。",
+      "model_text": "[warmly] 沒事！[short pause] 下班，我教你怎麼練。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [warmly] 沒事！[short pause] 下班，我教你怎麼練。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "warmly",
+          "provider_tag": "warmly"
+        },
+        {
+          "type": "text",
+          "text": " 沒事！"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 下班，我教你怎麼練。"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [warmly] 沒事！[short pause] 下班，我教你怎麼練。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 744
+        }
+      },
+      "fingerprint": "67c4cfd9027a7b552e4e",
+      "utterance_id": "s10_014",
+      "utterance_line_ids": [
+        "s10_014"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "親切答應",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [warmly] 沒事！[short pause] 下班，我教你怎麼練。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_015",
+      "source_row": 16,
+      "speaker": "count",
+      "source_text": "虎面教練，在下意識到光喝番茄汁似乎營養不均衡。",
+      "text": "[formal] 虎面教練，[pause] 在下意識到...光喝番茄汁，似乎營養不均衡。",
+      "emotion": "鄭重請教",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "保持伯爵的端正措辭，笑點来自把番茄汁問題說得很嚴肅。",
+      "pause_after_ms": 180,
+      "order": 15,
+      "character": "伯爵",
+      "source_sprite": "",
+      "spoken_text": "虎面教練， 在下意識到...光喝番茄汁，似乎營養不均衡。",
+      "model_text": "[formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。\n[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "formal",
+          "provider_tag": "formal"
+        },
+        {
+          "type": "text",
+          "text": " 虎面教練，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 在下意識到...光喝番茄汁，似乎營養不均衡。"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 3231,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_u015_016",
+      "utterance_line_ids": [
+        "s10_015",
+        "s10_016"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 2,
+      "utterance_emotion": "鄭重請教",
+      "utterance_reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_016",
+      "source_row": 17,
+      "speaker": "count",
+      "source_text": "有什麼營養均衡的膳食可傳授給我嗎？",
+      "text": "[curious] 有什麼營養均衡的膳食，[pause] 可傳授給我嗎？",
+      "emotion": "誠懇求教",
+      "intensity": 0.4,
+      "expression": "normal",
+      "direction": "語氣客氣，句尾上揚，承接上一句。",
+      "order": 16,
+      "character": "伯爵",
+      "source_sprite": "",
+      "spoken_text": "有什麼營養均衡的膳食， 可傳授給我嗎？",
+      "model_text": "[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。\n[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "curious",
+          "provider_tag": "curious"
+        },
+        {
+          "type": "text",
+          "text": " 有什麼營養均衡的膳食，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 可傳授給我嗎？"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2462,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_u015_016",
+      "utterance_line_ids": [
+        "s10_015",
+        "s10_016"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 2,
+      "utterance_emotion": "鄭重請教",
+      "utterance_reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_017",
+      "source_row": 18,
+      "speaker": "tiger",
+      "source_text": "沒問題，等等告訴你。",
+      "text": "[reassuring] 沒問題！[pause] 等等告訴你。",
+      "emotion": "爽快可靠",
+      "intensity": 0.6,
+      "expression": "happy",
+      "direction": "爽快接住另一位同事的問題，不匆忙、不敷衍。",
+      "order": 17,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "沒問題！ 等等告訴你。",
+      "model_text": "[reassuring] 沒問題！[short pause] 等等告訴你。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "reassuring",
+          "provider_tag": "reassuring"
+        },
+        {
+          "type": "text",
+          "text": " 沒問題！"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 等等告訴你。"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 747
+        }
+      },
+      "fingerprint": "0664d4b2f76c990864b4",
+      "utterance_id": "s10_017",
+      "utterance_line_ids": [
+        "s10_017"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "爽快可靠",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_018",
+      "source_row": 19,
+      "speaker": "protagonist",
+      "source_text": "喔〜看來虎面現在的位置，是認真傳授經驗吧〜",
+      "text": "[amused] 喔～[pause] 看來虎面現在的位置，是認真傳授經驗吧～",
+      "emotion": "笑著點破",
+      "intensity": 0.55,
+      "expression": "normal",
+      "direction": "恍然大悟的『喔』拉長一點，像旁觀朋友找到新方向。",
+      "order": 18,
+      "character": "主角",
+      "source_sprite": "",
+      "spoken_text": "喔～ 看來虎面現在的位置，是認真傳授經驗吧～",
+      "model_text": "[amused] 喔～[short pause] 看來虎面現在的位置，是認真傳授經驗吧～",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 喔～[short pause] 看來虎面現在的位置，是認真傳授經驗吧～",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "amused",
+          "provider_tag": "amused"
+        },
+        {
+          "type": "text",
+          "text": " 喔～"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 看來虎面現在的位置，是認真傳授經驗吧～"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2769,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_018",
+      "utterance_line_ids": [
+        "s10_018"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "笑著點破",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [amused] 喔～[short pause] 看來虎面現在的位置，是認真傳授經驗吧～",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_019",
+      "source_row": 20,
+      "speaker": "fei_fei",
+      "source_text": "而且也不會過度燃燒自己了〜",
+      "text": "[mischievously] 而且...[pause] 也不會過度燃燒自己了～[chuckles]",
+      "emotion": "俏皮又欣慰",
+      "intensity": 0.65,
+      "expression": "happy",
+      "direction": "『而且』像補充一個大家都懂的梗，句尾輕笑帶出安心。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.02
+      },
+      "pause_after_ms": 400,
+      "order": 19,
+      "character": "菲菲",
+      "source_sprite": "",
+      "spoken_text": "而且... 也不會過度燃燒自己了～",
+      "model_text": "[mischievously] 而且...[short pause] 也不會過度燃燒自己了～[chuckles]",
+      "tts_text": "[strong Taiwanese Mandarin accent] [mischievously] 而且...[short pause] 也不會過度燃燒自己了～[chuckles]",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "mischievously",
+          "provider_tag": "mischievously"
+        },
+        {
+          "type": "text",
+          "text": " 而且..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 也不會過度燃燒自己了～"
+        },
+        {
+          "type": "tag",
+          "tag": "chuckles",
+          "provider_tag": "chuckles"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "fei_fei_final",
+      "voice_id": "vqNgHlSPFeaXVYVRG0hv",
+      "subtitle_duration_ms": 2200,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [mischievously] 而且...[short pause] 也不會過度燃燒自己了～[chuckles]",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.02
+          },
+          "seed": 749
+        }
+      },
+      "fingerprint": "bb7728c8982ef7aff54f",
+      "utterance_id": "s10_019",
+      "utterance_line_ids": [
+        "s10_019"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "俏皮又欣慰",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [mischievously] 而且...[short pause] 也不會過度燃燒自己了～[chuckles]",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.02
+      }
+    },
+    {
+      "line_id": "s10_020",
+      "source_row": 21,
+      "speaker": "apprentice",
+      "source_text": "教練！！",
+      "text": "[excited] 教練！！",
+      "emotion": "興奮呼喚",
+      "intensity": 0.9,
+      "expression": "normal",
+      "direction": "像從店門口大聲叫人，帶來場景的能量轉折。",
+      "pause_after_ms": 150,
+      "order": 20,
+      "character": "徒弟",
+      "source_sprite": "",
+      "spoken_text": "教練！！",
+      "model_text": "[excited] 教練！！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 教練！！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 教練！！"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_020",
+      "utterance_line_ids": [
+        "s10_020"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "興奮呼喚",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 教練！！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_021",
+      "source_row": 22,
+      "speaker": "tiger",
+      "source_text": "喔喔，你們怎麼突然來了？",
+      "text": "[surprise] 喔喔！？[pause] 你們怎麼突然來了？",
+      "emotion": "意外驚喜",
+      "intensity": 0.75,
+      "expression": "happy",
+      "direction": "先認出來訪者，驚訝後轉為開心的問句。",
+      "order": 21,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "喔喔！？ 你們怎麼突然來了？",
+      "model_text": "[surprised] 喔喔！？[short pause] 你們怎麼突然來了？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 喔喔！？[short pause] 你們怎麼突然來了？",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "surprise",
+          "provider_tag": "surprised"
+        },
+        {
+          "type": "text",
+          "text": " 喔喔！？"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 你們怎麼突然來了？"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 喔喔！？[short pause] 你們怎麼突然來了？",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 751
+        }
+      },
+      "fingerprint": "d47b0d9d643fc2e43017",
+      "utterance_id": "s10_021",
+      "utterance_line_ids": [
+        "s10_021"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "意外驚喜",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [surprised] 喔喔！？[short pause] 你們怎麼突然來了？",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_022",
+      "source_row": 23,
+      "speaker": "apprentice",
+      "source_text": "要來跟你報告好消息！",
+      "text": "[excited] 要來跟你報告...[pause] 好消息！",
+      "emotion": "迫不及待",
+      "intensity": 0.85,
+      "expression": "normal",
+      "direction": "稍微賣關子再拋出『好消息』。",
+      "pause_after_ms": 180,
+      "order": 22,
+      "character": "徒弟",
+      "source_sprite": "",
+      "spoken_text": "要來跟你報告... 好消息！",
+      "model_text": "[excited] 要來跟你報告...[short pause] 好消息！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 要來跟你報告...[short pause] 好消息！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 要來跟你報告..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 好消息！"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_022",
+      "utterance_line_ids": [
+        "s10_022"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "迫不及待",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 要來跟你報告...[short pause] 好消息！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_023",
+      "source_row": 24,
+      "speaker": "young_man",
+      "source_text": "我們都被選上成為摔角聯盟的儲備選手了！",
+      "text": "[excited] 我們都被選上...[pause] 成為摔角聯盟的儲備選手了！",
+      "emotion": "喜悅報喜",
+      "intensity": 0.9,
+      "expression": "normal",
+      "direction": "把『都被選上』說清楚，興奮但不是失控大吼。",
+      "order": 23,
+      "character": "年輕人",
+      "source_sprite": "",
+      "spoken_text": "我們都被選上... 成為摔角聯盟的儲備選手了！",
+      "model_text": "[excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 我們都被選上..."
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 成為摔角聯盟的儲備選手了！"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2769,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_023",
+      "utterance_line_ids": [
+        "s10_023"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "喜悅報喜",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_024",
+      "source_row": 25,
+      "speaker": "tiger",
+      "source_text": "哈哈哈，幹得好啊你們！",
+      "text": "[laughs] 哈哈哈！[excited] 幹得好啊，你們！",
+      "emotion": "為後輩驕傲",
+      "intensity": 0.9,
+      "expression": "happy",
+      "direction": "笑聲更開闊，是真心替徒弟成功而高興；不要用憤怒語氣。",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.05
+      },
+      "pause_after_ms": 450,
+      "order": 24,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "哈哈哈！ 幹得好啊，你們！",
+      "model_text": "[laughs] 哈哈哈！[excited] 幹得好啊，你們！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [laughs] 哈哈哈！[excited] 幹得好啊，你們！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "laughs",
+          "provider_tag": "laughs"
+        },
+        {
+          "type": "text",
+          "text": " 哈哈哈！"
+        },
+        {
+          "type": "tag",
+          "tag": "excited",
+          "provider_tag": "excited"
+        },
+        {
+          "type": "text",
+          "text": " 幹得好啊，你們！"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "subtitle_duration_ms": 2200,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [laughs] 哈哈哈！[excited] 幹得好啊，你們！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.05
+          },
+          "seed": 754
+        }
+      },
+      "fingerprint": "38156b79014874dc1bd4",
+      "utterance_id": "s10_024",
+      "utterance_line_ids": [
+        "s10_024"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "為後輩驕傲",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [laughs] 哈哈哈！[excited] 幹得好啊，你們！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.05
+      }
+    },
+    {
+      "line_id": "s10_025",
+      "source_row": 26,
+      "speaker": "young_man",
+      "source_text": "多謝教練平常的照顧和訓練！",
+      "text": "[grateful] 多謝教練，[pause] 平常的照顧和訓練！",
+      "emotion": "真誠感謝",
+      "intensity": 0.75,
+      "expression": "normal",
+      "direction": "熱情中帶尊敬，認真看著教練說。",
+      "order": 25,
+      "character": "年輕人",
+      "source_sprite": "",
+      "spoken_text": "多謝教練， 平常的照顧和訓練！",
+      "model_text": "[grateful] 多謝教練，[short pause] 平常的照顧和訓練！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！\n[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——\n[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "grateful",
+          "provider_tag": "grateful"
+        },
+        {
+          "type": "text",
+          "text": " 多謝教練，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 平常的照顧和訓練！"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_u025_027",
+      "utterance_line_ids": [
+        "s10_025",
+        "s10_026",
+        "s10_027"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 3,
+      "utterance_emotion": "感謝與傳承",
+      "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_026",
+      "source_row": 27,
+      "speaker": "young_man",
+      "source_text": "我們絕對不會忘記教練教導我們的話",
+      "text": "[earnest] 我們絕對不會忘記，[pause] 教練教導我們的話——",
+      "emotion": "堅定承諾",
+      "intensity": 0.75,
+      "expression": "normal",
+      "direction": "語速稍收，讓大家準備接下教練的信念。",
+      "pause_after_ms": 150,
+      "order": 26,
+      "character": "年輕人",
+      "source_sprite": "",
+      "spoken_text": "我們絕對不會忘記， 教練教導我們的話——",
+      "model_text": "[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——",
+      "tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！\n[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——\n[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "earnest",
+          "provider_tag": "earnest"
+        },
+        {
+          "type": "text",
+          "text": " 我們絕對不會忘記，"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 教練教導我們的話——"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2462,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_u025_027",
+      "utterance_line_ids": [
+        "s10_025",
+        "s10_026",
+        "s10_027"
+      ],
+      "utterance_index": 1,
+      "utterance_size": 3,
+      "utterance_emotion": "感謝與傳承",
+      "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_027",
+      "source_row": 28,
+      "speaker": "young_man",
+      "source_text": "「在擂台上全力戰鬥、為觀眾帶來極具視覺張力的表演！」",
+      "text": "[confident] 「在擂台上全力戰鬥！[pause] 為觀眾帶來極具視覺張力的表演！」",
+      "emotion": "傳承信念",
+      "intensity": 0.9,
+      "expression": "normal",
+      "direction": "兩段有力地呼應口號，第二段維持清楚咬字。",
+      "order": 27,
+      "character": "年輕人",
+      "source_sprite": "",
+      "spoken_text": "「在擂台上全力戰鬥！ 為觀眾帶來極具視覺張力的表演！」",
+      "model_text": "[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！\n[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——\n[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "confident",
+          "provider_tag": "confident"
+        },
+        {
+          "type": "text",
+          "text": " 「在擂台上全力戰鬥！"
+        },
+        {
+          "type": "tag",
+          "tag": "pause",
+          "provider_tag": "short pause"
+        },
+        {
+          "type": "text",
+          "text": " 為觀眾帶來極具視覺張力的表演！」"
+        }
+      ],
+      "mode": "subtitle_only",
+      "voice_name": null,
+      "voice_id": null,
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 3385,
+      "pause_after_ms": 350,
+      "request": null,
+      "fingerprint": null,
+      "utterance_id": "s10_u025_027",
+      "utterance_line_ids": [
+        "s10_025",
+        "s10_026",
+        "s10_027"
+      ],
+      "utterance_index": 2,
+      "utterance_size": 3,
+      "utterance_emotion": "感謝與傳承",
+      "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    },
+    {
+      "line_id": "s10_028",
+      "source_row": 29,
+      "speaker": "tiger",
+      "source_text": "沒錯，哈哈哈哈！",
+      "text": "[proud] 沒錯！[laughs] 哈哈哈哈！",
+      "emotion": "滿足的笑聲",
+      "intensity": 0.85,
+      "expression": "happy",
+      "direction": "肯定後放聲笑，笑裡帶著放下包袱、看見傳承的滿足。",
+      "pause_after_ms": 700,
+      "order": 28,
+      "character": "虎面",
+      "source_sprite": "",
+      "spoken_text": "沒錯！ 哈哈哈哈！",
+      "model_text": "[proud] 沒錯！[laughs] 哈哈哈哈！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [proud] 沒錯！[laughs] 哈哈哈哈！",
+      "segments": [
+        {
+          "type": "tag",
+          "tag": "proud",
+          "provider_tag": "proud"
+        },
+        {
+          "type": "text",
+          "text": " 沒錯！"
+        },
+        {
+          "type": "tag",
+          "tag": "laughs",
+          "provider_tag": "laughs"
+        },
+        {
+          "type": "text",
+          "text": " 哈哈哈哈！"
+        }
+      ],
+      "mode": "tts",
+      "voice_name": "Tiger",
+      "voice_id": "fUE2uGe261SSUQ97Ypbr",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      },
+      "subtitle_duration_ms": 2200,
+      "request": {
+        "method": "POST",
+        "path": "/v1/text-to-speech/fUE2uGe261SSUQ97Ypbr",
+        "query": {
+          "output_format": "mp3_44100_128"
+        },
+        "json": {
+          "text": "[strong Taiwanese Mandarin accent] [proud] 沒錯！[laughs] 哈哈哈哈！",
+          "model_id": "eleven_v3",
+          "language_code": "zh",
+          "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "speed": 1.0
+          },
+          "seed": 758
+        }
+      },
+      "fingerprint": "7365525893201d29acbd",
+      "utterance_id": "s10_028",
+      "utterance_line_ids": [
+        "s10_028"
+      ],
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "滿足的笑聲",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [proud] 沒錯！[laughs] 哈哈哈哈！",
+      "line_voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "speed": 1.0
+      }
+    }
+  ]
+}
