@@ -615,14 +615,14 @@
       "emotion": "爽快可靠",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "沒問題，等等告訴你。",
-      "spoken_text": "沒問題！ 等等告訴你。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+      "spoken_text": "沒問題，等等告訴你。",
+      "tts_text": "[strong Taiwanese Mandarin accent] 沒問題，等等告訴你。",
       "line_spans": [],
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_name": "Tiger",
       "voice_settings": {
-        "stability": 0.65,
-        "similarity_boost": 0.9,
+        "stability": 0.85,
+        "similarity_boost": 1.0,
         "speed": 1.0
       },
       "request": {
@@ -632,18 +632,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+          "text": "[strong Taiwanese Mandarin accent] 沒問題，等等告訴你。",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
-            "stability": 0.65,
-            "similarity_boost": 0.9,
+            "stability": 0.85,
+            "similarity_boost": 1.0,
             "speed": 1.0
           },
-          "seed": 7471
+          "seed": 17021
         }
       },
-      "fingerprint": "c79e3037ea436db4152c"
+      "fingerprint": "b82da8b0f2f55d634441"
     },
     {
       "utterance_id": "s10_018",
@@ -2167,42 +2167,28 @@
       "source_row": 18,
       "speaker": "tiger",
       "source_text": "沒問題，等等告訴你。",
-      "text": "[reassuring] 沒問題！[pause] 等等告訴你。",
+      "text": "沒問題，等等告訴你。",
       "emotion": "爽快可靠",
       "intensity": 0.6,
       "expression": "happy",
-      "direction": "爽快接住另一位同事的問題，不匆忙、不敷衍。",
+      "direction": "爽快接住另一位同事的問題，不匆忙、不敷衍；語氣交給逗號的節奏，不另外下 tag。",
       "voice_settings": {
-        "stability": 0.65,
-        "similarity_boost": 0.9,
+        "stability": 0.85,
+        "similarity_boost": 1.0,
         "speed": 1.0
       },
-      "seed": 7471,
-      "tuning_note": "原本整句飄粵語腔（ASR 聽成「雷梦台」，台＝題的粵語 tai）。提高 stability 與 similarity_boost 貼回 Tiger 基準聲線並換 seed 後，CER 0.38 → 0.25。另外試過對「問」「題」加 IPA，反而讓「沒問題」被吞成「媒體」（CER 回到 0.38），所以這句不用 IPA。",
+      "seed": 17021,
+      "tuning_note": "這句反覆飄粵語腔（ASR 先後聽成「雷梦台」「没梦体」，台＝題的粵語 tai）。以 scripts/story_line_probe.py 掃了兩輪共 14 個候選：移除 [reassuring] 是最大的單一改善（CER 0.25→0.12，『沒』與『題』轉正），stability 0.85＋similarity_boost 1.0 讓聲音貼回 Tiger 基準，最後由 seed 17021 讓『問』也正確，CER 0.00。對『問』加 IPA 反而更糟（聽成「沒亂台」），逐字加空白也更糟。",
       "order": 17,
       "character": "虎面",
       "source_sprite": "",
-      "spoken_text": "沒問題！ 等等告訴你。",
-      "model_text": "[reassuring] 沒問題！[short pause] 等等告訴你。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+      "spoken_text": "沒問題，等等告訴你。",
+      "model_text": "沒問題，等等告訴你。",
+      "tts_text": "[strong Taiwanese Mandarin accent] 沒問題，等等告訴你。",
       "segments": [
         {
-          "type": "tag",
-          "tag": "reassuring",
-          "provider_tag": "reassuring"
-        },
-        {
           "type": "text",
-          "text": " 沒問題！"
-        },
-        {
-          "type": "tag",
-          "tag": "pause",
-          "provider_tag": "short pause"
-        },
-        {
-          "type": "text",
-          "text": " 等等告訴你。"
+          "text": "沒問題，等等告訴你。"
         }
       ],
       "mode": "tts",
@@ -2219,18 +2205,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+          "text": "[strong Taiwanese Mandarin accent] 沒問題，等等告訴你。",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
-            "stability": 0.65,
-            "similarity_boost": 0.9,
+            "stability": 0.85,
+            "similarity_boost": 1.0,
             "speed": 1.0
           },
-          "seed": 7471
+          "seed": 17021
         }
       },
-      "fingerprint": "c79e3037ea436db4152c",
+      "fingerprint": "b82da8b0f2f55d634441",
       "utterance_id": "s10_017",
       "utterance_line_ids": [
         "s10_017"
@@ -2239,10 +2225,10 @@
       "utterance_size": 1,
       "utterance_emotion": "爽快可靠",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] 沒問題，等等告訴你。",
       "line_voice_settings": {
-        "stability": 0.65,
-        "similarity_boost": 0.9,
+        "stability": 0.85,
+        "similarity_boost": 1.0,
         "speed": 1.0
       }
     },
