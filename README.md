@@ -24,7 +24,7 @@ Settings → Pages → Source 選 `main` 分支的根目錄即可。`.nojekyll` 
 |---|---|
 | `/` | IndexTTS-2.0 語音克隆 ＋ 情緒控制試聽（8 角色） |
 | `/convenientstore_m_poc/` | 便利商店 NPC 選角（菲菲／紙袋君／虎面，各 1 基準音 ＋ 喜怒哀，三引擎可切） |
-| `/story_tiger_s10/` | 虎面支線 S10 整幕對白（28 句劇本，14 句配音走 11 段 TTS，逐句字幕與情緒稿對照） |
+| `/story_tiger_s10/` | 虎面支線 S10 全卡司（28 句；虎面、菲菲 ElevenLabs ＋ 旁白、阿龐、紙袋君、伯爵、徒弟、年輕人 Gemini 3.8，共 26 句配音／20 段 TTS） |
 | `/story_paperbag_s1/` | 紙袋君支線 S1 全卡司（31 列；菲菲 ElevenLabs ＋ 紙袋君、阿龐 Gemini 3.8，共 29 句配音／22 段 TTS） |
 
 `convenientstore_m_poc/` 由 emotts repo 的 `scripts/build_casting_page.py` 產生：把 studio 的
@@ -105,15 +105,17 @@ IndexTTS **沒有口音提示詞**，口音只由 `spk_audio_prompt` 決定（�
 
 | 頁面 | 劇本 | 配音 |
 |---|---|---|
-| `story_tiger_s10/` | 虎面 S10〈傳奇片刻：傳承〉28 句 | 虎面 `Tiger` 12 句 ＋ 菲菲 `fei_fei_final` 2 句，走 11 段 TTS |
+| `story_tiger_s10/` | 虎面 S10〈傳奇片刻：傳承〉28 句 | 虎面 12 句 ＋ 菲菲 2 句（ElevenLabs）＋ Gemini 旁白 1、阿龐 2、紙袋君 1、伯爵 2、徒弟 2、年輕人 4；主角 2 句為字幕 |
 | `story_paperbag_s1/` | 紙袋君 S1〈頭戴紙袋的應徵者〉31 列 | 菲菲 11 句／8 段 ＋ Gemini 紙袋君 12 句／8 段、阿龐 6 句／6 段；2 個沉默節拍 |
 
-沒有指定聲線的角色保留完整台詞，以字幕串場，情緒稿一樣備妥。
+兩幕唯一不配音的是虎面 S10 的「主角」——主角是玩家本人，台詞與情緒稿一樣備妥，以字幕串場。
 
 | 這些頁面能回答的問題 | 頁面上的做法 |
 |---|---|
 | 一整幕的音色是否穩定 | 相鄰、同角色且情緒接近的台詞合併成一次 TTS，而不是逐句各生一次 |
 | 一個角色的情緒幅度夠不夠 | 菲菲演出誤會與吐槽、紙袋君沉穩回應；阿龐以緊張通報、驚叫、委屈抱怨與崩潰求救放大喜劇效果 |
+| 同一個角色換一幕還是同一個人嗎 | 阿龐與紙袋君在兩幕共用同一個 Gemini 聲線 ID；聲線設定與劇本分開保存 |
+| 配角之間聽不聽得出區別 | 旁白不入戲、伯爵端正客套、徒弟全場音量最大、年輕人以支撐力收尾，差異寫在各句的表演設定 |
 | 情緒指示到底送了什麼進模型 | 原文／情緒稿字幕切換，右欄顯示各引擎的實際文字、語氣 metadata 與句中 tags |
 | 節奏是不是被後處理弄壞 | 同段播放整份母帶，以引擎字元時間戳或 Whisper 詞級時間對齊切字幕 |
 
@@ -126,11 +128,13 @@ IndexTTS **沒有口音提示詞**，口音只由 `spk_audio_prompt` 決定（�
 做法與重跑方式見 emotts repo 的 `story/tts/tiger_s10/README.md`（共用說明）與
 `story/tts/paperbag_s1/README.md`（本幕差異與沉默空拍的處理）。
 
-Gemini 紙袋君與阿龐先依各自角色表設計固定聲線，同一角色的 TTS 共用自己的 voice ID。
+Gemini 角色先依人物設定建立固定聲線，同一角色的 TTS 共用自己的 voice ID；
+聲線屬於角色而不是某一幕，所以阿龐與紙袋君在兩個頁面聽起來是同一個人。
 原情緒稿在 adapter 中轉成 `speech_metadata.style` 與 `<short pause>` 等瞬時標記；
 頁面可查看各句的實際模型輸入，並分別開啟紙袋君的「台灣華語試聽」與「原生設計樣本」，
 也能展開固定繁體中文試聽稿。原生樣本與固定稿都通過中文語言檢查後才用該聲線生成台詞。
-完整接法見 emotts 的 `story/tts/paperbag_s1/README_GEMINI.md`。
+完整接法見 emotts 的 `story/tts/paperbag_s1/README_GEMINI.md`，
+六位角色的聲線、voice_id 與檢查數據見 `story/tts/voices/README.md`。
 阿龐的青年戲劇系人設與 `delivery_style` 表演設定見 `story/tts/paperbag_s1/README_A_PANG.md`。
 
 ## 內容

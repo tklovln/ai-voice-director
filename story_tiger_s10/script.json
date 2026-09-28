@@ -5,8 +5,8 @@
   "title": "S10 傳奇片刻：傳承",
   "display_title": "傳奇片刻：傳承",
   "description": "虎面回到便利商店，把拚命證明自己，慢慢轉化成陪伴與傳承。",
-  "director_note": "前半場是休息後的釋懷與同事間的玩笑；徒弟進門時短暫驚喜，最後以真心為後輩驕傲的笑聲收尾。情緒隨句子轉折，不把每句都演成吶喊。全幕最短的兩句（s10_007、s10_017）曾出現破音字與口音漂移，改用 stability 0.65 + similarity_boost 0.9 貼回 Tiger 的基準聲線，並以 IPA 固定「不了」的輕聲讀法。",
-  "casting_note": "虎面與菲菲使用指定 ElevenLabs 聲線；其他七個角色保留完整台詞，以字幕串場。",
+  "director_note": "前半場是休息後的釋懷與同事間的玩笑；徒弟進門時短暫驚喜，最後以真心為後輩驕傲的笑聲收尾。情緒隨句子轉折，不把每句都演成吶喊。全幕最短的兩句（s10_007、s10_017）曾出現破音字與口音漂移，改用 stability 0.65 + similarity_boost 0.9 貼回 Tiger 的基準聲線，並以 IPA 固定「不了」的輕聲讀法。配角的演法差異寫在 delivery_style：旁白不入戲、阿龐使力時把聲音壓在喉嚨、紙袋君難得心虛而收小聲、伯爵端正客套、徒弟全場音量最大、年輕人以支撐力而非音量收尾。",
+  "casting_note": "虎面與菲菲使用指定 ElevenLabs 聲線；旁白、阿龐、紙袋君、伯爵、徒弟、年輕人改用各自的 Gemini 3.8 固定聲線。阿龐與紙袋君沿用紙袋君 S1 建立的同一組聲線。主角是玩家本人，刻意保留為字幕。",
   "source_csv": "story/clean/虎面_鍾哥_scenes/10_S10_傳奇片刻：傳承.csv",
   "authoring_script": "story/tts/tiger_s10/scene.json",
   "source_fingerprint": "baf1bf09d8a62416dcad",
@@ -40,45 +40,127 @@
     },
     "a_pang": {
       "name": "阿龐",
+      "character_id": "clk_0002",
       "color": "#92bcea",
-      "voice_id": null,
+      "voice_id": "voice_09wkojtpb4gd",
+      "provider": {
+        "name": "gemini",
+        "model_id": "gemini-3.8-flash-tts",
+        "voice_config": "story/tts/voices/gemini_a_pang.json"
+      },
       "portraits": {
         "normal": "data/figure/CLK_0002/normal_512.png",
-        "happy": "data/figure/CLK_0002/happy_512.png"
-      }
+        "happy": "data/figure/CLK_0002/happy_512.png",
+        "sad": "data/figure/CLK_0002/sad_512.png"
+      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_type": "prompted",
+      "voice_preview": "out/gemini_voices/clk_0002/preview.wav",
+      "voice_preview_text": "嗨，我是阿龐！我念戲劇系，平常在便利商店打工。欸，你有沒有看到門口那位客人？我真的嚇了一跳耶！好啦，先別緊張，垃圾袋我來拿，下個星期再一起練習。這個故事告訴我們，遇到事情要先問清楚！",
+      "voice_preview_sha256": "13631c087a63ab8a3f1ce905f065ec0d9511788136a2569a7087720f1a8e2d53",
+      "voice_design_sample": "out/gemini_voices/clk_0002/design_sample.wav",
+      "voice_design_sample_sha256": "e0be0dbe73d85e288a40db9cb14102298ce4d19db0f00655835382bdc71c3acf"
     },
     "protagonist": {
       "name": "主角",
       "color": "#cab7ed",
-      "voice_id": null
+      "voice_id": null,
+      "casting_note": "主角是玩家本人（店長），角色表沒有這個人，也沒有性別或聲線設定；刻意保留為字幕，不替玩家決定聲音。"
     },
     "paper_bag": {
       "name": "紙袋君",
+      "character_id": "clk_0003",
       "color": "#cebc90",
-      "voice_id": null,
+      "voice_id": "voice_qe1zayqswgae",
+      "provider": {
+        "name": "gemini",
+        "model_id": "gemini-3.8-flash-tts",
+        "voice_config": "story/tts/voices/gemini_paper_bag.json"
+      },
       "portraits": {
-        "normal": "data/figure/CLK_0003/normal_512.png"
-      }
+        "normal": "data/figure/CLK_0003/normal_512.png",
+        "happy": "data/figure/CLK_0003/happy_512.png",
+        "sad": "data/figure/CLK_0003/sad_512.png"
+      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_type": "prompted",
+      "voice_preview": "out/gemini_voices/clk_0003/preview.wav",
+      "voice_preview_text": "嗯……我是紙袋君。以前是做行銷的，現在比較喜歡待在這種小店裡。欸，有什麼問題都可以問我，一件一件來就好，不用急。垃圾等一下我拿去門口，下個星期再看看店裡的生意有沒有變好。",
+      "voice_preview_sha256": "e2729f678da419d3951c28fa1b507702ef86216bf8cd62fff054cf9dc4015a97",
+      "voice_design_sample": "out/gemini_voices/clk_0003/design_sample.wav",
+      "voice_design_sample_sha256": "a99b60355f0d69eed9c553517e6bcf0487ee3ccf703ad446282928c3b1dfd71f"
     },
     "count": {
       "name": "伯爵",
+      "character_id": "clk_0033",
       "color": "#d5a1c4",
-      "voice_id": null
+      "voice_id": "voice_nb6hw78826hn",
+      "provider": {
+        "name": "gemini",
+        "model_id": "gemini-3.8-flash-tts",
+        "voice_config": "story/tts/voices/gemini_count.json"
+      },
+      "voice_name": "吸血鬼伯爵 Count Tomato · 台灣華語",
+      "voice_type": "prompted",
+      "voice_preview": "out/gemini_voices/clk_0033/preview.wav",
+      "voice_preview_text": "晚安，在下是伯爵。這間店的夜班，比在下的城堡熱鬧多了。可愛的小姐，需要什麼呢？啊，番茄汁請讓在下自己來拿，垃圾也由在下送到門口就好。下個星期若有空，還請多指教。",
+      "voice_preview_sha256": "b9aa370414293ed1b2c9f2b3349dc183673ded33269323e6c19f64436645c363",
+      "voice_design_sample": "out/gemini_voices/clk_0033/design_sample.wav",
+      "voice_design_sample_sha256": "1220145cb82951e3d16a75b7f5cec8e875980c3e9a8e8f8917489b0aefd74398"
     },
     "apprentice": {
       "name": "徒弟",
+      "character_id": "tiger_apprentice",
       "color": "#e9b38d",
-      "voice_id": null
+      "voice_id": "voice_l9wieoh7hmmc",
+      "provider": {
+        "name": "gemini",
+        "model_id": "gemini-3.8-flash-tts",
+        "voice_config": "story/tts/voices/gemini_apprentice.json"
+      },
+      "voice_name": "徒弟 · 台灣華語",
+      "voice_type": "prompted",
+      "voice_preview": "out/gemini_voices/tiger_apprentice/preview.wav",
+      "voice_preview_text": "教練！我跟你說，我們今天的訓練全部做完了！下個星期就要正式報到了，我一定不會給你丟臉。啊，垃圾我拿去門口就好，你坐著休息一下啦！",
+      "voice_preview_sha256": "04928676542fcc654d0bf7a0cd96abf553140cb009c19f7c748f20a328113bf5",
+      "voice_design_sample": "out/gemini_voices/tiger_apprentice/design_sample.wav",
+      "voice_design_sample_sha256": "48e139b9a71d811194f30eff86682ebb0be430db506d7e35af7b9ae6d9bc8466"
     },
     "young_man": {
       "name": "年輕人",
+      "character_id": "tiger_young_man",
       "color": "#b4c786",
-      "voice_id": null
+      "voice_id": "voice_qlnr4aoblkll",
+      "provider": {
+        "name": "gemini",
+        "model_id": "gemini-3.8-flash-tts",
+        "voice_config": "story/tts/voices/gemini_young_man.json"
+      },
+      "voice_name": "年輕人 · 台灣華語",
+      "voice_type": "prompted",
+      "voice_preview": "out/gemini_voices/tiger_young_man/preview.wav",
+      "voice_preview_text": "教練，這段時間真的很謝謝你。你說過，上了場就要全力以赴，我們都記得。下個星期報到之前，我們會把道館整理乾淨，垃圾也都處理好，請你放心。",
+      "voice_preview_sha256": "9d1da1619c364cfd1819ba1e3e60f06739c7dd7c1aa4ad30c7dd51a45b341093",
+      "voice_design_sample": "out/gemini_voices/tiger_young_man/design_sample.wav",
+      "voice_design_sample_sha256": "86899a5d8dd4245bf2afb4a85f613593ba01f188418c4d2be29c45cd3a2f99ea"
     },
     "narrator": {
       "name": "旁白",
+      "character_id": "story_narrator",
       "color": "#bac4cc",
-      "voice_id": null
+      "voice_id": "voice_au6hnsxwn265",
+      "provider": {
+        "name": "gemini",
+        "model_id": "gemini-3.8-flash-tts",
+        "voice_config": "story/tts/voices/gemini_narrator.json"
+      },
+      "voice_name": "旁白 · 台灣華語",
+      "voice_type": "prompted",
+      "voice_preview": "out/gemini_voices/story_narrator/preview.wav",
+      "voice_preview_text": "那天之後，店裡的日子慢慢回到原來的樣子。清晨的貨到了，垃圾也都收乾淨了。下個星期的排班表貼在牆上，名字一個都沒有少。",
+      "voice_preview_sha256": "ceca33ef87f31f3f042fc1ff53a96bd3e3ae562e033153122b5a705bc26c0393",
+      "voice_design_sample": "out/gemini_voices/story_narrator/design_sample.wav",
+      "voice_design_sample_sha256": "689e977743f513cc6947dd0630f14280fba11f9dc89515f1c42b498c3a39a35f"
     }
   },
   "page": {
@@ -179,24 +261,58 @@
       ],
       "speaker": "narrator",
       "character": "旁白",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "平靜開場",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "虎面好好休息後，終於回到便利商店。",
       "spoken_text": "虎面好好休息後， 終於回到便利商店。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。",
+      "tts_text": "虎面好好休息後，<short pause> 終於回到便利商店。",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_au6hnsxwn265",
+      "voice_name": "旁白 · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面好好休息後，<short pause> 終於回到便利商店。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然；說明的語氣，不入戲、不抒情；平穩交代時間過去，句尾穩穩收住。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_au6hnsxwn265",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 731
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "83afddcd9a6df759ad9b",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_002",
@@ -205,24 +321,58 @@
       ],
       "speaker": "a_pang",
       "character": "阿龐",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "期待被肯定",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "虎面哥你看，我現在終於可以……",
       "spoken_text": "虎面哥，你看！ 我現在終於可以...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...",
+      "tts_text": "虎面哥，你看！<short pause> 我現在終於可以...",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面哥，你看！<short pause> 我現在終於可以...",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "興奮開心；興奮到有點急，音量偏大、語速偏快；句尾沒說完就吊在那裡。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 730102
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "929156857c76640e1551",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_003",
@@ -231,24 +381,58 @@
       ],
       "speaker": "a_pang",
       "character": "阿龐",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "用力又得意",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "唔嗯……一次拿起兩箱飲料……",
       "spoken_text": "唔嗯... 一次拿起，兩箱飲料...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales]",
+      "tts_text": "唔嗯...<short pause> 一次拿起，兩箱飲料... <exhales>",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "唔嗯...<short pause> 一次拿起，兩箱飲料... <exhales>",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "費力地說話；屏著氣使力，聲音被壓在喉嚨裡，字要一個一個撐出來，最後大口吐氣。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 733
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "a95135e45ce2f123430a",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_u004_005",
@@ -528,24 +712,58 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "靦腆求助",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "虎面，我總覺得我沒什麼二頭肌，看起來很不MAN……",
-      "spoken_text": "虎面... 我總覺得我沒什麼二頭肌，看起來很不MAN...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "spoken_text": "虎面， 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "tts_text": "虎面，<short pause> 我總覺得我沒什麼二頭肌，看起來很不MAN...",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_qe1zayqswgae",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面，<short pause> 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "略帶遲疑；開頭的「虎面」是人名，虎念三聲（ㄏㄨˇ），要完整叫出來並咬清楚。整句難得不自信，音量收小、語速放慢，說到不MAN時聲音再更小。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_qe1zayqswgae",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 730137
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "08dcfddeee13a55b3de3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_014",
@@ -598,35 +816,79 @@
       ],
       "speaker": "count",
       "character": "伯爵",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "鄭重請教",
       "reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。",
       "source_text": "虎面教練，在下意識到光喝番茄汁似乎營養不均衡。\n有什麼營養均衡的膳食可傳授給我嗎？",
       "spoken_text": "虎面教練， 在下意識到...光喝番茄汁，似乎營養不均衡。\n有什麼營養均衡的膳食， 可傳授給我嗎？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。\n[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
+      "tts_text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。\n有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
       "line_spans": [
         {
           "line_id": "s10_015",
-          "start_char": 35,
-          "end_char": 85
+          "start_char": 0,
+          "end_char": 41
         },
         {
           "line_id": "s10_016",
-          "start_char": 86,
-          "end_char": 128
+          "start_char": 42,
+          "end_char": 74
         }
       ],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_nb6hw78826hn",
+      "voice_name": "吸血鬼伯爵 Count Tomato · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "客氣鄭重；端正客套的貴族語氣，字字清楚不含糊，把番茄汁的煩惱講得像正式諮詢。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "好奇追問；更客氣一點，句尾微微上揚，像行禮一樣收住。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_nb6hw78826hn",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 745
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "67c7c0587dfbd23a727e",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_017",
@@ -747,24 +1009,58 @@
       ],
       "speaker": "apprentice",
       "character": "徒弟",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "興奮呼喚",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "教練！！",
       "spoken_text": "教練！！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 教練！！",
+      "tts_text": "教練！！",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_l9wieoh7hmmc",
+      "voice_name": "徒弟 · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "教練！！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "興奮開心；從店門口全力喊出來，全場音量最大，尾音短促上衝，不拖長。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_l9wieoh7hmmc",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 750
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "0dba69c453314adfb172",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_021",
@@ -816,24 +1112,58 @@
       ],
       "speaker": "apprentice",
       "character": "徒弟",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "迫不及待",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "要來跟你報告好消息！",
       "spoken_text": "要來跟你報告... 好消息！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 要來跟你報告...[short pause] 好消息！",
+      "tts_text": "要來根你報告...<short pause> 好消息！",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_l9wieoh7hmmc",
+      "voice_name": "徒弟 · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "要來根你報告...<short pause> 好消息！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "興奮開心；還喘著氣，急著把好消息講完，語速偏快、句尾用力。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_l9wieoh7hmmc",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 730221
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "e1a080f31f422996b536",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_023",
@@ -842,24 +1172,58 @@
       ],
       "speaker": "young_man",
       "character": "年輕人",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "喜悅報喜",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "我們都被選上成為摔角聯盟的儲備選手了！",
       "spoken_text": "我們都被選上... 成為摔角聯盟的儲備選手了！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！",
+      "tts_text": "我們都被選上...<short pause> 成為摔角聯盟的儲備選手了！",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_qlnr4aoblkll",
+      "voice_name": "年輕人 · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "我們都被選上...<short pause> 成為摔角聯盟的儲備選手了！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "興奮開心；興奮但咬字清楚，像正式宣布好消息，不吼破也不失控。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_qlnr4aoblkll",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 753
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "7decf6385c7af489ca73",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_024",
@@ -913,40 +1277,94 @@
       ],
       "speaker": "young_man",
       "character": "年輕人",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "感謝與傳承",
       "reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
       "source_text": "多謝教練平常的照顧和訓練！\n我們絕對不會忘記教練教導我們的話\n「在擂台上全力戰鬥、為觀眾帶來極具視覺張力的表演！」",
       "spoken_text": "多謝教練， 平常的照顧和訓練！\n我們絕對不會忘記， 教練教導我們的話——\n「在擂台上全力戰鬥！ 為觀眾帶來極具視覺張力的表演！」",
-      "tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！\n[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——\n[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "tts_text": "多謝教練，<short pause> 平常的照顧和訓練！\n我們絕對不會忘記，<short pause> 教練教導我們的話——\n「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
       "line_spans": [
         {
           "line_id": "s10_025",
-          "start_char": 35,
-          "end_char": 74
+          "start_char": 0,
+          "end_char": 28
         },
         {
           "line_id": "s10_026",
-          "start_char": 75,
-          "end_char": 118
+          "start_char": 29,
+          "end_char": 62
         },
         {
           "line_id": "s10_027",
-          "start_char": 119,
-          "end_char": 171
+          "start_char": 63,
+          "end_char": 103
         }
       ],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_qlnr4aoblkll",
+      "voice_name": "年輕人 · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "多謝教練，<short pause> 平常的照顧和訓練！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "誠懇感謝；音量收一點，誠懇而尊敬，像鞠躬時說出來的話。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "我們絕對不會忘記，<short pause> 教練教導我們的話——",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "真誠認真；語速放慢、語氣鄭重，像在準備複誦一句重要的話。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定；宣言式地有力，用胸腔支撐而不是音量；兩段都要清楚，不喊破。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_qlnr4aoblkll",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 755
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "3ed866ade8cf56ab46f8",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s10_028",
@@ -1003,13 +1421,14 @@
       "intensity": 0.25,
       "expression": "normal",
       "direction": "敘事帶著安心感，讓觀眾知道虎面已經休息好了。",
+      "delivery_style": "說明的語氣，不入戲、不抒情；平穩交代時間過去，句尾穩穩收住。",
       "pause_after_ms": 500,
       "order": 1,
       "character": "旁白",
       "source_sprite": "",
       "spoken_text": "虎面好好休息後， 終於回到便利商店。",
-      "model_text": "[calm] 虎面好好休息後，[short pause] 終於回到便利商店。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。",
+      "model_text": "虎面好好休息後，<short pause> 終於回到便利商店。",
+      "tts_text": "虎面好好休息後，<short pause> 終於回到便利商店。",
       "segments": [
         {
           "type": "tag",
@@ -1030,25 +1449,70 @@
           "text": " 終於回到便利商店。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "旁白 · 台灣華語",
+      "voice_id": "voice_au6hnsxwn265",
+      "voice_settings": {},
       "subtitle_duration_ms": 2308,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 731,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "虎面好好休息後，<short pause> 終於回到便利商店。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "平靜自然；說明的語氣，不入戲、不抒情；平穩交代時間過去，句尾穩穩收住。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面好好休息後，<short pause> 終於回到便利商店。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然；說明的語氣，不入戲、不抒情；平穩交代時間過去，句尾穩穩收住。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_au6hnsxwn265",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 731
+          }
+        }
+      },
+      "fingerprint": "83afddcd9a6df759ad9b",
       "utterance_id": "s10_001",
       "utterance_line_ids": [
         "s10_001"
@@ -1057,12 +1521,8 @@
       "utterance_size": 1,
       "utterance_emotion": "平靜開場",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "虎面好好休息後，<short pause> 終於回到便利商店。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_002",
@@ -1074,13 +1534,16 @@
       "intensity": 0.65,
       "expression": "happy",
       "direction": "先興奮叫住虎面，再用未完成的句尾銜接搬貨動作。",
+      "delivery_style": "興奮到有點急，音量偏大、語速偏快；句尾沒說完就吊在那裡。",
+      "seed": 730102,
+      "tuning_note": "預設 seed 把「虎面哥」唸成「虎咪哥」（ASR 聽成虎咪哥）。只換 seed 重抽，文字與演法都沒改，730102 的「虎面哥」正確。",
       "pause_after_ms": 150,
       "order": 2,
       "character": "阿龐",
       "source_sprite": "",
       "spoken_text": "虎面哥，你看！ 我現在終於可以...",
-      "model_text": "[excited] 虎面哥，你看！[short pause] 我現在終於可以...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...",
+      "model_text": "虎面哥，你看！<short pause> 我現在終於可以...",
+      "tts_text": "虎面哥，你看！<short pause> 我現在終於可以...",
       "segments": [
         {
           "type": "tag",
@@ -1101,25 +1564,70 @@
           "text": " 我現在終於可以..."
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
-      "generation_seed": 732,
-      "gemini_content": [],
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 730102,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "虎面哥，你看！<short pause> 我現在終於可以...",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "興奮開心；興奮到有點急，音量偏大、語速偏快；句尾沒說完就吊在那裡。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面哥，你看！<short pause> 我現在終於可以...",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "興奮開心；興奮到有點急，音量偏大、語速偏快；句尾沒說完就吊在那裡。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 730102
+          }
+        }
+      },
+      "fingerprint": "929156857c76640e1551",
       "utterance_id": "s10_002",
       "utterance_line_ids": [
         "s10_002"
@@ -1128,12 +1636,8 @@
       "utterance_size": 1,
       "utterance_emotion": "期待被肯定",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "虎面哥，你看！<short pause> 我現在終於可以...",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_003",
@@ -1145,12 +1649,13 @@
       "intensity": 0.6,
       "expression": "normal",
       "direction": "搬重物時分兩口氣說完，句尾吐氣，不演成痛苦尖叫。",
+      "delivery_style": "屏著氣使力，聲音被壓在喉嚨裡，字要一個一個撐出來，最後大口吐氣。",
       "order": 3,
       "character": "阿龐",
       "source_sprite": "",
       "spoken_text": "唔嗯... 一次拿起，兩箱飲料...",
-      "model_text": "[strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales]",
-      "tts_text": "[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales]",
+      "model_text": "唔嗯...<short pause> 一次拿起，兩箱飲料... <exhales>",
+      "tts_text": "唔嗯...<short pause> 一次拿起，兩箱飲料... <exhales>",
       "segments": [
         {
           "type": "tag",
@@ -1176,26 +1681,71 @@
           "provider_tag": "exhales"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 733,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "唔嗯...<short pause> 一次拿起，兩箱飲料... <exhales>",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "費力地說話；屏著氣使力，聲音被壓在喉嚨裡，字要一個一個撐出來，最後大口吐氣。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "唔嗯...<short pause> 一次拿起，兩箱飲料... <exhales>",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "費力地說話；屏著氣使力，聲音被壓在喉嚨裡，字要一個一個撐出來，最後大口吐氣。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 733
+          }
+        }
+      },
+      "fingerprint": "a95135e45ce2f123430a",
       "utterance_id": "s10_003",
       "utterance_line_ids": [
         "s10_003"
@@ -1204,12 +1754,8 @@
       "utterance_size": 1,
       "utterance_emotion": "用力又得意",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales]",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "唔嗯...<short pause> 一次拿起，兩箱飲料... <exhales>",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_004",
@@ -2004,17 +2550,20 @@
       "source_row": 14,
       "speaker": "paper_bag",
       "source_text": "虎面，我總覺得我沒什麼二頭肌，看起來很不MAN……",
-      "text": "[hesitant] 虎面...[pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "text": "[hesitant] 虎面，[pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
       "emotion": "靦腆求助",
       "intensity": 0.4,
       "expression": "normal",
       "direction": "打斷時很認真，說到『不MAN』有點不好意思；英文保留原稿。",
+      "delivery_style": "開頭的「虎面」是人名，虎念三聲（ㄏㄨˇ），要完整叫出來並咬清楚。整句難得不自信，音量收小、語速放慢，說到不MAN時聲音再更小。",
+      "seed": 730137,
+      "tuning_note": "句首叫人的「虎面」一直唸錯：ASR 先後聽成「後面」「毀滅」「湖面」「胡曼」「Who man」。掃了五個 seed 都錯，同音字「唬」被唸成一聲、「琥」讓整個人名被吞掉，delivery_style 直接標註三聲也沒用。真正有效的是標點——把人名後面的刪節號改成逗號（「虎面...」→「虎面，」），呼名就變成完整的一句稱呼而不是拖尾的碎句，ASR 聽成「虎面」。",
       "order": 13,
       "character": "紙袋君",
       "source_sprite": "",
-      "spoken_text": "虎面... 我總覺得我沒什麼二頭肌，看起來很不MAN...",
-      "model_text": "[hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "spoken_text": "虎面， 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "model_text": "虎面，<short pause> 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "tts_text": "虎面，<short pause> 我總覺得我沒什麼二頭肌，看起來很不MAN...",
       "segments": [
         {
           "type": "tag",
@@ -2023,7 +2572,7 @@
         },
         {
           "type": "text",
-          "text": " 虎面..."
+          "text": " 虎面，"
         },
         {
           "type": "tag",
@@ -2035,26 +2584,87 @@
           "text": " 我總覺得我沒什麼二頭肌，看起來很不MAN..."
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_qe1zayqswgae",
+      "voice_settings": {},
       "subtitle_duration_ms": 3231,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
-      "generation_seed": 743,
-      "gemini_content": [],
-      "normalizations": [],
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 730137,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "虎面，<short pause> 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "略帶遲疑；開頭的「虎面」是人名，虎念三聲（ㄏㄨˇ），要完整叫出來並咬清楚。整句難得不自信，音量收小、語速放慢，說到不MAN時聲音再更小。"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面，<short pause> 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "略帶遲疑；開頭的「虎面」是人名，虎念三聲（ㄏㄨˇ），要完整叫出來並咬清楚。整句難得不自信，音量收小、語速放慢，說到不MAN時聲音再更小。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_qe1zayqswgae",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 730137
+          }
+        }
+      },
+      "fingerprint": "08dcfddeee13a55b3de3",
       "utterance_id": "s10_013",
       "utterance_line_ids": [
         "s10_013"
@@ -2063,12 +2673,8 @@
       "utterance_size": 1,
       "utterance_emotion": "靦腆求助",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "虎面，<short pause> 我總覺得我沒什麼二頭肌，看起來很不MAN...",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_014",
@@ -2167,14 +2773,16 @@
       "emotion": "鄭重請教",
       "intensity": 0.4,
       "expression": "normal",
-      "direction": "保持伯爵的端正措辭，笑點来自把番茄汁問題說得很嚴肅。",
+      "direction": "保持伯爵的端正措辭，笑點來自把番茄汁問題說得很嚴肅。",
+      "delivery_style": "端正客套的貴族語氣，字字清楚不含糊，把番茄汁的煩惱講得像正式諮詢。",
+      "tuning_note": "這兩句合併成一段 13.4 秒的伯爵發言，沒有任何空白，純粹是語速慢。曾在 delivery_style 補上「語速維持正常對話速度」，結果快了 2.2 秒卻把「虎面教練」唸成「湖面教練」；同音字「唬麵」雖然唸對但會讓模型輸入出現替代字。最後保留原本的端正語氣——慢是這個角色的演法，讀音正確優先。",
       "pause_after_ms": 180,
       "order": 15,
       "character": "伯爵",
       "source_sprite": "",
       "spoken_text": "虎面教練， 在下意識到...光喝番茄汁，似乎營養不均衡。",
-      "model_text": "[formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。\n[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
+      "model_text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。",
+      "tts_text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。\n有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
       "segments": [
         {
           "type": "tag",
@@ -2195,25 +2803,80 @@
           "text": " 在下意識到...光喝番茄汁，似乎營養不均衡。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "吸血鬼伯爵 Count Tomato · 台灣華語",
+      "voice_id": "voice_nb6hw78826hn",
+      "voice_settings": {},
       "subtitle_duration_ms": 3231,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 745,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "客氣鄭重；端正客套的貴族語氣，字字清楚不含糊，把番茄汁的煩惱講得像正式諮詢。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "客氣鄭重；端正客套的貴族語氣，字字清楚不含糊，把番茄汁的煩惱講得像正式諮詢。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "好奇追問；更客氣一點，句尾微微上揚，像行禮一樣收住。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_nb6hw78826hn",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 745
+          }
+        }
+      },
+      "fingerprint": "67c7c0587dfbd23a727e",
       "utterance_id": "s10_u015_016",
       "utterance_line_ids": [
         "s10_015",
@@ -2223,12 +2886,8 @@
       "utterance_size": 2,
       "utterance_emotion": "鄭重請教",
       "utterance_reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_016",
@@ -2240,12 +2899,13 @@
       "intensity": 0.4,
       "expression": "normal",
       "direction": "語氣客氣，句尾上揚，承接上一句。",
+      "delivery_style": "更客氣一點，句尾微微上揚，像行禮一樣收住。",
       "order": 16,
       "character": "伯爵",
       "source_sprite": "",
       "spoken_text": "有什麼營養均衡的膳食， 可傳授給我嗎？",
-      "model_text": "[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。\n[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
+      "model_text": "有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
+      "tts_text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。\n有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
       "segments": [
         {
           "type": "tag",
@@ -2266,26 +2926,81 @@
           "text": " 可傳授給我嗎？"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "吸血鬼伯爵 Count Tomato · 台灣華語",
+      "voice_id": "voice_nb6hw78826hn",
+      "voice_settings": {},
       "subtitle_duration_ms": 2462,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 746,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "好奇追問；更客氣一點，句尾微微上揚，像行禮一樣收住。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "客氣鄭重；端正客套的貴族語氣，字字清楚不含糊，把番茄汁的煩惱講得像正式諮詢。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "好奇追問；更客氣一點，句尾微微上揚，像行禮一樣收住。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_nb6hw78826hn",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 745
+          }
+        }
+      },
+      "fingerprint": "67c7c0587dfbd23a727e",
       "utterance_id": "s10_u015_016",
       "utterance_line_ids": [
         "s10_015",
@@ -2295,12 +3010,8 @@
       "utterance_size": 2,
       "utterance_emotion": "鄭重請教",
       "utterance_reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_017",
@@ -2552,13 +3263,14 @@
       "intensity": 0.9,
       "expression": "normal",
       "direction": "像從店門口大聲叫人，帶來場景的能量轉折。",
+      "delivery_style": "從店門口全力喊出來，全場音量最大，尾音短促上衝，不拖長。",
       "pause_after_ms": 150,
       "order": 20,
       "character": "徒弟",
       "source_sprite": "",
       "spoken_text": "教練！！",
-      "model_text": "[excited] 教練！！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 教練！！",
+      "model_text": "教練！！",
+      "tts_text": "教練！！",
       "segments": [
         {
           "type": "tag",
@@ -2570,25 +3282,70 @@
           "text": " 教練！！"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "徒弟 · 台灣華語",
+      "voice_id": "voice_l9wieoh7hmmc",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 750,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "教練！！",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "興奮開心；從店門口全力喊出來，全場音量最大，尾音短促上衝，不拖長。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "教練！！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "興奮開心；從店門口全力喊出來，全場音量最大，尾音短促上衝，不拖長。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_l9wieoh7hmmc",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 750
+          }
+        }
+      },
+      "fingerprint": "0dba69c453314adfb172",
       "utterance_id": "s10_020",
       "utterance_line_ids": [
         "s10_020"
@@ -2597,12 +3354,8 @@
       "utterance_size": 1,
       "utterance_emotion": "興奮呼喚",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 教練！！",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "教練！！",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_021",
@@ -2702,13 +3455,23 @@
       "intensity": 0.85,
       "expression": "normal",
       "direction": "稍微賣關子再拋出『好消息』。",
+      "delivery_style": "還喘著氣，急著把好消息講完，語速偏快、句尾用力。",
+      "pronunciations": [
+        {
+          "word": "跟",
+          "homophone": "根",
+          "note": "「跟你報告」被唸成「給你報告」「個你報告」；改用同音字「根」（gēn）固定讀音。"
+        }
+      ],
+      "seed": 730221,
+      "tuning_note": "預設 seed 把「要來跟你報告」唸成「他又來給你報告」，換 seed 後仍聽成「要來個你報告」，所以再用同音字固定「跟」的讀音。",
       "pause_after_ms": 180,
       "order": 22,
       "character": "徒弟",
       "source_sprite": "",
       "spoken_text": "要來跟你報告... 好消息！",
-      "model_text": "[excited] 要來跟你報告...[short pause] 好消息！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 要來跟你報告...[short pause] 好消息！",
+      "model_text": "要來根你報告...<short pause> 好消息！",
+      "tts_text": "要來根你報告...<short pause> 好消息！",
       "segments": [
         {
           "type": "tag",
@@ -2729,25 +3492,69 @@
           "text": " 好消息！"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
-      "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "徒弟 · 台灣華語",
+      "voice_id": "voice_l9wieoh7hmmc",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
-      "generation_seed": 752,
-      "gemini_content": [],
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 730221,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "要來根你報告...<short pause> 好消息！",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "興奮開心；還喘著氣，急著把好消息講完，語速偏快、句尾用力。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "要來根你報告...<short pause> 好消息！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "興奮開心；還喘著氣，急著把好消息講完，語速偏快、句尾用力。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_l9wieoh7hmmc",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 730221
+          }
+        }
+      },
+      "fingerprint": "e1a080f31f422996b536",
       "utterance_id": "s10_022",
       "utterance_line_ids": [
         "s10_022"
@@ -2756,12 +3563,8 @@
       "utterance_size": 1,
       "utterance_emotion": "迫不及待",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 要來跟你報告...[short pause] 好消息！",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "要來根你報告...<short pause> 好消息！",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_023",
@@ -2773,12 +3576,13 @@
       "intensity": 0.9,
       "expression": "normal",
       "direction": "把『都被選上』說清楚，興奮但不是失控大吼。",
+      "delivery_style": "興奮但咬字清楚，像正式宣布好消息，不吼破也不失控。",
       "order": 23,
       "character": "年輕人",
       "source_sprite": "",
       "spoken_text": "我們都被選上... 成為摔角聯盟的儲備選手了！",
-      "model_text": "[excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！",
+      "model_text": "我們都被選上...<short pause> 成為摔角聯盟的儲備選手了！",
+      "tts_text": "我們都被選上...<short pause> 成為摔角聯盟的儲備選手了！",
       "segments": [
         {
           "type": "tag",
@@ -2799,26 +3603,71 @@
           "text": " 成為摔角聯盟的儲備選手了！"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "年輕人 · 台灣華語",
+      "voice_id": "voice_qlnr4aoblkll",
+      "voice_settings": {},
       "subtitle_duration_ms": 2769,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 753,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "我們都被選上...<short pause> 成為摔角聯盟的儲備選手了！",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "興奮開心；興奮但咬字清楚，像正式宣布好消息，不吼破也不失控。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "我們都被選上...<short pause> 成為摔角聯盟的儲備選手了！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "興奮開心；興奮但咬字清楚，像正式宣布好消息，不吼破也不失控。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_qlnr4aoblkll",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 753
+          }
+        }
+      },
+      "fingerprint": "7decf6385c7af489ca73",
       "utterance_id": "s10_023",
       "utterance_line_ids": [
         "s10_023"
@@ -2827,12 +3676,8 @@
       "utterance_size": 1,
       "utterance_emotion": "喜悅報喜",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "我們都被選上...<short pause> 成為摔角聯盟的儲備選手了！",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_024",
@@ -2932,12 +3777,13 @@
       "intensity": 0.75,
       "expression": "normal",
       "direction": "熱情中帶尊敬，認真看著教練說。",
+      "delivery_style": "音量收一點，誠懇而尊敬，像鞠躬時說出來的話。",
       "order": 25,
       "character": "年輕人",
       "source_sprite": "",
       "spoken_text": "多謝教練， 平常的照顧和訓練！",
-      "model_text": "[grateful] 多謝教練，[short pause] 平常的照顧和訓練！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！\n[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——\n[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "model_text": "多謝教練，<short pause> 平常的照顧和訓練！",
+      "tts_text": "多謝教練，<short pause> 平常的照顧和訓練！\n我們絕對不會忘記，<short pause> 教練教導我們的話——\n「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
       "segments": [
         {
           "type": "tag",
@@ -2958,26 +3804,91 @@
           "text": " 平常的照顧和訓練！"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "年輕人 · 台灣華語",
+      "voice_id": "voice_qlnr4aoblkll",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 755,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "多謝教練，<short pause> 平常的照顧和訓練！",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "誠懇感謝；音量收一點，誠懇而尊敬，像鞠躬時說出來的話。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "多謝教練，<short pause> 平常的照顧和訓練！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "誠懇感謝；音量收一點，誠懇而尊敬，像鞠躬時說出來的話。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "我們絕對不會忘記，<short pause> 教練教導我們的話——",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "真誠認真；語速放慢、語氣鄭重，像在準備複誦一句重要的話。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定；宣言式地有力，用胸腔支撐而不是音量；兩段都要清楚，不喊破。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_qlnr4aoblkll",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 755
+          }
+        }
+      },
+      "fingerprint": "3ed866ade8cf56ab46f8",
       "utterance_id": "s10_u025_027",
       "utterance_line_ids": [
         "s10_025",
@@ -2988,12 +3899,8 @@
       "utterance_size": 3,
       "utterance_emotion": "感謝與傳承",
       "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "多謝教練，<short pause> 平常的照顧和訓練！",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_026",
@@ -3005,13 +3912,14 @@
       "intensity": 0.75,
       "expression": "normal",
       "direction": "語速稍收，讓大家準備接下教練的信念。",
+      "delivery_style": "語速放慢、語氣鄭重，像在準備複誦一句重要的話。",
       "pause_after_ms": 150,
       "order": 26,
       "character": "年輕人",
       "source_sprite": "",
       "spoken_text": "我們絕對不會忘記， 教練教導我們的話——",
-      "model_text": "[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——",
-      "tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！\n[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——\n[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "model_text": "我們絕對不會忘記，<short pause> 教練教導我們的話——",
+      "tts_text": "多謝教練，<short pause> 平常的照顧和訓練！\n我們絕對不會忘記，<short pause> 教練教導我們的話——\n「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
       "segments": [
         {
           "type": "tag",
@@ -3032,25 +3940,90 @@
           "text": " 教練教導我們的話——"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "年輕人 · 台灣華語",
+      "voice_id": "voice_qlnr4aoblkll",
+      "voice_settings": {},
       "subtitle_duration_ms": 2462,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 756,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "我們絕對不會忘記，<short pause> 教練教導我們的話——",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "真誠認真；語速放慢、語氣鄭重，像在準備複誦一句重要的話。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "多謝教練，<short pause> 平常的照顧和訓練！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "誠懇感謝；音量收一點，誠懇而尊敬，像鞠躬時說出來的話。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "我們絕對不會忘記，<short pause> 教練教導我們的話——",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "真誠認真；語速放慢、語氣鄭重，像在準備複誦一句重要的話。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定；宣言式地有力，用胸腔支撐而不是音量；兩段都要清楚，不喊破。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_qlnr4aoblkll",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 755
+          }
+        }
+      },
+      "fingerprint": "3ed866ade8cf56ab46f8",
       "utterance_id": "s10_u025_027",
       "utterance_line_ids": [
         "s10_025",
@@ -3061,12 +4034,8 @@
       "utterance_size": 3,
       "utterance_emotion": "感謝與傳承",
       "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "我們絕對不會忘記，<short pause> 教練教導我們的話——",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_027",
@@ -3078,12 +4047,13 @@
       "intensity": 0.9,
       "expression": "normal",
       "direction": "兩段有力地呼應口號，第二段維持清楚咬字。",
+      "delivery_style": "宣言式地有力，用胸腔支撐而不是音量；兩段都要清楚，不喊破。",
       "order": 27,
       "character": "年輕人",
       "source_sprite": "",
       "spoken_text": "「在擂台上全力戰鬥！ 為觀眾帶來極具視覺張力的表演！」",
-      "model_text": "[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
-      "tts_text": "[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！\n[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——\n[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
+      "model_text": "「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
+      "tts_text": "多謝教練，<short pause> 平常的照顧和訓練！\n我們絕對不會忘記，<short pause> 教練教導我們的話——\n「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
       "segments": [
         {
           "type": "tag",
@@ -3104,26 +4074,91 @@
           "text": " 為觀眾帶來極具視覺張力的表演！」"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "年輕人 · 台灣華語",
+      "voice_id": "voice_qlnr4aoblkll",
+      "voice_settings": {},
       "subtitle_duration_ms": 3385,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 757,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "自信篤定；宣言式地有力，用胸腔支撐而不是音量；兩段都要清楚，不喊破。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "多謝教練，<short pause> 平常的照顧和訓練！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "誠懇感謝；音量收一點，誠懇而尊敬，像鞠躬時說出來的話。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "我們絕對不會忘記，<short pause> 教練教導我們的話——",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "真誠認真；語速放慢、語氣鄭重，像在準備複誦一句重要的話。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定；宣言式地有力，用胸腔支撐而不是音量；兩段都要清楚，不喊破。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_qlnr4aoblkll",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 755
+          }
+        }
+      },
+      "fingerprint": "3ed866ade8cf56ab46f8",
       "utterance_id": "s10_u025_027",
       "utterance_line_ids": [
         "s10_025",
@@ -3134,12 +4169,8 @@
       "utterance_size": 3,
       "utterance_emotion": "感謝與傳承",
       "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s10_028",

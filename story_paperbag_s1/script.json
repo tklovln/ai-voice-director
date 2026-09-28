@@ -38,7 +38,7 @@
       "provider": {
         "name": "gemini",
         "model_id": "gemini-3.8-flash-tts",
-        "voice_config": "story/tts/paperbag_s1/gemini_voice.json"
+        "voice_config": "story/tts/voices/gemini_paper_bag.json"
       },
       "portraits": {
         "normal": "data/figure/CLK_0003/normal_512.png",
@@ -47,10 +47,10 @@
       },
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_type": "prompted",
-      "voice_preview": "out/pipeline_story_paperbag_s1/voices/clk_0003/preview.wav",
+      "voice_preview": "out/gemini_voices/clk_0003/preview.wav",
       "voice_preview_text": "嗯……我是紙袋君。以前是做行銷的，現在比較喜歡待在這種小店裡。欸，有什麼問題都可以問我，一件一件來就好，不用急。垃圾等一下我拿去門口，下個星期再看看店裡的生意有沒有變好。",
       "voice_preview_sha256": "e2729f678da419d3951c28fa1b507702ef86216bf8cd62fff054cf9dc4015a97",
-      "voice_design_sample": "out/pipeline_story_paperbag_s1/voices/clk_0003/design_sample.wav",
+      "voice_design_sample": "out/gemini_voices/clk_0003/design_sample.wav",
       "voice_design_sample_sha256": "a99b60355f0d69eed9c553517e6bcf0487ee3ccf703ad446282928c3b1dfd71f"
     },
     "a_pang": {
@@ -61,7 +61,7 @@
       "provider": {
         "name": "gemini",
         "model_id": "gemini-3.8-flash-tts",
-        "voice_config": "story/tts/paperbag_s1/gemini_voice_a_pang.json"
+        "voice_config": "story/tts/voices/gemini_a_pang.json"
       },
       "portraits": {
         "normal": "data/figure/CLK_0002/normal_512.png",
@@ -70,10 +70,10 @@
       },
       "voice_name": "阿龐 Alvin · 台灣華語",
       "voice_type": "prompted",
-      "voice_preview": "out/pipeline_story_paperbag_s1/voices/clk_0002/preview.wav",
+      "voice_preview": "out/gemini_voices/clk_0002/preview.wav",
       "voice_preview_text": "嗨，我是阿龐！我念戲劇系，平常在便利商店打工。欸，你有沒有看到門口那位客人？我真的嚇了一跳耶！好啦，先別緊張，垃圾袋我來拿，下個星期再一起練習。這個故事告訴我們，遇到事情要先問清楚！",
       "voice_preview_sha256": "13631c087a63ab8a3f1ce905f065ec0d9511788136a2569a7087720f1a8e2d53",
-      "voice_design_sample": "out/pipeline_story_paperbag_s1/voices/clk_0002/design_sample.wav",
+      "voice_design_sample": "out/gemini_voices/clk_0002/design_sample.wav",
       "voice_design_sample_sha256": "e0be0dbe73d85e288a40db9cb14102298ce4d19db0f00655835382bdc71c3acf"
     }
   },
@@ -1243,8 +1243,8 @@
       "emotion": "完全跟不上術語",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "⋯⋯什麼是轉換率？",
-      "spoken_text": "⋯⋯什麼是轉換率！？",
-      "tts_text": "⋯⋯什麼是轉換率！？",
+      "spoken_text": "什麼是轉換率！？",
+      "tts_text": "什麼是轉換率！？",
       "line_spans": [],
       "voice_id": "voice_09wkojtpb4gd",
       "voice_name": "阿龐 Alvin · 台灣華語",
@@ -1261,11 +1261,11 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "⋯⋯什麼是轉換率！？",
+                  "text": "什麼是轉換率！？",
                   "annotations": [
                     {
                       "type": "speech_metadata",
-                      "style": "意外驚訝；腦袋跟不上、困惑到脫口而出，『什麼』明顯上揚，喜劇式大反應。"
+                      "style": "意外驚訝；腦袋跟不上、困惑到脫口而出；一句到底不換氣、不停頓，『什麼』明顯上揚，句尾用力，喜劇式大反應。"
                     }
                   ]
                 }
@@ -1288,7 +1288,7 @@
           }
         }
       },
-      "fingerprint": "8075702db7d64e402b21",
+      "fingerprint": "6c1fbcaf0b5f191908fd",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -3980,19 +3980,19 @@
       "source_row": 24,
       "speaker": "a_pang",
       "source_text": "⋯⋯什麼是轉換率？",
-      "text": "[surprise] ⋯⋯什麼是轉換率！？",
+      "text": "[surprise] 什麼是轉換率！？",
       "emotion": "完全跟不上術語",
       "intensity": 0.8,
       "expression": "normal",
-      "direction": "先卡住一拍，再把不懂的地方脫口而出，問得非常認真卻很好笑。",
-      "delivery_style": "腦袋跟不上、困惑到脫口而出，『什麼』明顯上揚，喜劇式大反應。",
+      "direction": "一口氣問完，中間不要停頓，問得非常認真卻很好笑。",
+      "delivery_style": "腦袋跟不上、困惑到脫口而出；一句到底不換氣、不停頓，『什麼』明顯上揚，句尾用力，喜劇式大反應。",
       "pause_after_ms": 200,
       "order": 23,
       "character": "阿龐",
       "source_sprite": "",
-      "spoken_text": "⋯⋯什麼是轉換率！？",
-      "model_text": "⋯⋯什麼是轉換率！？",
-      "tts_text": "⋯⋯什麼是轉換率！？",
+      "spoken_text": "什麼是轉換率！？",
+      "model_text": "什麼是轉換率！？",
+      "tts_text": "什麼是轉換率！？",
       "segments": [
         {
           "type": "tag",
@@ -4001,7 +4001,7 @@
         },
         {
           "type": "text",
-          "text": " ⋯⋯什麼是轉換率！？"
+          "text": " 什麼是轉換率！？"
         }
       ],
       "mode": "tts",
@@ -4018,11 +4018,11 @@
       "gemini_content": [
         {
           "type": "text",
-          "text": "⋯⋯什麼是轉換率！？",
+          "text": "什麼是轉換率！？",
           "annotations": [
             {
               "type": "speech_metadata",
-              "style": "意外驚訝；腦袋跟不上、困惑到脫口而出，『什麼』明顯上揚，喜劇式大反應。"
+              "style": "意外驚訝；腦袋跟不上、困惑到脫口而出；一句到底不換氣、不停頓，『什麼』明顯上揚，句尾用力，喜劇式大反應。"
             }
           ]
         }
@@ -4040,11 +4040,11 @@
               "content": [
                 {
                   "type": "text",
-                  "text": "⋯⋯什麼是轉換率！？",
+                  "text": "什麼是轉換率！？",
                   "annotations": [
                     {
                       "type": "speech_metadata",
-                      "style": "意外驚訝；腦袋跟不上、困惑到脫口而出，『什麼』明顯上揚，喜劇式大反應。"
+                      "style": "意外驚訝；腦袋跟不上、困惑到脫口而出；一句到底不換氣、不停頓，『什麼』明顯上揚，句尾用力，喜劇式大反應。"
                     }
                   ]
                 }
@@ -4067,7 +4067,7 @@
           }
         }
       },
-      "fingerprint": "8075702db7d64e402b21",
+      "fingerprint": "6c1fbcaf0b5f191908fd",
       "utterance_id": "s1_023",
       "utterance_line_ids": [
         "s1_023"
@@ -4076,7 +4076,7 @@
       "utterance_size": 1,
       "utterance_emotion": "完全跟不上術語",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "⋯⋯什麼是轉換率！？",
+      "line_tts_text": "什麼是轉換率！？",
       "line_voice_settings": {}
     },
     {

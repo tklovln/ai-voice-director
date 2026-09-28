@@ -1,7 +1,7 @@
 ﻿utterance_id,角色,line_ids,情緒,分組理由,整段原文,TTS_input,模式
-s10_001,旁白,s10_001,平靜開場,單句或與相鄰句的情緒／角色不同。,虎面好好休息後，終於回到便利商店。,[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。,subtitle_only
-s10_002,阿龐,s10_002,期待被肯定,單句或與相鄰句的情緒／角色不同。,虎面哥你看，我現在終於可以……,[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...,subtitle_only
-s10_003,阿龐,s10_003,用力又得意,單句或與相鄰句的情緒／角色不同。,唔嗯……一次拿起兩箱飲料……,[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales],subtitle_only
+s10_001,旁白,s10_001,平靜開場,單句或與相鄰句的情緒／角色不同。,虎面好好休息後，終於回到便利商店。,虎面好好休息後，<short pause> 終於回到便利商店。,tts
+s10_002,阿龐,s10_002,期待被肯定,單句或與相鄰句的情緒／角色不同。,虎面哥你看，我現在終於可以……,虎面哥，你看！<short pause> 我現在終於可以...,tts
+s10_003,阿龐,s10_003,用力又得意,單句或與相鄰句的情緒／角色不同。,唔嗯……一次拿起兩箱飲料……,唔嗯...<short pause> 一次拿起，兩箱飲料... <exhales>,tts
 s10_u004_005,虎面,s10_004|s10_005,溫暖關懷,笑著提醒小心身體，再補充量力而為，都是同一段溫暖關心。,"哈哈哈，小心身體啊！
 凡事量力而為就好。","[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[warmly] 小心身體啊！
 [reassuring] 凡事...[short pause] 量力而為就好。",tts
@@ -14,22 +14,22 @@ s10_u008_010,虎面,s10_008|s10_009|s10_010,釋懷分享,從放下逞強，到�
 [reassuring] 這才是...[short pause] 每個人應該做的事。",tts
 s10_011,主角,s10_011,順勢追問,單句或與相鄰句的情緒／角色不同。,那你現在的人生位置是什麼？,[strong Taiwanese Mandarin accent] [curious] 那你現在的人生位置...[short pause] 是什麼？,subtitle_only
 s10_012,虎面,s10_012,準備宣言,單句或與相鄰句的情緒／角色不同。,那當然是——,[strong Taiwanese Mandarin accent] [confident] 那當然是——,tts
-s10_013,紙袋君,s10_013,靦腆求助,單句或與相鄰句的情緒／角色不同。,虎面，我總覺得我沒什麼二頭肌，看起來很不MAN……,[strong Taiwanese Mandarin accent] [hesitant] 虎面...[short pause] 我總覺得我沒什麼二頭肌，看起來很不MAN...,subtitle_only
+s10_013,紙袋君,s10_013,靦腆求助,單句或與相鄰句的情緒／角色不同。,虎面，我總覺得我沒什麼二頭肌，看起來很不MAN……,虎面，<short pause> 我總覺得我沒什麼二頭肌，看起來很不MAN...,tts
 s10_014,虎面,s10_014,親切答應,單句或與相鄰句的情緒／角色不同。,沒事，下班我教你怎麼練。,[strong Taiwanese Mandarin accent] [warmly] 沒事！[short pause] 下班，我教你怎麼練。,tts
 s10_u015_016,伯爵,s10_015|s10_016,鄭重請教,伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。,"虎面教練，在下意識到光喝番茄汁似乎營養不均衡。
-有什麼營養均衡的膳食可傳授給我嗎？","[strong Taiwanese Mandarin accent] [formal] 虎面教練，[short pause] 在下意識到...光喝番茄汁，似乎營養不均衡。
-[curious] 有什麼營養均衡的膳食，[short pause] 可傳授給我嗎？",subtitle_only
+有什麼營養均衡的膳食可傳授給我嗎？","虎面教練，<short pause> 在下意識到...光喝番茄汁，似乎營養不均衡。
+有什麼營養均衡的膳食，<short pause> 可傳授給我嗎？",tts
 s10_017,虎面,s10_017,爽快可靠,單句或與相鄰句的情緒／角色不同。,沒問題，等等告訴你。,[strong Taiwanese Mandarin accent] 沒問題，等等告訴你。,tts
 s10_018,主角,s10_018,笑著點破,單句或與相鄰句的情緒／角色不同。,喔〜看來虎面現在的位置，是認真傳授經驗吧〜,[strong Taiwanese Mandarin accent] [amused] 喔～[short pause] 看來虎面現在的位置，是認真傳授經驗吧～,subtitle_only
 s10_019,菲菲,s10_019,俏皮又欣慰,單句或與相鄰句的情緒／角色不同。,而且也不會過度燃燒自己了〜,[strong Taiwanese Mandarin accent] [mischievously] 而且...[short pause] 也不會過度燃燒自己了～[chuckles],tts
-s10_020,徒弟,s10_020,興奮呼喚,單句或與相鄰句的情緒／角色不同。,教練！！,[strong Taiwanese Mandarin accent] [excited] 教練！！,subtitle_only
+s10_020,徒弟,s10_020,興奮呼喚,單句或與相鄰句的情緒／角色不同。,教練！！,教練！！,tts
 s10_021,虎面,s10_021,意外驚喜,單句或與相鄰句的情緒／角色不同。,喔喔，你們怎麼突然來了？,[strong Taiwanese Mandarin accent] [surprised] 喔喔！？[short pause] 你們怎麼突然來了？,tts
-s10_022,徒弟,s10_022,迫不及待,單句或與相鄰句的情緒／角色不同。,要來跟你報告好消息！,[strong Taiwanese Mandarin accent] [excited] 要來跟你報告...[short pause] 好消息！,subtitle_only
-s10_023,年輕人,s10_023,喜悅報喜,單句或與相鄰句的情緒／角色不同。,我們都被選上成為摔角聯盟的儲備選手了！,[strong Taiwanese Mandarin accent] [excited] 我們都被選上...[short pause] 成為摔角聯盟的儲備選手了！,subtitle_only
+s10_022,徒弟,s10_022,迫不及待,單句或與相鄰句的情緒／角色不同。,要來跟你報告好消息！,要來根你報告...<short pause> 好消息！,tts
+s10_023,年輕人,s10_023,喜悅報喜,單句或與相鄰句的情緒／角色不同。,我們都被選上成為摔角聯盟的儲備選手了！,我們都被選上...<short pause> 成為摔角聯盟的儲備選手了！,tts
 s10_024,虎面,s10_024,為後輩驕傲,單句或與相鄰句的情緒／角色不同。,哈哈哈，幹得好啊你們！,[strong Taiwanese Mandarin accent] [laughs] 哈哈哈！[excited] 幹得好啊，你們！,tts
 s10_u025_027,年輕人,s10_025|s10_026|s10_027,感謝與傳承,年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。,"多謝教練平常的照顧和訓練！
 我們絕對不會忘記教練教導我們的話
-「在擂台上全力戰鬥、為觀眾帶來極具視覺張力的表演！」","[strong Taiwanese Mandarin accent] [grateful] 多謝教練，[short pause] 平常的照顧和訓練！
-[earnest] 我們絕對不會忘記，[short pause] 教練教導我們的話——
-[confident] 「在擂台上全力戰鬥！[short pause] 為觀眾帶來極具視覺張力的表演！」",subtitle_only
+「在擂台上全力戰鬥、為觀眾帶來極具視覺張力的表演！」","多謝教練，<short pause> 平常的照顧和訓練！
+我們絕對不會忘記，<short pause> 教練教導我們的話——
+「在擂台上全力戰鬥！<short pause> 為觀眾帶來極具視覺張力的表演！」",tts
 s10_028,虎面,s10_028,滿足的笑聲,單句或與相鄰句的情緒／角色不同。,沒錯，哈哈哈哈！,[strong Taiwanese Mandarin accent] [proud] 沒錯！[laughs] 哈哈哈哈！,tts
