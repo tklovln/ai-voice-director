@@ -84,6 +84,13 @@
       "url": "../story_paperbag_s1/"
     }
   },
+  "engines": [
+    {
+      "name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "label": "Eleven v3"
+    }
+  ],
   "utterances": [
     {
       "utterance_id": "s10_001",
@@ -412,9 +419,14 @@
       "utterance_emotion": "平靜開場",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_002",
@@ -447,9 +459,14 @@
       "utterance_emotion": "期待被肯定",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_003",
@@ -482,9 +499,14 @@
       "utterance_emotion": "用力又得意",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_004",
@@ -518,6 +540,10 @@
       "utterance_emotion": "溫暖關懷",
       "utterance_reason": "笑著提醒小心身體，再補充量力而為，都是同一段溫暖關心。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -609,7 +635,8 @@
           0.115
         ],
         "utterance_duration_s": 4.16
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_005",
@@ -643,6 +670,10 @@
       "utterance_emotion": "溫暖關懷",
       "utterance_reason": "笑著提醒小心身體，再補充量力而為，都是同一段溫暖關心。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -734,7 +765,8 @@
           0.003
         ],
         "utterance_duration_s": 4.16
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_006",
@@ -767,6 +799,10 @@
       "utterance_emotion": "好奇打趣",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -858,7 +894,8 @@
           0.054
         ],
         "utterance_duration_s": 3.936
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_007",
@@ -897,6 +934,10 @@
           "note": "「不了」是委婉拒絕，兩個『了』都念輕聲 le；原本模型讀成 liú／liǎo，ASR 聽成「不留不留」。加 IPA 後 ASR 聽成「不了不了」。"
         }
       ],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -988,7 +1029,8 @@
           0.004
         ],
         "utterance_duration_s": 2.24
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_008",
@@ -1023,6 +1065,10 @@
       "utterance_emotion": "釋懷分享",
       "utterance_reason": "從放下逞強，到分享休息與訓練的體悟，再收束結論，都是沉穩釋懷的同一段話。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "開頭增加語助詞『嗯』，表現想通後的釋懷；其餘字詞保留。",
       "tuning_note": "",
       "audio": {
@@ -1114,7 +1160,8 @@
           0.016
         ],
         "utterance_duration_s": 12.16
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_009",
@@ -1149,6 +1196,10 @@
       "utterance_emotion": "釋懷分享",
       "utterance_reason": "從放下逞強，到分享休息與訓練的體悟，再收束結論，都是沉穩釋懷的同一段話。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -1240,7 +1291,8 @@
           0.567
         ],
         "utterance_duration_s": 12.16
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_010",
@@ -1275,6 +1327,10 @@
       "utterance_emotion": "釋懷分享",
       "utterance_reason": "從放下逞強，到分享休息與訓練的體悟，再收束結論，都是沉穩釋懷的同一段話。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -1366,7 +1422,8 @@
           0.077
         ],
         "utterance_duration_s": 12.16
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_011",
@@ -1399,9 +1456,14 @@
       "utterance_emotion": "順勢追問",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_012",
@@ -1434,6 +1496,10 @@
       "utterance_emotion": "準備宣言",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -1525,7 +1591,8 @@
           0.01
         ],
         "utterance_duration_s": 1.355
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_013",
@@ -1558,9 +1625,14 @@
       "utterance_emotion": "靦腆求助",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_014",
@@ -1593,6 +1665,10 @@
       "utterance_emotion": "親切答應",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -1684,7 +1760,8 @@
           0.004
         ],
         "utterance_duration_s": 2.688
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_015",
@@ -1718,9 +1795,14 @@
       "utterance_emotion": "鄭重請教",
       "utterance_reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_016",
@@ -1754,9 +1836,14 @@
       "utterance_emotion": "鄭重請教",
       "utterance_reason": "伯爵先說明營養問題，隨即誠懇提問，維持同一種客氣認真的語氣。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_017",
@@ -1789,6 +1876,10 @@
       "utterance_emotion": "爽快可靠",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "這句反覆飄粵語腔（ASR 先後聽成「雷梦台」「没梦体」，台＝題的粵語 tai）。以 scripts/story_line_probe.py 掃了兩輪共 14 個候選：移除 [reassuring] 是最大的單一改善（CER 0.25→0.12，『沒』與『題』轉正），stability 0.85＋similarity_boost 1.0 讓聲音貼回 Tiger 基準，最後由 seed 17021 讓『問』也正確，CER 0.00。對『問』加 IPA 反而更糟（聽成「沒亂台」），逐字加空白也更糟。",
       "audio": {
@@ -1880,7 +1971,8 @@
           0.004
         ],
         "utterance_duration_s": 1.611
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_018",
@@ -1913,9 +2005,14 @@
       "utterance_emotion": "笑著點破",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_019",
@@ -1948,6 +2045,10 @@
       "utterance_emotion": "俏皮又欣慰",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -2039,7 +2140,8 @@
           0.009
         ],
         "utterance_duration_s": 4.096
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_020",
@@ -2072,9 +2174,14 @@
       "utterance_emotion": "興奮呼喚",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_021",
@@ -2107,6 +2214,10 @@
       "utterance_emotion": "意外驚喜",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -2198,7 +2309,8 @@
           0.503
         ],
         "utterance_duration_s": 2.133
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_022",
@@ -2231,9 +2343,14 @@
       "utterance_emotion": "迫不及待",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_023",
@@ -2266,9 +2383,14 @@
       "utterance_emotion": "喜悅報喜",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_024",
@@ -2301,6 +2423,10 @@
       "utterance_emotion": "為後輩驕傲",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -2392,7 +2518,8 @@
           0.035
         ],
         "utterance_duration_s": 2.709
-      }
+      },
+      "speech_styles": []
     },
     {
       "line_id": "s10_025",
@@ -2427,9 +2554,14 @@
       "utterance_emotion": "感謝與傳承",
       "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_026",
@@ -2464,9 +2596,14 @@
       "utterance_emotion": "感謝與傳承",
       "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_027",
@@ -2501,9 +2638,14 @@
       "utterance_emotion": "感謝與傳承",
       "utterance_reason": "年輕人真誠致謝，接著以承諾與口號回應教練，同屬熱切而堅定的傳承宣言。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
-      "audio": null
+      "audio": null,
+      "speech_styles": []
     },
     {
       "line_id": "s10_028",
@@ -2536,6 +2678,10 @@
       "utterance_emotion": "滿足的笑聲",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "pronunciations": [],
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "normalizations": [],
       "text_edit_note": "",
       "tuning_note": "",
       "audio": {
@@ -2627,7 +2773,8 @@
           0.028
         ],
         "utterance_duration_s": 1.824
-      }
+      },
+      "speech_styles": []
     }
   ],
   "tts_count": 14,

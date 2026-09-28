@@ -1,4 +1,4 @@
-﻿line_id,劇本標題,角色,原文,口語稿,情緒稿,ElevenLabs_input,情緒,強度,導演筆記,改寫註記,聲線,模式,句後停頓_ms,utterance_id,同段句子,分組理由
+﻿line_id,劇本標題,角色,原文,口語稿,情緒稿,TTS_input,情緒,強度,導演筆記,改寫註記,聲線,模式,句後停頓_ms,utterance_id,同段句子,分組理由
 s10_001,S10 傳奇片刻：傳承,旁白,虎面好好休息後，終於回到便利商店。,虎面好好休息後， 終於回到便利商店。,[calm] 虎面好好休息後，[pause] 終於回到便利商店。,[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。,平靜開場,0.25,敘事帶著安心感，讓觀眾知道虎面已經休息好了。,,,subtitle_only,500,s10_001,s10_001,單句或與相鄰句的情緒／角色不同。
 s10_002,S10 傳奇片刻：傳承,阿龐,虎面哥你看，我現在終於可以……,虎面哥，你看！ 我現在終於可以...,[excited] 虎面哥，你看！[pause] 我現在終於可以...,[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...,期待被肯定,0.65,先興奮叫住虎面，再用未完成的句尾銜接搬貨動作。,,,subtitle_only,150,s10_002,s10_002,單句或與相鄰句的情緒／角色不同。
 s10_003,S10 傳奇片刻：傳承,阿龐,唔嗯……一次拿起兩箱飲料……,唔嗯... 一次拿起，兩箱飲料...,[strained] 唔嗯...[pause] 一次拿起，兩箱飲料... [exhales],[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales],用力又得意,0.6,搬重物時分兩口氣說完，句尾吐氣，不演成痛苦尖叫。,,,subtitle_only,350,s10_003,s10_003,單句或與相鄰句的情緒／角色不同。

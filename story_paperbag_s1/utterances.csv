@@ -1,37 +1,37 @@
-﻿utterance_id,角色,line_ids,情緒,分組理由,整段原文,ElevenLabs_input,模式
+﻿utterance_id,角色,line_ids,情緒,分組理由,整段原文,TTS_input,模式
 s1_001,阿龐,s1_001,不安通報,單句或與相鄰句的情緒／角色不同。,菲菲，店門口外一直站著一個人，在那邊盯著我們看耶……,[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...,subtitle_only
 s1_002,菲菲,s1_002,期待客人,單句或與相鄰句的情緒／角色不同。,是客人嗎？那快請他進來啊！,[strong Taiwanese Mandarin accent] [curious] 是客人嗎？[short pause] [excited] 那快請他進來啊！,tts
 s1_003,阿龐,s1_003,難以形容,單句或與相鄰句的情緒／角色不同。,應該不是，因為他……頭戴著一個紙袋。,[strong Taiwanese Mandarin accent] [hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。,subtitle_only
 s1_004,菲菲,s1_004,驚疑,單句或與相鄰句的情緒／角色不同。,頭戴紙袋！？該不會是——,[strong Taiwanese Mandarin accent] 投戴紙袋！？[short pause] 該不會是——,tts
-s1_005,紙袋君,s1_005,平靜打斷,單句或與相鄰句的情緒／角色不同。,——不好意思。,[strong Taiwanese Mandarin accent] [calm] ——不好意思。,subtitle_only
+s1_005,紙袋君,s1_005,平靜打斷,單句或與相鄰句的情緒／角色不同。,——不好意思。,——不好意思。,tts
 s1_006,阿龐,s1_006,驚叫,單句或與相鄰句的情緒／角色不同。,他進來啦！！！,[strong Taiwanese Mandarin accent] [excited] 他進來啦！！！,subtitle_only
 s1_u007_008,菲菲,s1_007|s1_008,慌張求饒,先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。,"那個先生，我們這間店很窮啦。
 你你你你要搶劫的話，看要不要考慮其他便利商店……","[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。
 [stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",tts
-s1_009,紙袋君,s1_009,澄清誤會,單句或與相鄰句的情緒／角色不同。,……不好意思，我是來應徵的。,[strong Taiwanese Mandarin accent] [calm] ...不好意思，[short pause] 我是來應徵的。,subtitle_only
+s1_009,紙袋君,s1_009,澄清誤會,單句或與相鄰句的情緒／角色不同。,……不好意思，我是來應徵的。,...不好意思，<short pause> 我是來應徵的。,tts
 s1_u010_011,菲菲,s1_010|s1_011,困惑追問,確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。,"不是搶劫？
 應徵的話，你幹嘛戴著紙袋？","[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？
 [curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",tts
-s1_012,紙袋君,s1_012,含糊帶過,單句或與相鄰句的情緒／角色不同。,呃……這樣臉不會弄髒，比較方便。,[strong Taiwanese Mandarin accent] [hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。,subtitle_only
+s1_012,紙袋君,s1_012,含糊帶過,單句或與相鄰句的情緒／角色不同。,呃……這樣臉不會弄髒，比較方便。,呃...<short pause> 這樣臉不會弄髒，比較方便。,tts
 s1_013,菲菲,s1_013,無言沉默,單句或與相鄰句的情緒／角色不同。,………,[strong Taiwanese Mandarin accent] ………,subtitle_only
 s1_014,菲菲,s1_014,無力吐槽,單句或與相鄰句的情緒／角色不同。,不，你這理由實在是太可疑了……,[strong Taiwanese Mandarin accent] [amused] 不，[short pause] 你這理由實在是太可疑了...,tts
-s1_015,紙袋君,s1_015,平靜讓步,單句或與相鄰句的情緒／角色不同。,不然我只要一半薪水就好。,[strong Taiwanese Mandarin accent] [calm] 不然...[short pause] 我只要一半薪水就好。,subtitle_only
+s1_015,紙袋君,s1_015,平靜讓步,單句或與相鄰句的情緒／角色不同。,不然我只要一半薪水就好。,不然...<short pause> 我只要一半薪水就好。,tts
 s1_016,菲菲,s1_016,秒變熱情,單句或與相鄰句的情緒／角色不同。,好的，歡迎你加入我們這個大家庭。,[strong Taiwanese Mandarin accent] [excited] 好的！[short pause] [warmly] 歡迎你加入我們這個大家庭。,tts
-s1_017,紙袋君,s1_017,簡短道謝,單句或與相鄰句的情緒／角色不同。,謝謝妳。,[strong Taiwanese Mandarin accent] [warmly] 謝謝妳。,subtitle_only
+s1_017,紙袋君,s1_017,簡短道謝,單句或與相鄰句的情緒／角色不同。,謝謝妳。,謝謝妳。,tts
 s1_018,阿龐,s1_018,好心提醒,單句或與相鄰句的情緒／角色不同。,大哥你想清楚，我們本來的薪水就不高了耶。,[strong Taiwanese Mandarin accent] [hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。,subtitle_only
-s1_019,紙袋君,s1_019,自報稱呼,單句或與相鄰句的情緒／角色不同。,叫我紙袋君就可以了，所以是立刻上班嗎？,[strong Taiwanese Mandarin accent] [calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？,subtitle_only
+s1_019,紙袋君,s1_019,自報稱呼,單句或與相鄰句的情緒／角色不同。,叫我紙袋君就可以了，所以是立刻上班嗎？,叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？,tts
 s1_020,菲菲,s1_020,興頭上追問,單句或與相鄰句的情緒／角色不同。,可以當然最好了，你的專長是什麼？,[strong Taiwanese Mandarin accent] [excited] 可以當然最好了！[short pause] [curious] 你的專長是什麼？,tts
 s1_u021_022,紙袋君,s1_021|s1_022,含糊到舉例,先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。,"唔嗯……很難仔細說明。
-舉例來說，照那個貨架的擺法，商品的轉換率會差 12%。","[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。
-[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",subtitle_only
+舉例來說，照那個貨架的擺法，商品的轉換率會差 12%。","唔嗯...<short pause> 很難仔細說明。
+舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",tts
 s1_023,阿龐,s1_023,跟不上,單句或與相鄰句的情緒／角色不同。,⋯⋯什麼是轉換率？,[strong Taiwanese Mandarin accent] [curious] ⋯⋯什麼是轉換率？,subtitle_only
 s1_u024_027,紙袋君,s1_024|s1_025|s1_026|s1_027,專業簡報,解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。,"就是每天來店的顧客轉化成消費的比率。
 還有建議降低女性用品貨架第二層高度大概 5 mm左右。
 這樣會與消費族群女性顧客的平均視線高度對齊。
-會顯得比較親近無距離，推估可以提高8%的轉換率。","[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。
-[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。
-[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。
-[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",subtitle_only
+會顯得比較親近無距離，推估可以提高8%的轉換率。","就是每天來店的顧客，<short pause> 轉化成消費的比率。
+還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。
+這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。
+會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",tts
 s1_u028_029,阿龐,s1_028|s1_029,被術語淹沒,先沉默，再向菲菲求救，是同一個聽不懂的反應。,"………
 菲菲，妳聽得懂他在說什麼嗎？","[strong Taiwanese Mandarin accent] ………
 [hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",subtitle_only

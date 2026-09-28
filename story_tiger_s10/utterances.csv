@@ -1,4 +1,4 @@
-﻿utterance_id,角色,line_ids,情緒,分組理由,整段原文,ElevenLabs_input,模式
+﻿utterance_id,角色,line_ids,情緒,分組理由,整段原文,TTS_input,模式
 s10_001,旁白,s10_001,平靜開場,單句或與相鄰句的情緒／角色不同。,虎面好好休息後，終於回到便利商店。,[strong Taiwanese Mandarin accent] [calm] 虎面好好休息後，[short pause] 終於回到便利商店。,subtitle_only
 s10_002,阿龐,s10_002,期待被肯定,單句或與相鄰句的情緒／角色不同。,虎面哥你看，我現在終於可以……,[strong Taiwanese Mandarin accent] [excited] 虎面哥，你看！[short pause] 我現在終於可以...,subtitle_only
 s10_003,阿龐,s10_003,用力又得意,單句或與相鄰句的情緒／角色不同。,唔嗯……一次拿起兩箱飲料……,[strong Taiwanese Mandarin accent] [strained] 唔嗯...[short pause] 一次拿起，兩箱飲料... [exhales],subtitle_only

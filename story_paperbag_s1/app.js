@@ -19,8 +19,8 @@ const formatTime = (seconds) => `${Math.floor(seconds / 60)}:${String(Math.floor
 
 function textWithTags(element, text) {
   element.replaceChildren();
-  for (const part of text.split(/(\[[^\]]+\])/g)) {
-    if (part.startsWith("[") && part.endsWith("]")) {
+  for (const part of text.split(/(\[[^\]]+\]|<[^>]+>)/g)) {
+    if ((part.startsWith("[") && part.endsWith("]")) || (part.startsWith("<") && part.endsWith(">"))) {
       const tag = document.createElement("span");
       tag.className = "audio-tag";
       tag.textContent = part;
@@ -118,8 +118,13 @@ function renderSelected() {
   $("direction-note").textContent = current.direction;
   $("voice-name").textContent = current.voice_name ?? "字幕串場";
   $("voice-status").textContent = current.audio
-    ? `Eleven v3 · ${current.utterance_size > 1 ? `${current.utterance_size} 句同次生成` : "單句生成"}`
+    ? `${current.engine_label} · ${current.utterance_size > 1 ? `${current.utterance_size} 句同次生成` : "單句生成"}`
     : "已備妥情緒稿 · 按閱讀時間接續";
+  $("engine-label").textContent = current.engine_label;
+  $("speech-style").hidden = !current.speech_styles.length;
+  $("speech-style").textContent = `speech_metadata.style：${current.speech_styles.join(" → ")}`;
+  $("voice-preview").hidden = !actor().voice_preview;
+  if (actor().voice_preview) $("voice-preview").href = actor().voice_preview;
   $("utterance-note").textContent = current.utterance_size > 1
     ? `${current.utterance_line_ids.map(id => Number(id.split("_").at(-1))).join("–")} 同段 · ${current.utterance_emotion}：${current.utterance_reason}` : "";
   $("utterance-note").hidden = current.utterance_size < 2;
@@ -130,8 +135,11 @@ function renderSelected() {
   $("edit-note").hidden = !current.text_edit_note;
   $("edit-note").textContent = current.text_edit_note;
   const notes = [
-    ...current.pronunciations.map(rule => `讀音 ${rule.word} → /${rule.ipa}/：${rule.note}`),
+    ...current.pronunciations.map(rule =>
+      `讀音 ${rule.word} → ${rule.homophone ? `同音字「${rule.homophone}」` : `/${rule.ipa}/`}：${rule.note}`),
     ...(current.tuning_note ? [`調參：${current.tuning_note}`] : []),
+    ...current.normalizations.filter(rule => current.source_text.includes(rule.source))
+      .map(rule => `口語化 ${rule.source} → ${rule.spoken}：${rule.note}`),
   ];
   $("tuning-notes").replaceChildren(...notes.map(text => {
     const item = document.createElement("li");
@@ -140,7 +148,9 @@ function renderSelected() {
   }));
   $("tuning-notes").hidden = !notes.length;
   $("request-settings").textContent = JSON.stringify({
-    mode: current.mode, voice: current.voice_name, voice_settings: current.voice_settings,
+    mode: current.mode, provider: current.provider_name, model_id: current.model_id,
+    voice: current.voice_name, voice_settings: current.voice_settings,
+    speech_styles: current.speech_styles,
     utterance_id: current.utterance_id, line_ids: current.utterance_line_ids,
     pause_after_ms: current.pause_after_ms,
     ...(current.audio ? { start_s: current.audio.start_s, end_s: current.audio.end_s,
@@ -426,6 +436,8 @@ $("scene-description").textContent = scene.description;
 $("total-count").textContent = scene.lines.length;
 $("voiced-count").textContent = scene.tts_count;
 $("utterance-count").textContent = scene.tts_request_count;
+$("engine-summary").textContent = scene.engines.map(engine => engine.label.replace(" Flash TTS", "")).join(" + ");
+$("voice-preview").addEventListener("click", pause);
 for (const [slot, speaker] of LEADS) {
   const member = scene.cast[speaker];
   $(`${slot}-portrait`).alt = `${member.name}角色立繪`;

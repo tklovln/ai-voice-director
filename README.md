@@ -25,7 +25,7 @@ Settings → Pages → Source 選 `main` 分支的根目錄即可。`.nojekyll` 
 | `/` | IndexTTS-2.0 語音克隆 ＋ 情緒控制試聽（8 角色） |
 | `/convenientstore_m_poc/` | 便利商店 NPC 選角（菲菲／紙袋君／虎面，各 1 基準音 ＋ 喜怒哀，三引擎可切） |
 | `/story_tiger_s10/` | 虎面支線 S10 整幕對白（28 句劇本，14 句配音走 11 段 TTS，逐句字幕與情緒稿對照） |
-| `/story_paperbag_s1/` | 紙袋君支線 S1 整幕對白（31 句劇本，只有菲菲配音 11 句走 8 段 TTS） |
+| `/story_paperbag_s1/` | 紙袋君支線 S1（31 句；菲菲 ElevenLabs ＋ 紙袋君 Gemini 3.8，共 23 句配音／16 段 TTS） |
 
 `convenientstore_m_poc/` 由 emotts repo 的 `scripts/build_casting_page.py` 產生：把 studio 的
 選角頁靜態化，state 內嵌在 HTML、音檔與立繪複製到 `assets/`，並移除生成按鈕——公開頁面不該
@@ -106,25 +106,30 @@ IndexTTS **沒有口音提示詞**，口音只由 `spk_audio_prompt` 決定（�
 | 頁面 | 劇本 | 配音 |
 |---|---|---|
 | `story_tiger_s10/` | 虎面 S10〈傳奇片刻：傳承〉28 句 | 虎面 `Tiger` 12 句 ＋ 菲菲 `fei_fei_final` 2 句，走 11 段 TTS |
-| `story_paperbag_s1/` | 紙袋君 S1〈頭戴紙袋的應徵者〉31 句 | 只有菲菲 `fei_fei_final` 11 句，走 8 段 TTS |
+| `story_paperbag_s1/` | 紙袋君 S1〈頭戴紙袋的應徵者〉31 句 | 菲菲 `fei_fei_final` 11 句／8 段 ＋ Gemini 3.8 紙袋君 12 句／8 段 |
 
 沒有指定聲線的角色保留完整台詞，以字幕串場，情緒稿一樣備妥。
 
 | 這些頁面能回答的問題 | 頁面上的做法 |
 |---|---|
 | 一整幕的音色是否穩定 | 相鄰、同角色且情緒接近的台詞合併成一次 TTS，而不是逐句各生一次 |
-| 一個角色的情緒幅度夠不夠 | 紙袋君 S1 全程只有菲菲：期待 → 驚疑 → 慌張 → 吐槽 → 秒答應 → 佩服 |
-| 情緒指示到底送了什麼進模型 | 原文／情緒稿字幕切換，右欄顯示逐字的 Eleven v3 輸入與句中 audio tags |
-| 節奏是不是被後處理弄壞 | 同段播放整份母帶，字幕靠 provider 回傳的字元時間戳切換，不重新載入音檔 |
+| 一個角色的情緒幅度夠不夠 | 菲菲：期待 → 驚疑 → 慌張 → 吐槽 → 秒答應 → 佩服；紙袋君用沉穩男聲回應 |
+| 情緒指示到底送了什麼進模型 | 原文／情緒稿字幕切換，右欄顯示各引擎的實際文字、語氣 metadata 與句中 tags |
+| 節奏是不是被後處理弄壞 | 同段播放整份母帶，以引擎字元時間戳或 Whisper 詞級時間對齊切字幕 |
 
 逐句試聽用 **只播本句**，整段用 **只播本段**；連續播放會依劇情順序走完整幕，
 字幕按閱讀時間接續。`script.json` / `script.csv` / `utterances.csv` 可直接從頁面下載。
 
-音檔同樣是 24 kHz WAV 母帶（每頁約 3.8 MB）。合併段落只做一次 −16 LUFS 正規化，
+音檔使用 24 kHz WAV 母帶。合併段落只做一次 −16 LUFS 正規化，
 所以段落內句子之間的強弱關係是生成時的原樣；逐句下載檔是同一份母帶的原樣切片。
 兩頁共用同一份模板與同一支瀏覽器檢查，舞台角色與頁面標題由各自的 `scene.json` 指定。
 做法與重跑方式見 emotts repo 的 `story/tts/tiger_s10/README.md`（共用說明）與
 `story/tts/paperbag_s1/README.md`（本幕差異與沉默空拍的處理）。
+
+Gemini 紙袋君先依角色表設計固定聲線，之後的 8 段 TTS 共用同一個 voice ID。
+原情緒稿在 adapter 中轉成 `speech_metadata.style` 與 `<short pause>` 等瞬時標記；
+頁面可查看各句的實際模型輸入，並開啟紙袋君的聲線設計樣本。
+完整接法見 emotts 的 `story/tts/paperbag_s1/README_GEMINI.md`。
 
 ## 內容
 

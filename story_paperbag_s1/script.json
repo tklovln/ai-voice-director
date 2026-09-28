@@ -6,7 +6,7 @@
   "display_title": "頭戴紙袋的應徵者",
   "description": "門外站著一個頭戴紙袋的人。菲菲以為遇上搶劫，結果對方是來應徵的。",
   "director_note": "一場誤會喜劇：從好奇、驚疑、慌張求饒，轉為困惑追問與吐槽，聽到「一半薪水」立刻翻臉答應，最後對聽不懂的專業術語心服口服。慌張要像真的害怕，但整場是好笑的，不是驚悚的。",
-  "casting_note": "本幕只有菲菲使用指定 ElevenLabs 聲線（fei_fei_final）；紙袋君與阿龐保留完整台詞，以字幕串場。",
+  "casting_note": "菲菲使用 ElevenLabs fei_fei_final；紙袋君使用依人物設定建立的 Gemini 3.8 固定聲線。阿龐與菲菲的沉默空拍以字幕串場。",
   "source_csv": "story/clean/紙袋君_鍾哥_scenes/01_S1_XXX.csv",
   "authoring_script": "story/tts/paperbag_s1/scene.json",
   "source_fingerprint": "d15bb02fc684b4c84dea",
@@ -34,12 +34,20 @@
       "name": "紙袋君",
       "character_id": "clk_0003",
       "color": "#cebc90",
-      "voice_id": null,
+      "voice_id": "voice_jnco0z1ub8o8",
+      "provider": {
+        "name": "gemini",
+        "model_id": "gemini-3.8-flash-tts",
+        "voice_config": "story/tts/paperbag_s1/gemini_voice.json"
+      },
       "portraits": {
         "normal": "data/figure/CLK_0003/normal_512.png",
         "happy": "data/figure/CLK_0003/happy_512.png",
         "sad": "data/figure/CLK_0003/sad_512.png"
-      }
+      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_type": "prompted",
+      "voice_preview": "out/pipeline_story_paperbag_s1/voices/clk_0003/preview.wav"
     },
     "a_pang": {
       "name": "阿龐",
@@ -185,7 +193,9 @@
         "speed": 1.0
       },
       "request": null,
-      "fingerprint": null
+      "fingerprint": null,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_002",
@@ -226,7 +236,9 @@
           "seed": 912
         }
       },
-      "fingerprint": "023b5709960ef1a7be27"
+      "fingerprint": "023b5709960ef1a7be27",
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_003",
@@ -250,7 +262,9 @@
         "speed": 1.0
       },
       "request": null,
-      "fingerprint": null
+      "fingerprint": null,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_004",
@@ -291,7 +305,9 @@
           "seed": 914
         }
       },
-      "fingerprint": "debe1dbb4cd71fdb5f40"
+      "fingerprint": "debe1dbb4cd71fdb5f40",
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_005",
@@ -300,22 +316,58 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "平靜打斷",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "——不好意思。",
       "spoken_text": "——不好意思。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] ——不好意思。",
+      "tts_text": "——不好意思。",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "——不好意思。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 915
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null
+      "fingerprint": "53453d42be0d2c62a8dd",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_006",
@@ -339,7 +391,9 @@
         "speed": 1.0
       },
       "request": null,
-      "fingerprint": null
+      "fingerprint": null,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_u007_008",
@@ -392,7 +446,9 @@
           "seed": 917
         }
       },
-      "fingerprint": "6d99fbfd19788a0c5ef9"
+      "fingerprint": "6d99fbfd19788a0c5ef9",
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_009",
@@ -401,22 +457,58 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "澄清誤會",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "……不好意思，我是來應徵的。",
       "spoken_text": "...不好意思， 我是來應徵的。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] ...不好意思，[short pause] 我是來應徵的。",
+      "tts_text": "...不好意思，<short pause> 我是來應徵的。",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "...不好意思，<short pause> 我是來應徵的。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 919
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null
+      "fingerprint": "7755f1f1a1df39169410",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_u010_011",
@@ -469,7 +561,9 @@
           "seed": 920
         }
       },
-      "fingerprint": "1bbe5dcf95c5cce1673d"
+      "fingerprint": "1bbe5dcf95c5cce1673d",
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_012",
@@ -478,22 +572,58 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "含糊帶過",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "呃……這樣臉不會弄髒，比較方便。",
       "spoken_text": "呃... 這樣臉不會弄髒，比較方便。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。",
+      "tts_text": "呃...<short pause> 這樣臉不會弄髒，比較方便。",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "呃...<short pause> 這樣臉不會弄髒，比較方便。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "略帶遲疑"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 922
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null
+      "fingerprint": "fd53ebf960caa4e8715c",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_013",
@@ -517,7 +647,9 @@
         "speed": 1.0
       },
       "request": null,
-      "fingerprint": null
+      "fingerprint": null,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_014",
@@ -558,7 +690,9 @@
           "seed": 924
         }
       },
-      "fingerprint": "82f6f4b6b50d67c5eb64"
+      "fingerprint": "82f6f4b6b50d67c5eb64",
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_015",
@@ -567,22 +701,58 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "平靜讓步",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "不然我只要一半薪水就好。",
       "spoken_text": "不然... 我只要一半薪水就好。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 不然...[short pause] 我只要一半薪水就好。",
+      "tts_text": "不然...<short pause> 我只要一半薪水就好。",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "不然...<short pause> 我只要一半薪水就好。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 925
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null
+      "fingerprint": "13a0984db4d9216405f0",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_016",
@@ -623,7 +793,9 @@
           "seed": 926
         }
       },
-      "fingerprint": "c20a47ce984e00e75fa9"
+      "fingerprint": "c20a47ce984e00e75fa9",
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_017",
@@ -632,22 +804,58 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "簡短道謝",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "謝謝妳。",
       "spoken_text": "謝謝妳。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [warmly] 謝謝妳。",
+      "tts_text": "謝謝妳。",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "謝謝妳。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "溫暖親切"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 927
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null
+      "fingerprint": "aa72b8a68916a79e4e35",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_018",
@@ -671,7 +879,9 @@
         "speed": 1.0
       },
       "request": null,
-      "fingerprint": null
+      "fingerprint": null,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_019",
@@ -680,22 +890,58 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "自報稱呼",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "叫我紙袋君就可以了，所以是立刻上班嗎？",
       "spoken_text": "叫我紙袋君就可以了， 所以...是立刻上班嗎？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？",
+      "tts_text": "叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 929
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null
+      "fingerprint": "d0a1ceb45f22b571221b",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_020",
@@ -736,7 +982,9 @@
           "seed": 930
         }
       },
-      "fingerprint": "491329caa461d0f72fe7"
+      "fingerprint": "491329caa461d0f72fe7",
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_u021_022",
@@ -746,33 +994,79 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "含糊到舉例",
       "reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。",
       "source_text": "唔嗯……很難仔細說明。\n舉例來說，照那個貨架的擺法，商品的轉換率會差 12%。",
       "spoken_text": "唔嗯... 很難仔細說明。\n舉例來說， 照那個貨架的擺法，商品的轉換率會差 12%。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。\n[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "tts_text": "唔嗯...<short pause> 很難仔細說明。\n舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
       "line_spans": [
         {
           "line_id": "s1_021",
-          "start_char": 35,
-          "end_char": 74
+          "start_char": 0,
+          "end_char": 26
         },
         {
           "line_id": "s1_022",
-          "start_char": 75,
-          "end_char": 128
+          "start_char": 27,
+          "end_char": 70
         }
       ],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "唔嗯...<short pause> 很難仔細說明。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "沉穩思考"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 931
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null
+      "fingerprint": "5175ec1cb518806c3004",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_023",
@@ -796,7 +1090,9 @@
         "speed": 1.0
       },
       "request": null,
-      "fingerprint": null
+      "fingerprint": null,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_u024_027",
@@ -808,43 +1104,109 @@
       ],
       "speaker": "paper_bag",
       "character": "紙袋君",
-      "mode": "subtitle_only",
+      "mode": "tts",
       "emotion": "專業簡報",
       "reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
       "source_text": "就是每天來店的顧客轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度大概 5 mm左右。\n這樣會與消費族群女性顧客的平均視線高度對齊。\n會顯得比較親近無距離，推估可以提高8%的轉換率。",
       "spoken_text": "就是每天來店的顧客， 轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度， 大概 5 mm左右。\n這樣會與消費族群女性顧客的... 平均視線高度對齊。\n會顯得比較親近無距離， 推估可以提高8%的轉換率。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "tts_text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。\n這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。\n會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
       "line_spans": [
         {
           "line_id": "s1_024",
-          "start_char": 35,
-          "end_char": 75
+          "start_char": 0,
+          "end_char": 33
         },
         {
           "line_id": "s1_025",
-          "start_char": 76,
-          "end_char": 130
+          "start_char": 34,
+          "end_char": 75
         },
         {
           "line_id": "s1_026",
-          "start_char": 131,
-          "end_char": 177
+          "start_char": 76,
+          "end_char": 115
         },
         {
           "line_id": "s1_027",
-          "start_char": 178,
-          "end_char": 228
+          "start_char": 116,
+          "end_char": 156
         }
       ],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 934
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null
+      "fingerprint": "1a0bcc9b0fe6461be42b",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_u028_029",
@@ -880,7 +1242,9 @@
         "speed": 1.0
       },
       "request": null,
-      "fingerprint": null
+      "fingerprint": null,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     },
     {
       "utterance_id": "s1_u030_031",
@@ -933,7 +1297,9 @@
           "seed": 300322
         }
       },
-      "fingerprint": "176d78910138b6162a5f"
+      "fingerprint": "176d78910138b6162a5f",
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3"
     }
   ],
   "lines": [
@@ -985,6 +1351,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 3385,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 911,
+      "gemini_content": [],
+      "normalizations": [],
       "request": null,
       "fingerprint": null,
       "utterance_id": "s1_001",
@@ -1058,6 +1430,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 912,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": {
         "method": "POST",
@@ -1141,6 +1519,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 913,
+      "gemini_content": [],
+      "normalizations": [],
       "request": null,
       "fingerprint": null,
       "utterance_id": "s1_003",
@@ -1208,6 +1592,12 @@
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 914,
+      "gemini_content": [],
+      "normalizations": [],
       "request": {
         "method": "POST",
         "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv",
@@ -1257,8 +1647,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "——不好意思。",
-      "model_text": "[calm] ——不好意思。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] ——不好意思。",
+      "model_text": "——不好意思。",
+      "tts_text": "——不好意思。",
       "segments": [
         {
           "type": "tag",
@@ -1270,19 +1660,86 @@
           "text": " ——不好意思。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "request": null,
-      "fingerprint": null,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 915,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "——不好意思。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "平靜自然"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "——不好意思。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 915
+          }
+        }
+      },
+      "fingerprint": "53453d42be0d2c62a8dd",
       "utterance_id": "s1_005",
       "utterance_line_ids": [
         "s1_005"
@@ -1291,12 +1748,8 @@
       "utterance_size": 1,
       "utterance_emotion": "平靜打斷",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] ——不好意思。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "——不好意思。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_006",
@@ -1337,6 +1790,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 916,
+      "gemini_content": [],
+      "normalizations": [],
       "request": null,
       "fingerprint": null,
       "utterance_id": "s1_006",
@@ -1401,6 +1860,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 917,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": {
         "method": "POST",
@@ -1486,6 +1951,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 3231,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 918,
+      "gemini_content": [],
+      "normalizations": [],
       "request": {
         "method": "POST",
         "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
@@ -1536,8 +2007,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "...不好意思， 我是來應徵的。",
-      "model_text": "[calm] ...不好意思，[short pause] 我是來應徵的。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] ...不好意思，[short pause] 我是來應徵的。",
+      "model_text": "...不好意思，<short pause> 我是來應徵的。",
+      "tts_text": "...不好意思，<short pause> 我是來應徵的。",
       "segments": [
         {
           "type": "tag",
@@ -1558,19 +2029,86 @@
           "text": " 我是來應徵的。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "request": null,
-      "fingerprint": null,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 919,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "...不好意思，<short pause> 我是來應徵的。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "平靜自然"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "...不好意思，<short pause> 我是來應徵的。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 919
+          }
+        }
+      },
+      "fingerprint": "7755f1f1a1df39169410",
       "utterance_id": "s1_009",
       "utterance_line_ids": [
         "s1_009"
@@ -1579,12 +2117,8 @@
       "utterance_size": 1,
       "utterance_emotion": "澄清誤會",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] ...不好意思，[short pause] 我是來應徵的。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "...不好意思，<short pause> 我是來應徵的。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_010",
@@ -1624,6 +2158,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 920,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": {
         "method": "POST",
@@ -1714,6 +2254,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 921,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": {
         "method": "POST",
@@ -1765,8 +2311,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "呃... 這樣臉不會弄髒，比較方便。",
-      "model_text": "[hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。",
+      "model_text": "呃...<short pause> 這樣臉不會弄髒，比較方便。",
+      "tts_text": "呃...<short pause> 這樣臉不會弄髒，比較方便。",
       "segments": [
         {
           "type": "tag",
@@ -1787,19 +2333,86 @@
           "text": " 這樣臉不會弄髒，比較方便。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "request": null,
-      "fingerprint": null,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 922,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "呃...<short pause> 這樣臉不會弄髒，比較方便。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "略帶遲疑"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "呃...<short pause> 這樣臉不會弄髒，比較方便。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "略帶遲疑"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 922
+          }
+        }
+      },
+      "fingerprint": "fd53ebf960caa4e8715c",
       "utterance_id": "s1_012",
       "utterance_line_ids": [
         "s1_012"
@@ -1808,12 +2421,8 @@
       "utterance_size": 1,
       "utterance_emotion": "含糊帶過",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 呃...[short pause] 這樣臉不會弄髒，比較方便。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "呃...<short pause> 這樣臉不會弄髒，比較方便。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_013",
@@ -1850,6 +2459,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 923,
+      "gemini_content": [],
+      "normalizations": [],
       "request": null,
       "fingerprint": null,
       "utterance_id": "s1_013",
@@ -1914,6 +2529,12 @@
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 924,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": {
         "method": "POST",
@@ -1964,8 +2585,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "不然... 我只要一半薪水就好。",
-      "model_text": "[calm] 不然...[short pause] 我只要一半薪水就好。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 不然...[short pause] 我只要一半薪水就好。",
+      "model_text": "不然...<short pause> 我只要一半薪水就好。",
+      "tts_text": "不然...<short pause> 我只要一半薪水就好。",
       "segments": [
         {
           "type": "tag",
@@ -1986,19 +2607,86 @@
           "text": " 我只要一半薪水就好。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "request": null,
-      "fingerprint": null,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 925,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "不然...<short pause> 我只要一半薪水就好。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "平靜自然"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "不然...<short pause> 我只要一半薪水就好。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 925
+          }
+        }
+      },
+      "fingerprint": "13a0984db4d9216405f0",
       "utterance_id": "s1_015",
       "utterance_line_ids": [
         "s1_015"
@@ -2007,12 +2695,8 @@
       "utterance_size": 1,
       "utterance_emotion": "平靜讓步",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 不然...[short pause] 我只要一半薪水就好。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "不然...<short pause> 我只要一半薪水就好。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_016",
@@ -2070,6 +2754,12 @@
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 926,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": {
         "method": "POST",
@@ -2120,8 +2810,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "謝謝妳。",
-      "model_text": "[warmly] 謝謝妳。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [warmly] 謝謝妳。",
+      "model_text": "謝謝妳。",
+      "tts_text": "謝謝妳。",
       "segments": [
         {
           "type": "tag",
@@ -2133,19 +2823,86 @@
           "text": " 謝謝妳。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "request": null,
-      "fingerprint": null,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 927,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "謝謝妳。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "溫暖親切"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "謝謝妳。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "溫暖親切"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 927
+          }
+        }
+      },
+      "fingerprint": "aa72b8a68916a79e4e35",
       "utterance_id": "s1_017",
       "utterance_line_ids": [
         "s1_017"
@@ -2154,12 +2911,8 @@
       "utterance_size": 1,
       "utterance_emotion": "簡短道謝",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [warmly] 謝謝妳。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "謝謝妳。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_018",
@@ -2208,6 +2961,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2769,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 928,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": null,
       "fingerprint": null,
@@ -2240,8 +2999,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "叫我紙袋君就可以了， 所以...是立刻上班嗎？",
-      "model_text": "[calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？",
+      "model_text": "叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？",
+      "tts_text": "叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？",
       "segments": [
         {
           "type": "tag",
@@ -2262,20 +3021,87 @@
           "text": " 所以...是立刻上班嗎？"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 2615,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 929,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "平靜自然"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 929
+          }
+        }
+      },
+      "fingerprint": "d0a1ceb45f22b571221b",
       "utterance_id": "s1_019",
       "utterance_line_ids": [
         "s1_019"
@@ -2284,12 +3110,8 @@
       "utterance_size": 1,
       "utterance_emotion": "自報稱呼",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 叫我紙袋君就可以了，[short pause] 所以...是立刻上班嗎？",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_020",
@@ -2347,6 +3169,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 930,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": {
         "method": "POST",
@@ -2396,8 +3224,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "唔嗯... 很難仔細說明。",
-      "model_text": "[thoughtful] 唔嗯...[short pause] 很難仔細說明。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。\n[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "model_text": "唔嗯...<short pause> 很難仔細說明。",
+      "tts_text": "唔嗯...<short pause> 很難仔細說明。\n舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
       "segments": [
         {
           "type": "tag",
@@ -2418,20 +3246,97 @@
           "text": " 很難仔細說明。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 931,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "唔嗯...<short pause> 很難仔細說明。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "沉穩思考"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "唔嗯...<short pause> 很難仔細說明。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "沉穩思考"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 931
+          }
+        }
+      },
+      "fingerprint": "5175ec1cb518806c3004",
       "utterance_id": "s1_u021_022",
       "utterance_line_ids": [
         "s1_021",
@@ -2441,12 +3346,8 @@
       "utterance_size": 2,
       "utterance_emotion": "含糊到舉例",
       "utterance_reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "唔嗯...<short pause> 很難仔細說明。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_022",
@@ -2463,8 +3364,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "舉例來說， 照那個貨架的擺法，商品的轉換率會差 12%。",
-      "model_text": "[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [thoughtful] 唔嗯...[short pause] 很難仔細說明。\n[confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
+      "model_text": "舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
+      "tts_text": "唔嗯...<short pause> 很難仔細說明。\n舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
       "segments": [
         {
           "type": "tag",
@@ -2485,19 +3386,96 @@
           "text": " 照那個貨架的擺法，商品的轉換率會差 12%。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 3385,
-      "request": null,
-      "fingerprint": null,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 932,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "自信篤定"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "唔嗯...<short pause> 很難仔細說明。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "沉穩思考"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 931
+          }
+        }
+      },
+      "fingerprint": "5175ec1cb518806c3004",
       "utterance_id": "s1_u021_022",
       "utterance_line_ids": [
         "s1_021",
@@ -2507,12 +3485,8 @@
       "utterance_size": 2,
       "utterance_emotion": "含糊到舉例",
       "utterance_reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 舉例來說，[short pause] 照那個貨架的擺法，商品的轉換率會差 12%。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "舉例來說，<short pause> 照那個貨架的擺法，商品的轉換率會差 百分之十二。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_023",
@@ -2553,6 +3527,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 933,
+      "gemini_content": [],
+      "normalizations": [],
       "request": null,
       "fingerprint": null,
       "utterance_id": "s1_023",
@@ -2584,8 +3564,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "就是每天來店的顧客， 轉化成消費的比率。",
-      "model_text": "[calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "model_text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。",
+      "tts_text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。\n這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。\n會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
       "segments": [
         {
           "type": "tag",
@@ -2606,20 +3586,117 @@
           "text": " 轉化成消費的比率。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 2615,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 934,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "平靜自然"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 934
+          }
+        }
+      },
+      "fingerprint": "1a0bcc9b0fe6461be42b",
       "utterance_id": "s1_u024_027",
       "utterance_line_ids": [
         "s1_024",
@@ -2631,12 +3708,8 @@
       "utterance_size": 4,
       "utterance_emotion": "專業簡報",
       "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_025",
@@ -2652,8 +3725,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "還有建議降低女性用品貨架第二層高度， 大概 5 mm左右。",
-      "model_text": "[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "model_text": "還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。",
+      "tts_text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。\n這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。\n會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
       "segments": [
         {
           "type": "tag",
@@ -2674,20 +3747,117 @@
           "text": " 大概 5 mm左右。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 3692,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 935,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "自信篤定"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 934
+          }
+        }
+      },
+      "fingerprint": "1a0bcc9b0fe6461be42b",
       "utterance_id": "s1_u024_027",
       "utterance_line_ids": [
         "s1_024",
@@ -2699,12 +3869,8 @@
       "utterance_size": 4,
       "utterance_emotion": "專業簡報",
       "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_026",
@@ -2720,8 +3886,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "這樣會與消費族群女性顧客的... 平均視線高度對齊。",
-      "model_text": "[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "model_text": "這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。",
+      "tts_text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。\n這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。\n會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
       "segments": [
         {
           "type": "tag",
@@ -2742,20 +3908,117 @@
           "text": " 平均視線高度對齊。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 3231,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 936,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "平靜自然"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 934
+          }
+        }
+      },
+      "fingerprint": "1a0bcc9b0fe6461be42b",
       "utterance_id": "s1_u024_027",
       "utterance_line_ids": [
         "s1_024",
@@ -2767,12 +4030,8 @@
       "utterance_size": 4,
       "utterance_emotion": "專業簡報",
       "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_027",
@@ -2789,8 +4048,8 @@
       "character": "紙袋君",
       "source_sprite": "",
       "spoken_text": "會顯得比較親近無距離， 推估可以提高8%的轉換率。",
-      "model_text": "[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [calm] 就是每天來店的顧客，[short pause] 轉化成消費的比率。\n[confident] 還有建議降低女性用品貨架第二層高度，[short pause] 大概 5 mm左右。\n[calm] 這樣會與消費族群女性顧客的...[short pause] 平均視線高度對齊。\n[confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
+      "model_text": "會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
+      "tts_text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。\n還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。\n這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。\n會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
       "segments": [
         {
           "type": "tag",
@@ -2811,19 +4070,116 @@
           "text": " 推估可以提高8%的轉換率。"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "紙袋君 Baggy Joe · 台灣華語",
+      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_settings": {},
       "subtitle_duration_ms": 3231,
-      "request": null,
-      "fingerprint": null,
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
+      "generation_seed": 937,
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "自信篤定"
+            }
+          ]
+        }
+      ],
+      "normalizations": [
+        {
+          "source": "12%",
+          "spoken": "百分之十二",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        },
+        {
+          "source": "5 mm",
+          "spoken": "五毫米",
+          "note": "把數值與單位展開成中文供逐字 TTS，原文仍為 5 mm。"
+        },
+        {
+          "source": "8%",
+          "spoken": "百分之八",
+          "note": "百分比以台灣華語口語讀法明列，字幕仍保留原始數字。"
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "就是每天來店的顧客，<short pause> 轉化成消費的比率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "還有建議降低女性用品貨架第二層高度，<short pause> 大概 五毫米左右。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "這樣會與消費族群女性顧客的...<short pause> 平均視線高度對齊。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "平靜自然"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "自信篤定"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_jnco0z1ub8o8",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 934
+          }
+        }
+      },
+      "fingerprint": "1a0bcc9b0fe6461be42b",
       "utterance_id": "s1_u024_027",
       "utterance_line_ids": [
         "s1_024",
@@ -2835,12 +4191,8 @@
       "utterance_size": 4,
       "utterance_emotion": "專業簡報",
       "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 會顯得比較親近無距離，[short pause] 推估可以提高8%的轉換率。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "會顯得比較親近無距離，<short pause> 推估可以提高百分之八的轉換率。",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_028",
@@ -2876,6 +4228,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 938,
+      "gemini_content": [],
+      "normalizations": [],
       "request": null,
       "fingerprint": null,
       "utterance_id": "s1_u028_029",
@@ -2941,6 +4299,12 @@
         "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 939,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": null,
       "fingerprint": null,
@@ -3007,6 +4371,12 @@
         "speed": 1.02
       },
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 940,
+      "gemini_content": [],
+      "normalizations": [],
       "pause_after_ms": 350,
       "request": {
         "method": "POST",
@@ -3103,6 +4473,12 @@
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "subtitle_duration_ms": 2200,
+      "provider_name": "elevenlabs",
+      "model_id": "eleven_v3",
+      "engine_label": "Eleven v3",
+      "generation_seed": 941,
+      "gemini_content": [],
+      "normalizations": [],
       "request": {
         "method": "POST",
         "path": "/v1/text-to-speech/vqNgHlSPFeaXVYVRG0hv/with-timestamps",
