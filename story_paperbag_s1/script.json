@@ -105,7 +105,7 @@
         "emotion": "慌張求饒",
         "reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
         "voice_settings": {
-          "speed": 1.08
+          "speed": 1.0
         }
       },
       {
@@ -127,7 +127,9 @@
         "reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
         "voice_settings": {
           "speed": 1.02
-        }
+        },
+        "seed": 300322,
+        "note": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。seed 經過掃描：預設 940 會把「去調整」唸成「去討診」，300322 是四個 seed 中唯一「聽不懂」與「去調整」都正確的。"
       },
       {
         "utterance_id": "s1_u021_022",
@@ -262,14 +264,14 @@
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "頭戴紙袋！？該不會是——",
       "spoken_text": "頭戴紙袋！？ 該不會是——",
-      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+      "tts_text": "[strong Taiwanese Mandarin accent] 投戴紙袋！？[short pause] 該不會是——",
       "line_spans": [],
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "voice_name": "fei_fei_final",
       "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.06
+        "stability": 0.85,
+        "similarity_boost": 1.0,
+        "speed": 1.0
       },
       "request": {
         "method": "POST",
@@ -278,18 +280,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+          "text": "[strong Taiwanese Mandarin accent] 投戴紙袋！？[short pause] 該不會是——",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75,
-            "speed": 1.06
+            "stability": 0.85,
+            "similarity_boost": 1.0,
+            "speed": 1.0
           },
           "seed": 914
         }
       },
-      "fingerprint": "6e1bd1456f9dfe0655f1"
+      "fingerprint": "debe1dbb4cd71fdb5f40"
     },
     {
       "utterance_id": "s1_005",
@@ -351,8 +353,8 @@
       "emotion": "慌張求饒",
       "reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
       "source_text": "那個先生，我們這間店很窮啦。\n你你你你要搶劫的話，看要不要考慮其他便利商店……",
-      "spoken_text": "那個先生... 我們這間店很窮啦。\n你你你你要搶劫的話， 看要不要考慮其他便利商店...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "spoken_text": "那個先生... 我們這間店很窮啦。\n你...你...你...你要搶劫的話， 看要不要考慮其他便利商店...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
       "line_spans": [
         {
           "line_id": "s1_007",
@@ -362,7 +364,7 @@
         {
           "line_id": "s1_008",
           "start_char": 76,
-          "end_char": 128
+          "end_char": 137
         }
       ],
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
@@ -370,7 +372,7 @@
       "voice_settings": {
         "stability": 0.5,
         "similarity_boost": 0.75,
-        "speed": 1.08
+        "speed": 1.0
       },
       "request": {
         "method": "POST",
@@ -379,18 +381,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
             "stability": 0.5,
             "similarity_boost": 0.75,
-            "speed": 1.08
+            "speed": 1.0
           },
           "seed": 917
         }
       },
-      "fingerprint": "5c107064169c6c5956c7"
+      "fingerprint": "6d99fbfd19788a0c5ef9"
     },
     {
       "utterance_id": "s1_009",
@@ -429,7 +431,7 @@
       "reason": "確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。",
       "source_text": "不是搶劫？\n應徵的話，你幹嘛戴著紙袋？",
       "spoken_text": "不是...搶劫？\n應徵的話， 你幹嘛戴著紙袋？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",
       "line_spans": [
         {
           "line_id": "s1_010",
@@ -456,7 +458,7 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
@@ -467,7 +469,7 @@
           "seed": 920
         }
       },
-      "fingerprint": "8247417cadad25163bef"
+      "fingerprint": "1bbe5dcf95c5cce1673d"
     },
     {
       "utterance_id": "s1_012",
@@ -893,7 +895,7 @@
       "reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
       "source_text": "聽不懂，但感覺很厲害。\n都照紙袋君的話去調整！",
       "spoken_text": "聽不懂... 但感覺很厲害。\n都照紙袋君的話... 去調整！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照只袋軍的話...[short pause] 去調整！",
       "line_spans": [
         {
           "line_id": "s1_030",
@@ -920,7 +922,7 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照只袋軍的話...[short pause] 去調整！",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
@@ -928,10 +930,10 @@
             "similarity_boost": 0.75,
             "speed": 1.02
           },
-          "seed": 940
+          "seed": 300322
         }
       },
-      "fingerprint": "feccca1587f615193e9d"
+      "fingerprint": "176d78910138b6162a5f"
     }
   ],
   "lines": [
@@ -1161,32 +1163,35 @@
       "source_row": 5,
       "speaker": "fei_fei",
       "source_text": "頭戴紙袋！？該不會是——",
-      "text": "[surprise] 頭戴紙袋！？[pause] 該不會是——",
+      "text": "頭戴紙袋！？[pause] 該不會是——",
       "emotion": "驚疑",
       "intensity": 0.8,
       "expression": "panic",
-      "direction": "拔尖地重複關鍵字，後半句往最壞的方向猜，被打斷。",
+      "direction": "拔尖地重複關鍵字，後半句往最壞的方向猜，被打斷；驚疑交給驚嘆號與問號，不另外下 tag。",
+      "pronunciations": [
+        {
+          "word": "頭",
+          "homophone": "投",
+          "note": "「頭」應為二聲 tóu；原本整個「頭戴紙」被唸成一團，ASR 聽成「欸袋子」。用等長同音字「投」固定讀音。"
+        }
+      ],
       "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.06
+        "stability": 0.85,
+        "similarity_boost": 1.0,
+        "speed": 1.0
       },
+      "tuning_note": "全幕 CER 最差的一句（0.38）。以 story_line_probe 掃 8 個候選：同音字「投」＋移除 [surprise]＋stability 0.85／similarity 1.0＋取消加速後，ASR 聽成「頭戴紙戴」（CER 0.12，剩下的差異只是 ASR 把「袋」寫成同音的「戴」）。IPA 版本較差（聽成「臭!帶紙袋」），單獨調參或單獨移除 tag 都更差。相同設定重新生成時抽到的版本把「戴」唸偏（CER 0.25），所以這一段採用掃描時實際量測與試聽過的那個 take（--adopt e_homophone）。",
       "pause_after_ms": 120,
       "order": 4,
       "character": "菲菲",
       "source_sprite": "",
       "spoken_text": "頭戴紙袋！？ 該不會是——",
-      "model_text": "[surprised] 頭戴紙袋！？[short pause] 該不會是——",
-      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+      "model_text": "投戴紙袋！？[short pause] 該不會是——",
+      "tts_text": "[strong Taiwanese Mandarin accent] 投戴紙袋！？[short pause] 該不會是——",
       "segments": [
         {
-          "type": "tag",
-          "tag": "surprise",
-          "provider_tag": "surprised"
-        },
-        {
           "type": "text",
-          "text": " 頭戴紙袋！？"
+          "text": "頭戴紙袋！？"
         },
         {
           "type": "tag",
@@ -1200,7 +1205,6 @@
       ],
       "mode": "tts",
       "voiced_note": "",
-      "pronunciations": [],
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "subtitle_duration_ms": 2200,
@@ -1211,18 +1215,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+          "text": "[strong Taiwanese Mandarin accent] 投戴紙袋！？[short pause] 該不會是——",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75,
-            "speed": 1.06
+            "stability": 0.85,
+            "similarity_boost": 1.0,
+            "speed": 1.0
           },
           "seed": 914
         }
       },
-      "fingerprint": "6e1bd1456f9dfe0655f1",
+      "fingerprint": "debe1dbb4cd71fdb5f40",
       "utterance_id": "s1_004",
       "utterance_line_ids": [
         "s1_004"
@@ -1231,11 +1235,11 @@
       "utterance_size": 1,
       "utterance_emotion": "驚疑",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [surprised] 頭戴紙袋！？[short pause] 該不會是——",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] 投戴紙袋！？[short pause] 該不會是——",
       "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.06
+        "stability": 0.85,
+        "similarity_boost": 1.0,
+        "speed": 1.0
       }
     },
     {
@@ -1365,7 +1369,7 @@
       "source_sprite": "",
       "spoken_text": "那個先生... 我們這間店很窮啦。",
       "model_text": "[nervous] 那個先生...[short pause] 我們這間店很窮啦。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
       "segments": [
         {
           "type": "tag",
@@ -1394,7 +1398,7 @@
       "voice_settings": {
         "stability": 0.5,
         "similarity_boost": 0.75,
-        "speed": 1.08
+        "speed": 1.0
       },
       "subtitle_duration_ms": 2200,
       "pause_after_ms": 350,
@@ -1405,18 +1409,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
             "stability": 0.5,
             "similarity_boost": 0.75,
-            "speed": 1.08
+            "speed": 1.0
           },
           "seed": 917
         }
       },
-      "fingerprint": "5c107064169c6c5956c7",
+      "fingerprint": "6d99fbfd19788a0c5ef9",
       "utterance_id": "s1_u007_008",
       "utterance_line_ids": [
         "s1_007",
@@ -1438,18 +1442,19 @@
       "source_row": 9,
       "speaker": "fei_fei",
       "source_text": "你你你你要搶劫的話，看要不要考慮其他便利商店……",
-      "text": "[stammering] 你你你你要搶劫的話，[pause] 看要不要考慮其他便利商店...",
+      "text": "[stammering] 你...你...你...你要搶劫的話，[pause] 看要不要考慮其他便利商店...",
       "emotion": "慌張推薦",
       "intensity": 0.75,
       "expression": "panic",
-      "direction": "結巴照原稿唸出來，句尾越說越小聲，像真心在幫忙介紹別家。",
+      "direction": "結巴照原稿唸出來，句尾越說越小聲，像真心在幫忙介紹別家；四個『你』要各自聽得出來。",
+      "tuning_note": "原本四個『你』被唸成連音，ASR 聽成「你娘要」——在中文是罵人的話，必須修掉。用刪節號把四個『你』分開（只改標點，字詞不變）並取消 1.08 倍速後，ASR 完整聽出「你,你,你,你要搶劫的話」，整段 CER 0.12 → 0.00。頓號版本（你、你、你、你）效果略差（0.03）。",
       "pause_after_ms": 250,
       "order": 8,
       "character": "菲菲",
       "source_sprite": "",
-      "spoken_text": "你你你你要搶劫的話， 看要不要考慮其他便利商店...",
-      "model_text": "[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "spoken_text": "你...你...你...你要搶劫的話， 看要不要考慮其他便利商店...",
+      "model_text": "[stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "tts_text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
       "segments": [
         {
           "type": "tag",
@@ -1458,7 +1463,7 @@
         },
         {
           "type": "text",
-          "text": " 你你你你要搶劫的話，"
+          "text": " 你...你...你...你要搶劫的話，"
         },
         {
           "type": "tag",
@@ -1478,7 +1483,7 @@
       "voice_settings": {
         "stability": 0.5,
         "similarity_boost": 0.75,
-        "speed": 1.08
+        "speed": 1.0
       },
       "subtitle_duration_ms": 3231,
       "request": {
@@ -1488,18 +1493,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+          "text": "[strong Taiwanese Mandarin accent] [nervous] 那個先生...[short pause] 我們這間店很窮啦。\n[stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
             "stability": 0.5,
             "similarity_boost": 0.75,
-            "speed": 1.08
+            "speed": 1.0
           },
           "seed": 917
         }
       },
-      "fingerprint": "5c107064169c6c5956c7",
+      "fingerprint": "6d99fbfd19788a0c5ef9",
       "utterance_id": "s1_u007_008",
       "utterance_line_ids": [
         "s1_007",
@@ -1509,7 +1514,7 @@
       "utterance_size": 2,
       "utterance_emotion": "慌張求饒",
       "utterance_reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [stammering] 你你你你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [stammering] 你...你...你...你要搶劫的話，[short pause] 看要不要考慮其他便利商店...",
       "line_voice_settings": {
         "stability": 0.5,
         "similarity_boost": 0.75,
@@ -1596,7 +1601,7 @@
       "source_sprite": "",
       "spoken_text": "不是...搶劫？",
       "model_text": "[surprised] 不是...搶劫？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",
       "segments": [
         {
           "type": "tag",
@@ -1627,7 +1632,7 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
@@ -1638,7 +1643,7 @@
           "seed": 920
         }
       },
-      "fingerprint": "8247417cadad25163bef",
+      "fingerprint": "1bbe5dcf95c5cce1673d",
       "utterance_id": "s1_u010_011",
       "utterance_line_ids": [
         "s1_010",
@@ -1665,12 +1670,20 @@
       "intensity": 0.55,
       "expression": "suspicious",
       "direction": "回到店長模式，把最想問的問題直接問出來。",
+      "pronunciations": [
+        {
+          "word": "應",
+          "homophone": "硬",
+          "note": "應徵是 yìng zhēng（四聲）；原本唸成一聲，ASR 聽成「陰真」，而一聲的「應」是「應該」的意思。用等長同音字「硬」固定四聲。"
+        }
+      ],
+      "tuning_note": "掃 6 個候選：同音字「硬」讓整段 CER 從 0.20 降到 0.07（剩下的差異只是 ASR 把「戴」寫成同音的「帶」）。IPA 加四聲調號反而大幅變差（CER 0.60，聽成「一旦的話」），移除 [curious] 也更差。",
       "order": 11,
       "character": "菲菲",
       "source_sprite": "",
       "spoken_text": "應徵的話， 你幹嘛戴著紙袋？",
-      "model_text": "[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "model_text": "[curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "tts_text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",
       "segments": [
         {
           "type": "tag",
@@ -1693,7 +1706,6 @@
       ],
       "mode": "tts",
       "voiced_note": "",
-      "pronunciations": [],
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "voice_settings": {
@@ -1710,7 +1722,7 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+          "text": "[strong Taiwanese Mandarin accent] [surprised] 不是...搶劫？\n[curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
@@ -1721,7 +1733,7 @@
           "seed": 920
         }
       },
-      "fingerprint": "8247417cadad25163bef",
+      "fingerprint": "1bbe5dcf95c5cce1673d",
       "utterance_id": "s1_u010_011",
       "utterance_line_ids": [
         "s1_010",
@@ -1731,7 +1743,7 @@
       "utterance_size": 2,
       "utterance_emotion": "困惑追問",
       "utterance_reason": "確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] 應徵的話，[short pause] 你幹嘛戴著紙袋？",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] 硬徵的話，[short pause] 你幹嘛戴著紙袋？",
       "line_voice_settings": {
         "stability": 0.5,
         "similarity_boost": 0.75,
@@ -2963,7 +2975,7 @@
       "source_sprite": "",
       "spoken_text": "聽不懂... 但感覺很厲害。",
       "model_text": "[amused] 聽不懂...[short pause] 但感覺很厲害。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照只袋軍的話...[short pause] 去調整！",
       "segments": [
         {
           "type": "tag",
@@ -3003,7 +3015,7 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照只袋軍的話...[short pause] 去調整！",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
@@ -3011,10 +3023,10 @@
             "similarity_boost": 0.75,
             "speed": 1.02
           },
-          "seed": 940
+          "seed": 300322
         }
       },
-      "fingerprint": "feccca1587f615193e9d",
+      "fingerprint": "176d78910138b6162a5f",
       "utterance_id": "s1_u030_031",
       "utterance_line_ids": [
         "s1_030",
@@ -3041,18 +3053,31 @@
       "intensity": 0.7,
       "expression": "confidence",
       "direction": "店長拍板定案，聲音抬起來，替整幕收尾。",
+      "pronunciations": [
+        {
+          "word": "紙",
+          "homophone": "只",
+          "note": "主角名字「紙袋君」＝zhǐ dài jūn，但「紙」原本被聽成「几」（jǐ）；用等長同音字「只」固定三聲。"
+        },
+        {
+          "word": "君",
+          "homophone": "軍",
+          "note": "「君」原本被聽成「金」（jīn）；用同音字「軍」固定 jūn。"
+        }
+      ],
       "voice_settings": {
         "stability": 0.5,
         "similarity_boost": 0.75,
         "speed": 1.02
       },
+      "tuning_note": "兩輪共 11 個候選都無法把整段 CER 壓到 0.16 以下（現有版本也是 0.16），所以這句只能選「音比較接近」的：採用版 ASR 聽成「植代君」（zhí dài jūn），原版是「几代君」（jǐ dài jūn）——聲母與韻母都對了，只差聲調。CER 分不出這個差別，因此這句特別需要用耳朵驗收。整個名字一起換同音字（只代軍）、加逗號、放慢語速都更差。",
       "pause_after_ms": 700,
       "order": 31,
       "character": "菲菲",
       "source_sprite": "",
       "spoken_text": "都照紙袋君的話... 去調整！",
-      "model_text": "[confident] 都照紙袋君的話...[short pause] 去調整！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+      "model_text": "[confident] 都照只袋軍的話...[short pause] 去調整！",
+      "tts_text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照只袋軍的話...[short pause] 去調整！",
       "segments": [
         {
           "type": "tag",
@@ -3075,7 +3100,6 @@
       ],
       "mode": "tts",
       "voiced_note": "",
-      "pronunciations": [],
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "subtitle_duration_ms": 2200,
@@ -3086,7 +3110,7 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照紙袋君的話...[short pause] 去調整！",
+          "text": "[strong Taiwanese Mandarin accent] [amused] 聽不懂...[short pause] 但感覺很厲害。\n[confident] 都照只袋軍的話...[short pause] 去調整！",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
@@ -3094,10 +3118,10 @@
             "similarity_boost": 0.75,
             "speed": 1.02
           },
-          "seed": 940
+          "seed": 300322
         }
       },
-      "fingerprint": "feccca1587f615193e9d",
+      "fingerprint": "176d78910138b6162a5f",
       "utterance_id": "s1_u030_031",
       "utterance_line_ids": [
         "s1_030",
@@ -3107,7 +3131,7 @@
       "utterance_size": 2,
       "utterance_emotion": "服氣下令",
       "utterance_reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 都照紙袋君的話...[short pause] 去調整！",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [confident] 都照只袋軍的話...[short pause] 去調整！",
       "line_voice_settings": {
         "stability": 0.5,
         "similarity_boost": 0.75,
