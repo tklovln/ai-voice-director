@@ -5,8 +5,8 @@
   "title": "S1 標題：XXX",
   "display_title": "頭戴紙袋的應徵者",
   "description": "門外站著一個頭戴紙袋的人。菲菲以為遇上搶劫，結果對方是來應徵的。",
-  "director_note": "一場誤會喜劇：從好奇、驚疑、慌張求饒，轉為困惑追問與吐槽，聽到「一半薪水」立刻翻臉答應，最後對聽不懂的專業術語心服口服。慌張要像真的害怕，但整場是好笑的，不是驚悚的。",
-  "casting_note": "菲菲使用 ElevenLabs fei_fei_final；紙袋君使用依人物設定建立的 Gemini 3.8 固定聲線。阿龐與菲菲的沉默空拍以字幕串場。",
+  "director_note": "一場誤會喜劇：從好奇、驚疑、慌張求饒，轉為困惑追問與吐槽，聽到「一半薪水」立刻翻臉答應，最後對聽不懂的專業術語心服口服。阿龐是戲劇系學生，反應要更浮誇：緊張通報像在講天大的秘密，看到人進店時突然拔高驚叫，聽不懂術語時明顯當機再求救；用音高起伏、停頓與節奏放大笑點。整場是好笑的，不是驚悚的。",
+  "casting_note": "三位角色皆已配音：菲菲使用 ElevenLabs fei_fei_final，紙袋君與阿龐使用各自的 Gemini 3.8 固定聲線。菲菲與阿龐各保留一個沉默節拍。",
   "source_csv": "story/clean/紙袋君_鍾哥_scenes/01_S1_XXX.csv",
   "authoring_script": "story/tts/paperbag_s1/scene.json",
   "source_fingerprint": "d15bb02fc684b4c84dea",
@@ -55,13 +55,26 @@
     },
     "a_pang": {
       "name": "阿龐",
+      "character_id": "clk_0002",
       "color": "#92bcea",
-      "voice_id": null,
+      "voice_id": "voice_09wkojtpb4gd",
+      "provider": {
+        "name": "gemini",
+        "model_id": "gemini-3.8-flash-tts",
+        "voice_config": "story/tts/paperbag_s1/gemini_voice_a_pang.json"
+      },
       "portraits": {
         "normal": "data/figure/CLK_0002/normal_512.png",
         "happy": "data/figure/CLK_0002/happy_512.png",
         "sad": "data/figure/CLK_0002/sad_512.png"
-      }
+      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_type": "prompted",
+      "voice_preview": "out/pipeline_story_paperbag_s1/voices/clk_0002/preview.wav",
+      "voice_preview_text": "嗨，我是阿龐！我念戲劇系，平常在便利商店打工。欸，你有沒有看到門口那位客人？我真的嚇了一跳耶！好啦，先別緊張，垃圾袋我來拿，下個星期再一起練習。這個故事告訴我們，遇到事情要先問清楚！",
+      "voice_preview_sha256": "13631c087a63ab8a3f1ce905f065ec0d9511788136a2569a7087720f1a8e2d53",
+      "voice_design_sample": "out/pipeline_story_paperbag_s1/voices/clk_0002/design_sample.wav",
+      "voice_design_sample_sha256": "e0be0dbe73d85e288a40db9cb14102298ce4d19db0f00655835382bdc71c3acf"
     }
   },
   "page": {
@@ -162,15 +175,6 @@
         ],
         "emotion": "專業簡報",
         "reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。"
-      },
-      {
-        "utterance_id": "s1_u028_029",
-        "line_ids": [
-          "s1_028",
-          "s1_029"
-        ],
-        "emotion": "被術語淹沒",
-        "reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。"
       }
     ]
   },
@@ -182,24 +186,68 @@
       ],
       "speaker": "a_pang",
       "character": "阿龐",
-      "mode": "subtitle_only",
-      "emotion": "不安通報",
+      "mode": "tts",
+      "emotion": "誇張緊張通報",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "菲菲，店門口外一直站著一個人，在那邊盯著我們看耶……",
-      "spoken_text": "菲菲， 店門口外一直站著一個人...在那邊盯著我們看耶...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "spoken_text": "菲菲！ 店門口外一直站著一個人... 在那邊盯著我們看耶！？",
+      "tts_text": "菲菲！<short pause> 店門口外一直站著一個人...\n在那邊盯著我們看耶！？",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "菲菲！<short pause> 店門口外一直站著一個人...",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "緊張不安；清楚喊『菲菲』兩個字，再緊張兮兮地報告，越說越急，句尾誇張上揚，喜劇式大反應。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "在那邊盯著我們看耶！？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "緊張不安；清楚喊『菲菲』兩個字，再緊張兮兮地報告，越說越急，句尾誇張上揚，喜劇式大反應。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 911
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "af1a98c4f9e0f843e306",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_002",
@@ -251,24 +299,68 @@
       ],
       "speaker": "a_pang",
       "character": "阿龐",
-      "mode": "subtitle_only",
-      "emotion": "難以形容",
+      "mode": "tts",
+      "emotion": "煞有其事地揭密",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "應該不是，因為他……頭戴著一個紙袋。",
-      "spoken_text": "應該不是，因為他... 頭戴著一個紙袋。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。",
+      "spoken_text": "應該不是！ 因為他... 頭戴著一個紙袋！",
+      "tts_text": "應該不是！<short pause> 因為他...\n頭戴著一個紙袋！",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "應該不是！<short pause> 因為他...",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "緊張不安；煞有其事地揭露秘密，停一下再強調最後的紙袋，反應鮮明又好笑。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "頭戴著一個紙袋！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "意外驚訝；煞有其事地揭露秘密，停一下再強調最後的紙袋，反應鮮明又好笑。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 913
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "1fca1a956411f582b543",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_004",
@@ -380,24 +472,58 @@
       ],
       "speaker": "a_pang",
       "character": "阿龐",
-      "mode": "subtitle_only",
-      "emotion": "驚叫",
+      "mode": "tts",
+      "emotion": "嚇到失控驚叫",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "他進來啦！！！",
-      "spoken_text": "他進來啦！！！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 他進來啦！！！",
+      "spoken_text": "他進來啦——！！！",
+      "tts_text": "<gasp> 他進來啦——！！！",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<gasp> 他進來啦——！！！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "突然嚇到放聲驚叫，音高瞬間拔高，最後的『啦』明顯拉長成一聲大叫，誇張喜劇反應。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 916
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "59a799b6cf03c1bafff7",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_u007_008",
@@ -868,24 +994,58 @@
       ],
       "speaker": "a_pang",
       "character": "阿龐",
-      "mode": "subtitle_only",
-      "emotion": "好心提醒",
+      "mode": "tts",
+      "emotion": "委屈又不敢置信",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "大哥你想清楚，我們本來的薪水就不高了耶。",
-      "spoken_text": "大哥，你想清楚... 我們本來的薪水就不高了耶。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。",
+      "spoken_text": "大哥！ 你想清楚！ 我們本來的薪水就不高了耶！",
+      "tts_text": "大哥！<short pause> 你想清楚！<sigh> 我們本來的薪水就不高了耶！",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "大哥！<short pause> 你想清楚！<sigh> 我們本來的薪水就不高了耶！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "意外驚訝；不敢置信地勸阻，委屈又誇張地抱怨，明顯重讀『本來』和『不高』。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 928
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "e009caaf8961c07b51bb",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_019",
@@ -1079,24 +1239,58 @@
       ],
       "speaker": "a_pang",
       "character": "阿龐",
-      "mode": "subtitle_only",
-      "emotion": "跟不上",
+      "mode": "tts",
+      "emotion": "完全跟不上術語",
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "⋯⋯什麼是轉換率？",
-      "spoken_text": "⋯⋯什麼是轉換率？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [curious] ⋯⋯什麼是轉換率？",
+      "spoken_text": "⋯⋯什麼是轉換率！？",
+      "tts_text": "⋯⋯什麼是轉換率！？",
       "line_spans": [],
-      "voice_id": null,
-      "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "⋯⋯什麼是轉換率！？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "意外驚訝；腦袋跟不上、困惑到脫口而出，『什麼』明顯上揚，喜劇式大反應。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 933
+          }
+        }
       },
-      "request": null,
-      "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "fingerprint": "8075702db7d64e402b21",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_u024_027",
@@ -1213,42 +1407,96 @@
       "model_id": "gemini-3.8-flash-tts"
     },
     {
-      "utterance_id": "s1_u028_029",
+      "utterance_id": "s1_028",
       "line_ids": [
-        "s1_028",
-        "s1_029"
+        "s1_028"
       ],
       "speaker": "a_pang",
       "character": "阿龐",
       "mode": "subtitle_only",
-      "emotion": "被術語淹沒",
-      "reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。",
-      "source_text": "………\n菲菲，妳聽得懂他在說什麼嗎？",
-      "spoken_text": "………\n菲菲， 妳聽得懂他在說什麼嗎？",
-      "tts_text": "[strong Taiwanese Mandarin accent] ………\n[hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
-      "line_spans": [
-        {
-          "line_id": "s1_028",
-          "start_char": 35,
-          "end_char": 38
-        },
-        {
-          "line_id": "s1_029",
-          "start_char": 39,
-          "end_char": 78
-        }
-      ],
+      "emotion": "完全當機",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "………",
+      "spoken_text": "………",
+      "tts_text": "………",
+      "line_spans": [],
       "voice_id": null,
       "voice_name": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_settings": {},
       "request": null,
       "fingerprint": null,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3"
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
+    },
+    {
+      "utterance_id": "s1_029",
+      "line_ids": [
+        "s1_029"
+      ],
+      "speaker": "a_pang",
+      "character": "阿龐",
+      "mode": "tts",
+      "emotion": "壓不住的崩潰求救",
+      "reason": "單句或與相鄰句的情緒／角色不同。",
+      "source_text": "菲菲，妳聽得懂他在說什麼嗎？",
+      "spoken_text": "菲菲...  妳聽得懂他在說什麼嗎！？",
+      "tts_text": "菲菲...<short pause>\n妳聽得懂他在說什麼嗎！？",
+      "line_spans": [],
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_settings": {},
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "菲菲...<short pause>",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "輕聲說話；壓低聲音卻藏不住崩潰，急著求救，尾音大幅上揚，維持喜劇感。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "妳聽得懂他在說什麼嗎！？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "緊張不安；壓低聲音卻藏不住崩潰，急著求救，尾音大幅上揚，維持喜劇感。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 939
+          }
+        }
+      },
+      "fingerprint": "a3b851fa444d2c7091f8",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts"
     },
     {
       "utterance_id": "s1_u030_031",
@@ -1312,27 +1560,28 @@
       "source_row": 2,
       "speaker": "a_pang",
       "source_text": "菲菲，店門口外一直站著一個人，在那邊盯著我們看耶……",
-      "text": "[hesitant] 菲菲，[pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
-      "emotion": "不安通報",
-      "intensity": 0.45,
+      "text": "[nervous] 菲菲！[pause] 店門口外一直站著一個人...[nervous] 在那邊盯著我們看耶！？",
+      "emotion": "誇張緊張通報",
+      "intensity": 0.8,
       "expression": "normal",
-      "direction": "壓低聲音通報，句尾拉長帶著不安。",
+      "direction": "像發現天大的秘密，先清楚叫住菲菲，越說越緊張，句尾明顯挑高。",
+      "delivery_style": "清楚喊『菲菲』兩個字，再緊張兮兮地報告，越說越急，句尾誇張上揚，喜劇式大反應。",
       "pause_after_ms": 300,
       "order": 1,
       "character": "阿龐",
       "source_sprite": "",
-      "spoken_text": "菲菲， 店門口外一直站著一個人...在那邊盯著我們看耶...",
-      "model_text": "[hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
+      "spoken_text": "菲菲！ 店門口外一直站著一個人... 在那邊盯著我們看耶！？",
+      "model_text": "菲菲！<short pause> 店門口外一直站著一個人...\n在那邊盯著我們看耶！？",
+      "tts_text": "菲菲！<short pause> 店門口外一直站著一個人...\n在那邊盯著我們看耶！？",
       "segments": [
         {
           "type": "tag",
-          "tag": "hesitant",
-          "provider_tag": "hesitant"
+          "tag": "nervous",
+          "provider_tag": "nervous"
         },
         {
           "type": "text",
-          "text": " 菲菲，"
+          "text": " 菲菲！"
         },
         {
           "type": "tag",
@@ -1341,42 +1590,112 @@
         },
         {
           "type": "text",
-          "text": " 店門口外一直站著一個人...在那邊盯著我們看耶..."
+          "text": " 店門口外一直站著一個人..."
+        },
+        {
+          "type": "tag",
+          "tag": "nervous",
+          "provider_tag": "nervous"
+        },
+        {
+          "type": "text",
+          "text": " 在那邊盯著我們看耶！？"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_settings": {},
       "subtitle_duration_ms": 3385,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 911,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "菲菲！<short pause> 店門口外一直站著一個人...",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "緊張不安；清楚喊『菲菲』兩個字，再緊張兮兮地報告，越說越急，句尾誇張上揚，喜劇式大反應。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "在那邊盯著我們看耶！？",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "緊張不安；清楚喊『菲菲』兩個字，再緊張兮兮地報告，越說越急，句尾誇張上揚，喜劇式大反應。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "菲菲！<short pause> 店門口外一直站著一個人...",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "緊張不安；清楚喊『菲菲』兩個字，再緊張兮兮地報告，越說越急，句尾誇張上揚，喜劇式大反應。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "在那邊盯著我們看耶！？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "緊張不安；清楚喊『菲菲』兩個字，再緊張兮兮地報告，越說越急，句尾誇張上揚，喜劇式大反應。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 911
+          }
+        }
+      },
+      "fingerprint": "af1a98c4f9e0f843e306",
       "utterance_id": "s1_001",
       "utterance_line_ids": [
         "s1_001"
       ],
       "utterance_index": 0,
       "utterance_size": 1,
-      "utterance_emotion": "不安通報",
+      "utterance_emotion": "誇張緊張通報",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 店門口外一直站著一個人...在那邊盯著我們看耶...",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "菲菲！<short pause> 店門口外一直站著一個人...\n在那邊盯著我們看耶！？",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_002",
@@ -1480,27 +1799,28 @@
       "source_row": 4,
       "speaker": "a_pang",
       "source_text": "應該不是，因為他……頭戴著一個紙袋。",
-      "text": "[hesitant] 應該不是，因為他...[pause] 頭戴著一個紙袋。",
-      "emotion": "難以形容",
-      "intensity": 0.4,
+      "text": "[nervous] 應該不是！[pause] 因為他...[surprise] 頭戴著一個紙袋！",
+      "emotion": "煞有其事地揭密",
+      "intensity": 0.8,
       "expression": "normal",
-      "direction": "停頓是在想怎麼描述，最後老實說出紙袋。",
+      "direction": "故意吊住大家的胃口，說到紙袋時瞪大眼，驚訝地把音調拉高。",
+      "delivery_style": "煞有其事地揭露秘密，停一下再強調最後的紙袋，反應鮮明又好笑。",
       "pause_after_ms": 250,
       "order": 3,
       "character": "阿龐",
       "source_sprite": "",
-      "spoken_text": "應該不是，因為他... 頭戴著一個紙袋。",
-      "model_text": "[hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。",
+      "spoken_text": "應該不是！ 因為他... 頭戴著一個紙袋！",
+      "model_text": "應該不是！<short pause> 因為他...\n頭戴著一個紙袋！",
+      "tts_text": "應該不是！<short pause> 因為他...\n頭戴著一個紙袋！",
       "segments": [
         {
           "type": "tag",
-          "tag": "hesitant",
-          "provider_tag": "hesitant"
+          "tag": "nervous",
+          "provider_tag": "nervous"
         },
         {
           "type": "text",
-          "text": " 應該不是，因為他..."
+          "text": " 應該不是！"
         },
         {
           "type": "tag",
@@ -1509,42 +1829,112 @@
         },
         {
           "type": "text",
-          "text": " 頭戴著一個紙袋。"
+          "text": " 因為他..."
+        },
+        {
+          "type": "tag",
+          "tag": "surprise",
+          "provider_tag": "surprised"
+        },
+        {
+          "type": "text",
+          "text": " 頭戴著一個紙袋！"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 913,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "應該不是！<short pause> 因為他...",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "緊張不安；煞有其事地揭露秘密，停一下再強調最後的紙袋，反應鮮明又好笑。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "頭戴著一個紙袋！",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "意外驚訝；煞有其事地揭露秘密，停一下再強調最後的紙袋，反應鮮明又好笑。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "應該不是！<short pause> 因為他...",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "緊張不安；煞有其事地揭露秘密，停一下再強調最後的紙袋，反應鮮明又好笑。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "頭戴著一個紙袋！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "意外驚訝；煞有其事地揭露秘密，停一下再強調最後的紙袋，反應鮮明又好笑。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 913
+          }
+        }
+      },
+      "fingerprint": "1fca1a956411f582b543",
       "utterance_id": "s1_003",
       "utterance_line_ids": [
         "s1_003"
       ],
       "utterance_index": 0,
       "utterance_size": 1,
-      "utterance_emotion": "難以形容",
+      "utterance_emotion": "煞有其事地揭密",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 應該不是，因為他...[short pause] 頭戴著一個紙袋。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "應該不是！<short pause> 因為他...\n頭戴著一個紙袋！",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_004",
@@ -1760,62 +2150,104 @@
       "source_row": 7,
       "speaker": "a_pang",
       "source_text": "他進來啦！！！",
-      "text": "[excited] 他進來啦！！！",
-      "emotion": "驚叫",
-      "intensity": 0.9,
+      "text": "[gasp] 他進來啦——！！！",
+      "emotion": "嚇到失控驚叫",
+      "intensity": 1.0,
       "expression": "sad",
-      "direction": "整場音量最高的一句，純粹是嚇到大叫。",
+      "direction": "突然倒吸一口氣，像驚弓之鳥，放聲叫出來；這一聲是整幕喜劇的爆點。",
+      "delivery_style": "突然嚇到放聲驚叫，音高瞬間拔高，最後的『啦』明顯拉長成一聲大叫，誇張喜劇反應。",
       "pause_after_ms": 150,
       "order": 6,
       "character": "阿龐",
       "source_sprite": "",
-      "spoken_text": "他進來啦！！！",
-      "model_text": "[excited] 他進來啦！！！",
-      "tts_text": "[strong Taiwanese Mandarin accent] [excited] 他進來啦！！！",
+      "spoken_text": "他進來啦——！！！",
+      "model_text": "<gasp> 他進來啦——！！！",
+      "tts_text": "<gasp> 他進來啦——！！！",
       "segments": [
         {
           "type": "tag",
-          "tag": "excited",
-          "provider_tag": "excited"
+          "tag": "gasp",
+          "provider_tag": "gasp"
         },
         {
           "type": "text",
-          "text": " 他進來啦！！！"
+          "text": " 他進來啦——！！！"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 916,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "<gasp> 他進來啦——！！！",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "突然嚇到放聲驚叫，音高瞬間拔高，最後的『啦』明顯拉長成一聲大叫，誇張喜劇反應。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<gasp> 他進來啦——！！！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "突然嚇到放聲驚叫，音高瞬間拔高，最後的『啦』明顯拉長成一聲大叫，誇張喜劇反應。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 916
+          }
+        }
+      },
+      "fingerprint": "59a799b6cf03c1bafff7",
       "utterance_id": "s1_006",
       "utterance_line_ids": [
         "s1_006"
       ],
       "utterance_index": 0,
       "utterance_size": 1,
-      "utterance_emotion": "驚叫",
+      "utterance_emotion": "嚇到失控驚叫",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [excited] 他進來啦！！！",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "<gasp> 他進來啦——！！！",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_007",
@@ -2923,26 +3355,27 @@
       "source_row": 19,
       "speaker": "a_pang",
       "source_text": "大哥你想清楚，我們本來的薪水就不高了耶。",
-      "text": "[hesitant] 大哥，你想清楚...[pause] 我們本來的薪水就不高了耶。",
-      "emotion": "好心提醒",
-      "intensity": 0.45,
+      "text": "[surprise] 大哥！[pause] 你想清楚！[sigh] 我們本來的薪水就不高了耶！",
+      "emotion": "委屈又不敢置信",
+      "intensity": 0.8,
       "expression": "sad",
-      "direction": "站在同事立場替對方著想，帶一點自嘲。",
+      "direction": "先像在攔住做傻事的朋友，接著誇張地替自己的低薪叫屈，帶點自嘲。",
+      "delivery_style": "不敢置信地勸阻，委屈又誇張地抱怨，明顯重讀『本來』和『不高』。",
       "order": 18,
       "character": "阿龐",
       "source_sprite": "",
-      "spoken_text": "大哥，你想清楚... 我們本來的薪水就不高了耶。",
-      "model_text": "[hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。",
+      "spoken_text": "大哥！ 你想清楚！ 我們本來的薪水就不高了耶！",
+      "model_text": "大哥！<short pause> 你想清楚！<sigh> 我們本來的薪水就不高了耶！",
+      "tts_text": "大哥！<short pause> 你想清楚！<sigh> 我們本來的薪水就不高了耶！",
       "segments": [
         {
           "type": "tag",
-          "tag": "hesitant",
-          "provider_tag": "hesitant"
+          "tag": "surprise",
+          "provider_tag": "surprised"
         },
         {
           "type": "text",
-          "text": " 大哥，你想清楚..."
+          "text": " 大哥！"
         },
         {
           "type": "tag",
@@ -2951,43 +3384,93 @@
         },
         {
           "type": "text",
-          "text": " 我們本來的薪水就不高了耶。"
+          "text": " 你想清楚！"
+        },
+        {
+          "type": "tag",
+          "tag": "sigh",
+          "provider_tag": "sighs"
+        },
+        {
+          "type": "text",
+          "text": " 我們本來的薪水就不高了耶！"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_settings": {},
       "subtitle_duration_ms": 2769,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 928,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "大哥！<short pause> 你想清楚！<sigh> 我們本來的薪水就不高了耶！",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "意外驚訝；不敢置信地勸阻，委屈又誇張地抱怨，明顯重讀『本來』和『不高』。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "大哥！<short pause> 你想清楚！<sigh> 我們本來的薪水就不高了耶！",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "意外驚訝；不敢置信地勸阻，委屈又誇張地抱怨，明顯重讀『本來』和『不高』。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 928
+          }
+        }
+      },
+      "fingerprint": "e009caaf8961c07b51bb",
       "utterance_id": "s1_018",
       "utterance_line_ids": [
         "s1_018"
       ],
       "utterance_index": 0,
       "utterance_size": 1,
-      "utterance_emotion": "好心提醒",
+      "utterance_emotion": "委屈又不敢置信",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 大哥，你想清楚...[short pause] 我們本來的薪水就不高了耶。",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "大哥！<short pause> 你想清楚！<sigh> 我們本來的薪水就不高了耶！",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_019",
@@ -3497,62 +3980,104 @@
       "source_row": 24,
       "speaker": "a_pang",
       "source_text": "⋯⋯什麼是轉換率？",
-      "text": "[curious] ⋯⋯什麼是轉換率？",
-      "emotion": "跟不上",
-      "intensity": 0.4,
+      "text": "[surprise] ⋯⋯什麼是轉換率！？",
+      "emotion": "完全跟不上術語",
+      "intensity": 0.8,
       "expression": "normal",
-      "direction": "老實舉手發問，代替觀眾問出這個字。",
+      "direction": "先卡住一拍，再把不懂的地方脫口而出，問得非常認真卻很好笑。",
+      "delivery_style": "腦袋跟不上、困惑到脫口而出，『什麼』明顯上揚，喜劇式大反應。",
       "pause_after_ms": 200,
       "order": 23,
       "character": "阿龐",
       "source_sprite": "",
-      "spoken_text": "⋯⋯什麼是轉換率？",
-      "model_text": "[curious] ⋯⋯什麼是轉換率？",
-      "tts_text": "[strong Taiwanese Mandarin accent] [curious] ⋯⋯什麼是轉換率？",
+      "spoken_text": "⋯⋯什麼是轉換率！？",
+      "model_text": "⋯⋯什麼是轉換率！？",
+      "tts_text": "⋯⋯什麼是轉換率！？",
       "segments": [
         {
           "type": "tag",
-          "tag": "curious",
-          "provider_tag": "curious"
+          "tag": "surprise",
+          "provider_tag": "surprised"
         },
         {
           "type": "text",
-          "text": " ⋯⋯什麼是轉換率？"
+          "text": " ⋯⋯什麼是轉換率！？"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 933,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "⋯⋯什麼是轉換率！？",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "意外驚訝；腦袋跟不上、困惑到脫口而出，『什麼』明顯上揚，喜劇式大反應。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
-      "request": null,
-      "fingerprint": null,
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "⋯⋯什麼是轉換率！？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "意外驚訝；腦袋跟不上、困惑到脫口而出，『什麼』明顯上揚，喜劇式大反應。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 933
+          }
+        }
+      },
+      "fingerprint": "8075702db7d64e402b21",
       "utterance_id": "s1_023",
       "utterance_line_ids": [
         "s1_023"
       ],
       "utterance_index": 0,
       "utterance_size": 1,
-      "utterance_emotion": "跟不上",
+      "utterance_emotion": "完全跟不上術語",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [curious] ⋯⋯什麼是轉換率？",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "line_tts_text": "⋯⋯什麼是轉換率！？",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_024",
@@ -4204,6 +4729,8 @@
       "speaker": "a_pang",
       "source_text": "………",
       "text": "………",
+      "voiced": false,
+      "voiced_note": "聽到一長串專業術語後的沉默當機；沒有可唸字詞，以畫面與停頓表演，不送入 TTS。",
       "emotion": "完全當機",
       "intensity": 0.2,
       "expression": "normal",
@@ -4214,7 +4741,7 @@
       "source_sprite": "",
       "spoken_text": "………",
       "model_text": "………",
-      "tts_text": "[strong Taiwanese Mandarin accent] ………\n[hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
+      "tts_text": "………",
       "segments": [
         {
           "type": "text",
@@ -4222,65 +4749,67 @@
         }
       ],
       "mode": "subtitle_only",
-      "voiced_note": "",
       "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 938,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "………",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": ""
+            }
+          ]
+        }
+      ],
       "normalizations": [],
       "request": null,
       "fingerprint": null,
-      "utterance_id": "s1_u028_029",
+      "utterance_id": "s1_028",
       "utterance_line_ids": [
-        "s1_028",
-        "s1_029"
+        "s1_028"
       ],
       "utterance_index": 0,
-      "utterance_size": 2,
-      "utterance_emotion": "被術語淹沒",
-      "utterance_reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] ………",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "utterance_size": 1,
+      "utterance_emotion": "完全當機",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "………",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_029",
       "source_row": 30,
       "speaker": "a_pang",
       "source_text": "菲菲，妳聽得懂他在說什麼嗎？",
-      "text": "[hesitant] 菲菲，[pause] 妳聽得懂他在說什麼嗎？",
-      "emotion": "小聲求救",
-      "intensity": 0.45,
-      "expression": "normal",
-      "direction": "側身對菲菲小聲問，不想讓新人聽見。",
+      "text": "[whispers] 菲菲...[pause] [nervous] 妳聽得懂他在說什麼嗎！？",
+      "emotion": "壓不住的崩潰求救",
+      "intensity": 0.85,
+      "expression": "sad",
+      "direction": "側身想小聲求救，卻已經藏不住聽不懂的慌張，最後問句誇張上揚。",
+      "delivery_style": "壓低聲音卻藏不住崩潰，急著求救，尾音大幅上揚，維持喜劇感。",
       "order": 29,
       "character": "阿龐",
       "source_sprite": "",
-      "spoken_text": "菲菲， 妳聽得懂他在說什麼嗎？",
-      "model_text": "[hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
-      "tts_text": "[strong Taiwanese Mandarin accent] ………\n[hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
+      "spoken_text": "菲菲...  妳聽得懂他在說什麼嗎！？",
+      "model_text": "菲菲...<short pause>\n妳聽得懂他在說什麼嗎！？",
+      "tts_text": "菲菲...<short pause>\n妳聽得懂他在說什麼嗎！？",
       "segments": [
         {
           "type": "tag",
-          "tag": "hesitant",
-          "provider_tag": "hesitant"
+          "tag": "whispers",
+          "provider_tag": "whispers"
         },
         {
           "type": "text",
-          "text": " 菲菲，"
+          "text": " 菲菲..."
         },
         {
           "type": "tag",
@@ -4289,44 +4818,113 @@
         },
         {
           "type": "text",
-          "text": " 妳聽得懂他在說什麼嗎？"
+          "text": " "
+        },
+        {
+          "type": "tag",
+          "tag": "nervous",
+          "provider_tag": "nervous"
+        },
+        {
+          "type": "text",
+          "text": " 妳聽得懂他在說什麼嗎！？"
         }
       ],
-      "mode": "subtitle_only",
+      "mode": "tts",
       "voiced_note": "",
       "pronunciations": [],
-      "voice_name": null,
-      "voice_id": null,
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
+      "voice_name": "阿龐 Alvin · 台灣華語",
+      "voice_id": "voice_09wkojtpb4gd",
+      "voice_settings": {},
       "subtitle_duration_ms": 2200,
-      "provider_name": "elevenlabs",
-      "model_id": "eleven_v3",
-      "engine_label": "Eleven v3",
+      "provider_name": "gemini",
+      "model_id": "gemini-3.8-flash-tts",
+      "engine_label": "Gemini 3.8 Flash TTS",
       "generation_seed": 939,
-      "gemini_content": [],
+      "gemini_content": [
+        {
+          "type": "text",
+          "text": "菲菲...<short pause>",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "輕聲說話；壓低聲音卻藏不住崩潰，急著求救，尾音大幅上揚，維持喜劇感。"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "妳聽得懂他在說什麼嗎！？",
+          "annotations": [
+            {
+              "type": "speech_metadata",
+              "style": "緊張不安；壓低聲音卻藏不住崩潰，急著求救，尾音大幅上揚，維持喜劇感。"
+            }
+          ]
+        }
+      ],
       "normalizations": [],
       "pause_after_ms": 350,
-      "request": null,
-      "fingerprint": null,
-      "utterance_id": "s1_u028_029",
+      "request": {
+        "method": "POST",
+        "path": "/v1beta/interactions",
+        "query": {},
+        "json": {
+          "model": "gemini-3.8-flash-tts",
+          "input": [
+            {
+              "type": "user_input",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "菲菲...<short pause>",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "輕聲說話；壓低聲音卻藏不住崩潰，急著求救，尾音大幅上揚，維持喜劇感。"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "妳聽得懂他在說什麼嗎！？",
+                  "annotations": [
+                    {
+                      "type": "speech_metadata",
+                      "style": "緊張不安；壓低聲音卻藏不住崩潰，急著求救，尾音大幅上揚，維持喜劇感。"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "response_format": {
+            "type": "audio",
+            "mime_type": "audio/wav",
+            "sample_rate": 24000
+          },
+          "generation_config": {
+            "speech_config": [
+              {
+                "voice": "voice_09wkojtpb4gd",
+                "language": "zh-TW"
+              }
+            ],
+            "seed": 939
+          }
+        }
+      },
+      "fingerprint": "a3b851fa444d2c7091f8",
+      "utterance_id": "s1_029",
       "utterance_line_ids": [
-        "s1_028",
         "s1_029"
       ],
-      "utterance_index": 1,
-      "utterance_size": 2,
-      "utterance_emotion": "被術語淹沒",
-      "utterance_reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [hesitant] 菲菲，[short pause] 妳聽得懂他在說什麼嗎？",
-      "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      }
+      "utterance_index": 0,
+      "utterance_size": 1,
+      "utterance_emotion": "壓不住的崩潰求救",
+      "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "line_tts_text": "菲菲...<short pause>\n妳聽得懂他在說什麼嗎！？",
+      "line_voice_settings": {}
     },
     {
       "line_id": "s1_030",
