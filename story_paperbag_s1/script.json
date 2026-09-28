@@ -34,7 +34,7 @@
       "name": "紙袋君",
       "character_id": "clk_0003",
       "color": "#cebc90",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "provider": {
         "name": "gemini",
         "model_id": "gemini-3.8-flash-tts",
@@ -47,7 +47,11 @@
       },
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_type": "prompted",
-      "voice_preview": "out/pipeline_story_paperbag_s1/voices/clk_0003/preview.wav"
+      "voice_preview": "out/pipeline_story_paperbag_s1/voices/clk_0003/preview.wav",
+      "voice_preview_text": "嗯……我是紙袋君。以前是做行銷的，現在比較喜歡待在這種小店裡。欸，有什麼問題都可以問我，一件一件來就好，不用急。垃圾等一下我拿去門口，下個星期再看看店裡的生意有沒有變好。",
+      "voice_preview_sha256": "e2729f678da419d3951c28fa1b507702ef86216bf8cd62fff054cf9dc4015a97",
+      "voice_design_sample": "out/pipeline_story_paperbag_s1/voices/clk_0003/design_sample.wav",
+      "voice_design_sample_sha256": "a99b60355f0d69eed9c553517e6bcf0487ee3ccf703ad446282928c3b1dfd71f"
     },
     "a_pang": {
       "name": "阿龐",
@@ -323,7 +327,7 @@
       "spoken_text": "——不好意思。",
       "tts_text": "——不好意思。",
       "line_spans": [],
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_settings": {},
       "request": {
@@ -357,7 +361,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -365,7 +369,7 @@
           }
         }
       },
-      "fingerprint": "53453d42be0d2c62a8dd",
+      "fingerprint": "00bf934e1b8fe9e50138",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -464,7 +468,7 @@
       "spoken_text": "...不好意思， 我是來應徵的。",
       "tts_text": "...不好意思，<short pause> 我是來應徵的。",
       "line_spans": [],
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_settings": {},
       "request": {
@@ -498,7 +502,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -506,7 +510,7 @@
           }
         }
       },
-      "fingerprint": "7755f1f1a1df39169410",
+      "fingerprint": "f9711a01a80767a49532",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -579,7 +583,7 @@
       "spoken_text": "呃... 這樣臉不會弄髒，比較方便。",
       "tts_text": "呃...<short pause> 這樣臉不會弄髒，比較方便。",
       "line_spans": [],
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_settings": {},
       "request": {
@@ -613,7 +617,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -621,7 +625,7 @@
           }
         }
       },
-      "fingerprint": "fd53ebf960caa4e8715c",
+      "fingerprint": "8f71a7a6328659647317",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -708,7 +712,7 @@
       "spoken_text": "不然... 我只要一半薪水就好。",
       "tts_text": "不然...<short pause> 我只要一半薪水就好。",
       "line_spans": [],
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_settings": {},
       "request": {
@@ -742,7 +746,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -750,7 +754,7 @@
           }
         }
       },
-      "fingerprint": "13a0984db4d9216405f0",
+      "fingerprint": "22c86e9de0713d4e9ccf",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -811,7 +815,7 @@
       "spoken_text": "謝謝妳。",
       "tts_text": "謝謝妳。",
       "line_spans": [],
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_settings": {},
       "request": {
@@ -845,7 +849,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -853,7 +857,7 @@
           }
         }
       },
-      "fingerprint": "aa72b8a68916a79e4e35",
+      "fingerprint": "a682860f865ab25acbf0",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -897,7 +901,7 @@
       "spoken_text": "叫我紙袋君就可以了， 所以...是立刻上班嗎？",
       "tts_text": "叫我紙袋君就可以了，<short pause> 所以...是立刻上班嗎？",
       "line_spans": [],
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_settings": {},
       "request": {
@@ -931,7 +935,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -939,7 +943,7 @@
           }
         }
       },
-      "fingerprint": "d0a1ceb45f22b571221b",
+      "fingerprint": "37ae19924c0fb86bca34",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -1012,7 +1016,7 @@
           "end_char": 70
         }
       ],
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_settings": {},
       "request": {
@@ -1056,7 +1060,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -1064,7 +1068,7 @@
           }
         }
       },
-      "fingerprint": "5175ec1cb518806c3004",
+      "fingerprint": "e895d329eb1c2b6624f6",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -1132,7 +1136,7 @@
           "end_char": 156
         }
       ],
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
       "voice_settings": {},
       "request": {
@@ -1196,7 +1200,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -1204,7 +1208,7 @@
           }
         }
       },
-      "fingerprint": "1a0bcc9b0fe6461be42b",
+      "fingerprint": "cfa3d7ac8495140d4bdc",
       "provider_name": "gemini",
       "model_id": "gemini-3.8-flash-tts"
     },
@@ -1664,7 +1668,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 2200,
       "provider_name": "gemini",
@@ -1731,7 +1735,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -1739,7 +1743,7 @@
           }
         }
       },
-      "fingerprint": "53453d42be0d2c62a8dd",
+      "fingerprint": "00bf934e1b8fe9e50138",
       "utterance_id": "s1_005",
       "utterance_line_ids": [
         "s1_005"
@@ -2033,7 +2037,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 2200,
       "provider_name": "gemini",
@@ -2100,7 +2104,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -2108,7 +2112,7 @@
           }
         }
       },
-      "fingerprint": "7755f1f1a1df39169410",
+      "fingerprint": "f9711a01a80767a49532",
       "utterance_id": "s1_009",
       "utterance_line_ids": [
         "s1_009"
@@ -2337,7 +2341,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 2200,
       "provider_name": "gemini",
@@ -2404,7 +2408,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -2412,7 +2416,7 @@
           }
         }
       },
-      "fingerprint": "fd53ebf960caa4e8715c",
+      "fingerprint": "8f71a7a6328659647317",
       "utterance_id": "s1_012",
       "utterance_line_ids": [
         "s1_012"
@@ -2611,7 +2615,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 2200,
       "provider_name": "gemini",
@@ -2678,7 +2682,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -2686,7 +2690,7 @@
           }
         }
       },
-      "fingerprint": "13a0984db4d9216405f0",
+      "fingerprint": "22c86e9de0713d4e9ccf",
       "utterance_id": "s1_015",
       "utterance_line_ids": [
         "s1_015"
@@ -2827,7 +2831,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 2200,
       "provider_name": "gemini",
@@ -2894,7 +2898,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -2902,7 +2906,7 @@
           }
         }
       },
-      "fingerprint": "aa72b8a68916a79e4e35",
+      "fingerprint": "a682860f865ab25acbf0",
       "utterance_id": "s1_017",
       "utterance_line_ids": [
         "s1_017"
@@ -3025,7 +3029,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 2615,
       "provider_name": "gemini",
@@ -3093,7 +3097,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -3101,7 +3105,7 @@
           }
         }
       },
-      "fingerprint": "d0a1ceb45f22b571221b",
+      "fingerprint": "37ae19924c0fb86bca34",
       "utterance_id": "s1_019",
       "utterance_line_ids": [
         "s1_019"
@@ -3250,7 +3254,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 2200,
       "provider_name": "gemini",
@@ -3328,7 +3332,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -3336,7 +3340,7 @@
           }
         }
       },
-      "fingerprint": "5175ec1cb518806c3004",
+      "fingerprint": "e895d329eb1c2b6624f6",
       "utterance_id": "s1_u021_022",
       "utterance_line_ids": [
         "s1_021",
@@ -3390,7 +3394,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 3385,
       "provider_name": "gemini",
@@ -3467,7 +3471,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -3475,7 +3479,7 @@
           }
         }
       },
-      "fingerprint": "5175ec1cb518806c3004",
+      "fingerprint": "e895d329eb1c2b6624f6",
       "utterance_id": "s1_u021_022",
       "utterance_line_ids": [
         "s1_021",
@@ -3590,7 +3594,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 2615,
       "provider_name": "gemini",
@@ -3688,7 +3692,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -3696,7 +3700,7 @@
           }
         }
       },
-      "fingerprint": "1a0bcc9b0fe6461be42b",
+      "fingerprint": "cfa3d7ac8495140d4bdc",
       "utterance_id": "s1_u024_027",
       "utterance_line_ids": [
         "s1_024",
@@ -3751,7 +3755,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 3692,
       "provider_name": "gemini",
@@ -3849,7 +3853,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -3857,7 +3861,7 @@
           }
         }
       },
-      "fingerprint": "1a0bcc9b0fe6461be42b",
+      "fingerprint": "cfa3d7ac8495140d4bdc",
       "utterance_id": "s1_u024_027",
       "utterance_line_ids": [
         "s1_024",
@@ -3912,7 +3916,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 3231,
       "provider_name": "gemini",
@@ -4010,7 +4014,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -4018,7 +4022,7 @@
           }
         }
       },
-      "fingerprint": "1a0bcc9b0fe6461be42b",
+      "fingerprint": "cfa3d7ac8495140d4bdc",
       "utterance_id": "s1_u024_027",
       "utterance_line_ids": [
         "s1_024",
@@ -4074,7 +4078,7 @@
       "voiced_note": "",
       "pronunciations": [],
       "voice_name": "紙袋君 Baggy Joe · 台灣華語",
-      "voice_id": "voice_jnco0z1ub8o8",
+      "voice_id": "voice_qe1zayqswgae",
       "voice_settings": {},
       "subtitle_duration_ms": 3231,
       "provider_name": "gemini",
@@ -4171,7 +4175,7 @@
           "generation_config": {
             "speech_config": [
               {
-                "voice": "voice_jnco0z1ub8o8",
+                "voice": "voice_qe1zayqswgae",
                 "language": "zh-TW"
               }
             ],
@@ -4179,7 +4183,7 @@
           }
         }
       },
-      "fingerprint": "1a0bcc9b0fe6461be42b",
+      "fingerprint": "cfa3d7ac8495140d4bdc",
       "utterance_id": "s1_u024_027",
       "utterance_line_ids": [
         "s1_024",

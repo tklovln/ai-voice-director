@@ -128,7 +128,8 @@ IndexTTS **沒有口音提示詞**，口音只由 `spk_audio_prompt` 決定（�
 
 Gemini 紙袋君先依角色表設計固定聲線，之後的 8 段 TTS 共用同一個 voice ID。
 原情緒稿在 adapter 中轉成 `speech_metadata.style` 與 `<short pause>` 等瞬時標記；
-頁面可查看各句的實際模型輸入，並開啟紙袋君的聲線設計樣本。
+頁面可查看各句的實際模型輸入，並分別開啟紙袋君的「台灣華語試聽」與「原生設計樣本」，
+也能展開固定繁體中文試聽稿。原生樣本與固定稿都通過中文語言檢查後才用該聲線生成台詞。
 完整接法見 emotts 的 `story/tts/paperbag_s1/README_GEMINI.md`。
 
 ## 內容

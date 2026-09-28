@@ -125,6 +125,10 @@ function renderSelected() {
   $("speech-style").textContent = `speech_metadata.style：${current.speech_styles.join(" → ")}`;
   $("voice-preview").hidden = !actor().voice_preview;
   if (actor().voice_preview) $("voice-preview").href = actor().voice_preview;
+  $("voice-native-sample").hidden = !actor().voice_design_sample;
+  if (actor().voice_design_sample) $("voice-native-sample").href = actor().voice_design_sample;
+  $("voice-preview-details").hidden = !actor().voice_preview_text;
+  $("voice-preview-text").textContent = actor().voice_preview_text ?? "";
   $("utterance-note").textContent = current.utterance_size > 1
     ? `${current.utterance_line_ids.map(id => Number(id.split("_").at(-1))).join("–")} 同段 · ${current.utterance_emotion}：${current.utterance_reason}` : "";
   $("utterance-note").hidden = current.utterance_size < 2;
@@ -438,6 +442,7 @@ $("voiced-count").textContent = scene.tts_count;
 $("utterance-count").textContent = scene.tts_request_count;
 $("engine-summary").textContent = scene.engines.map(engine => engine.label.replace(" Flash TTS", "")).join(" + ");
 $("voice-preview").addEventListener("click", pause);
+$("voice-native-sample").addEventListener("click", pause);
 for (const [slot, speaker] of LEADS) {
   const member = scene.cast[speaker];
   $(`${slot}-portrait`).alt = `${member.name}角色立繪`;

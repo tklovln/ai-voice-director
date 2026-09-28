@@ -60,7 +60,9 @@
         <div class="inspector-body">
           <div class="emotion-card"><div><span id="inspector-emotion"></span><small id="intensity-label"></small></div><meter id="intensity" min="0" max="1" value="0.5" aria-label="情緒強度"></meter><p id="direction-note"></p></div>
           <div class="voice-assignment"><span>聲線</span><strong id="voice-name"></strong><small id="voice-status"></small></div>
-          <a id="voice-preview" class="text-button" target="_blank" rel="noopener" hidden>聲線設計樣本 ↗</a>
+          <a id="voice-preview" class="text-button" target="_blank" rel="noopener" hidden>台灣華語試聽 ↗</a>
+          <a id="voice-native-sample" class="text-button" target="_blank" rel="noopener" hidden>原生設計樣本 ↗</a>
+          <details id="voice-preview-details" hidden><summary>試聽文字（台灣繁體中文）</summary><p id="voice-preview-text"></p></details>
           <p id="utterance-note" class="utterance-note" hidden></p>
           <section class="text-section"><h3>原始台詞 <span>SOURCE</span></h3><p id="original-text"></p></section>
           <section class="text-section"><div class="input-heading"><h3><b id="tts-input-label">模型輸入</b> <span id="engine-label"></span></h3><button id="copy-input" class="copy-button">複製</button></div><p id="speech-style" class="speech-style" hidden></p><div id="tts-text" class="model-text"></div><p id="edit-note" class="edit-note" hidden></p><ul id="tuning-notes" class="tuning-notes" hidden></ul></section>
