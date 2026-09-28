@@ -5,7 +5,7 @@
   "title": "S10 傳奇片刻：傳承",
   "display_title": "傳奇片刻：傳承",
   "description": "虎面回到便利商店，把拚命證明自己，慢慢轉化成陪伴與傳承。",
-  "director_note": "前半場是休息後的釋懷與同事間的玩笑；徒弟進門時短暫驚喜，最後以真心為後輩驕傲的笑聲收尾。情緒隨句子轉折，不把每句都演成吶喊。",
+  "director_note": "前半場是休息後的釋懷與同事間的玩笑；徒弟進門時短暫驚喜，最後以真心為後輩驕傲的笑聲收尾。情緒隨句子轉折，不把每句都演成吶喊。全幕最短的兩句（s10_007、s10_017）曾出現破音字與口音漂移，改用 stability 0.65 + similarity_boost 0.9 貼回 Tiger 的基準聲線，並以 IPA 固定「不了」的輕聲讀法。",
   "casting_note": "虎面與菲菲使用指定 ElevenLabs 聲線；其他七個角色保留完整台詞，以字幕串場。",
   "source_csv": "story/clean/虎面_鍾哥_scenes/10_S10_傳奇片刻：傳承.csv",
   "authoring_script": "story/tts/tiger_s10/scene.json",
@@ -350,13 +350,13 @@
       "reason": "單句或與相鄰句的情緒／角色不同。",
       "source_text": "哈哈哈，不了不了。",
       "spoken_text": "哈哈哈， 不了、不了。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不\"/lə/\"、不\"/lə/\"。",
       "line_spans": [],
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_name": "Tiger",
       "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
+        "stability": 0.65,
+        "similarity_boost": 0.9,
         "speed": 1.0
       },
       "request": {
@@ -366,18 +366,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不\"/lə/\"、不\"/lə/\"。",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75,
+            "stability": 0.65,
+            "similarity_boost": 0.9,
             "speed": 1.0
           },
-          "seed": 737
+          "seed": 7371
         }
       },
-      "fingerprint": "298092782c20a45e4211"
+      "fingerprint": "f7748b1a810070398b5e"
     },
     {
       "utterance_id": "s10_u008_010",
@@ -621,8 +621,8 @@
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_name": "Tiger",
       "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
+        "stability": 0.65,
+        "similarity_boost": 0.9,
         "speed": 1.0
       },
       "request": {
@@ -636,14 +636,14 @@
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75,
+            "stability": 0.65,
+            "similarity_boost": 0.9,
             "speed": 1.0
           },
-          "seed": 747
+          "seed": 7471
         }
       },
-      "fingerprint": "0664d4b2f76c990864b4"
+      "fingerprint": "c79e3037ea436db4152c"
     },
     {
       "utterance_id": "s10_018",
@@ -988,6 +988,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1052,6 +1053,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1120,6 +1122,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1184,6 +1187,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -1271,6 +1275,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "subtitle_duration_ms": 2200,
@@ -1348,6 +1353,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "voice_settings": {
@@ -1401,12 +1407,25 @@
       "intensity": 0.5,
       "expression": "happy",
       "direction": "笑著承認自己變了，兩個『不了』自然搖頭式地接上。",
+      "pronunciations": [
+        {
+          "word": "了",
+          "ipa": "lə",
+          "note": "「不了」是委婉拒絕，兩個『了』都念輕聲 le；原本模型讀成 liú／liǎo，ASR 聽成「不留不留」。加 IPA 後 ASR 聽成「不了不了」。"
+        }
+      ],
+      "voice_settings": {
+        "stability": 0.65,
+        "similarity_boost": 0.9,
+        "speed": 1.0
+      },
+      "seed": 7371,
       "order": 7,
       "character": "虎面",
       "source_sprite": "",
       "spoken_text": "哈哈哈， 不了、不了。",
-      "model_text": "[chuckles] 哈哈哈，[short pause] 不了、不了。",
-      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+      "model_text": "[chuckles] 哈哈哈，[short pause] 不\"/lə/\"、不\"/lə/\"。",
+      "tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不\"/lə/\"、不\"/lə/\"。",
       "segments": [
         {
           "type": "tag",
@@ -1431,11 +1450,6 @@
       "voiced_note": "",
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
       "subtitle_duration_ms": 2200,
       "pause_after_ms": 350,
       "request": {
@@ -1445,18 +1459,18 @@
           "output_format": "mp3_44100_128"
         },
         "json": {
-          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+          "text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不\"/lə/\"、不\"/lə/\"。",
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75,
+            "stability": 0.65,
+            "similarity_boost": 0.9,
             "speed": 1.0
           },
-          "seed": 737
+          "seed": 7371
         }
       },
-      "fingerprint": "298092782c20a45e4211",
+      "fingerprint": "f7748b1a810070398b5e",
       "utterance_id": "s10_007",
       "utterance_line_ids": [
         "s10_007"
@@ -1465,10 +1479,10 @@
       "utterance_size": 1,
       "utterance_emotion": "自在自嘲",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
-      "line_tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不了、不了。",
+      "line_tts_text": "[strong Taiwanese Mandarin accent] [chuckles] 哈哈哈，[short pause] 不\"/lə/\"、不\"/lə/\"。",
       "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
+        "stability": 0.65,
+        "similarity_boost": 0.9,
         "speed": 1.0
       }
     },
@@ -1523,6 +1537,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "subtitle_duration_ms": 2308,
@@ -1605,6 +1620,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "subtitle_duration_ms": 3231,
@@ -1683,6 +1699,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -1766,6 +1783,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1822,6 +1840,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -1902,6 +1921,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -1966,6 +1986,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -2048,6 +2069,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2112,6 +2134,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2149,6 +2172,13 @@
       "intensity": 0.6,
       "expression": "happy",
       "direction": "爽快接住另一位同事的問題，不匆忙、不敷衍。",
+      "voice_settings": {
+        "stability": 0.65,
+        "similarity_boost": 0.9,
+        "speed": 1.0
+      },
+      "seed": 7471,
+      "tuning_note": "原本整句飄粵語腔（ASR 聽成「雷梦台」，台＝題的粵語 tai）。提高 stability 與 similarity_boost 貼回 Tiger 基準聲線並換 seed 後，CER 0.38 → 0.25。另外試過對「問」「題」加 IPA，反而讓「沒問題」被吞成「媒體」（CER 回到 0.38），所以這句不用 IPA。",
       "order": 17,
       "character": "虎面",
       "source_sprite": "",
@@ -2177,13 +2207,9 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "speed": 1.0
-      },
       "subtitle_duration_ms": 2200,
       "pause_after_ms": 350,
       "request": {
@@ -2197,14 +2223,14 @@
           "model_id": "eleven_v3",
           "language_code": "zh",
           "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75,
+            "stability": 0.65,
+            "similarity_boost": 0.9,
             "speed": 1.0
           },
-          "seed": 747
+          "seed": 7471
         }
       },
-      "fingerprint": "0664d4b2f76c990864b4",
+      "fingerprint": "c79e3037ea436db4152c",
       "utterance_id": "s10_017",
       "utterance_line_ids": [
         "s10_017"
@@ -2215,8 +2241,8 @@
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
       "line_tts_text": "[strong Taiwanese Mandarin accent] [reassuring] 沒問題！[short pause] 等等告訴你。",
       "line_voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
+        "stability": 0.65,
+        "similarity_boost": 0.9,
         "speed": 1.0
       }
     },
@@ -2258,6 +2284,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2333,6 +2360,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "fei_fei_final",
       "voice_id": "vqNgHlSPFeaXVYVRG0hv",
       "subtitle_duration_ms": 2200,
@@ -2400,6 +2428,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2463,6 +2492,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {
@@ -2545,6 +2575,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2608,6 +2639,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2678,6 +2710,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "subtitle_duration_ms": 2200,
@@ -2753,6 +2786,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2820,6 +2854,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2885,6 +2920,7 @@
       ],
       "mode": "subtitle_only",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": null,
       "voice_id": null,
       "voice_settings": {
@@ -2952,6 +2988,7 @@
       ],
       "mode": "tts",
       "voiced_note": "",
+      "pronunciations": [],
       "voice_name": "Tiger",
       "voice_id": "fUE2uGe261SSUQ97Ypbr",
       "voice_settings": {

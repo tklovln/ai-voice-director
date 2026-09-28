@@ -410,7 +410,9 @@
       "utterance_size": 1,
       "utterance_emotion": "不安通報",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -443,7 +445,9 @@
       "utterance_size": 1,
       "utterance_emotion": "期待客人",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_002_023b5709960ef1a7be27.wav",
         "download_url": "assets/audio/s1_002_023b5709960ef1a7be27.wav",
@@ -565,7 +569,9 @@
       "utterance_size": 1,
       "utterance_emotion": "難以形容",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -598,7 +604,9 @@
       "utterance_size": 1,
       "utterance_emotion": "驚疑",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_004_6e1bd1456f9dfe0655f1.wav",
         "download_url": "assets/audio/s1_004_6e1bd1456f9dfe0655f1.wav",
@@ -720,7 +728,9 @@
       "utterance_size": 1,
       "utterance_emotion": "平靜打斷",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -753,7 +763,9 @@
       "utterance_size": 1,
       "utterance_emotion": "驚叫",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -787,7 +799,9 @@
       "utterance_size": 2,
       "utterance_emotion": "慌張求饒",
       "utterance_reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_u007_008_5c107064169c6c5956c7.wav",
         "download_url": "assets/audio/s1_007_5c107064169c6c5956c7_clip.wav",
@@ -910,7 +924,9 @@
       "utterance_size": 2,
       "utterance_emotion": "慌張求饒",
       "utterance_reason": "先說店裡很窮，再結巴著建議去搶別家，是同一口氣講完的慌張。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_u007_008_5c107064169c6c5956c7.wav",
         "download_url": "assets/audio/s1_008_5c107064169c6c5956c7_clip.wav",
@@ -1032,7 +1048,9 @@
       "utterance_size": 1,
       "utterance_emotion": "澄清誤會",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1066,7 +1084,9 @@
       "utterance_size": 2,
       "utterance_emotion": "困惑追問",
       "utterance_reason": "確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_u010_011_8247417cadad25163bef.wav",
         "download_url": "assets/audio/s1_010_8247417cadad25163bef_clip.wav",
@@ -1189,7 +1209,9 @@
       "utterance_size": 2,
       "utterance_emotion": "困惑追問",
       "utterance_reason": "確認不是搶劫後鬆一口氣，緊接著追問紙袋的事，都是同一種半信半疑。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_u010_011_8247417cadad25163bef.wav",
         "download_url": "assets/audio/s1_011_8247417cadad25163bef_clip.wav",
@@ -1311,7 +1333,9 @@
       "utterance_size": 1,
       "utterance_emotion": "含糊帶過",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1344,7 +1368,9 @@
       "utterance_size": 1,
       "utterance_emotion": "無言沉默",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1377,7 +1403,9 @@
       "utterance_size": 1,
       "utterance_emotion": "無力吐槽",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_014_82f6f4b6b50d67c5eb64.wav",
         "download_url": "assets/audio/s1_014_82f6f4b6b50d67c5eb64.wav",
@@ -1499,7 +1527,9 @@
       "utterance_size": 1,
       "utterance_emotion": "平靜讓步",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1532,7 +1562,9 @@
       "utterance_size": 1,
       "utterance_emotion": "秒變熱情",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_016_c20a47ce984e00e75fa9.wav",
         "download_url": "assets/audio/s1_016_c20a47ce984e00e75fa9.wav",
@@ -1654,7 +1686,9 @@
       "utterance_size": 1,
       "utterance_emotion": "簡短道謝",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1687,7 +1721,9 @@
       "utterance_size": 1,
       "utterance_emotion": "好心提醒",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1720,7 +1756,9 @@
       "utterance_size": 1,
       "utterance_emotion": "自報稱呼",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1753,7 +1791,9 @@
       "utterance_size": 1,
       "utterance_emotion": "興頭上追問",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_020_491329caa461d0f72fe7.wav",
         "download_url": "assets/audio/s1_020_491329caa461d0f72fe7.wav",
@@ -1876,7 +1916,9 @@
       "utterance_size": 2,
       "utterance_emotion": "含糊到舉例",
       "utterance_reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1910,7 +1952,9 @@
       "utterance_size": 2,
       "utterance_emotion": "含糊到舉例",
       "utterance_reason": "先說很難說明，接著改用貨架轉換率舉例，是同一段自我介紹專長。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1943,7 +1987,9 @@
       "utterance_size": 1,
       "utterance_emotion": "跟不上",
       "utterance_reason": "單句或與相鄰句的情緒／角色不同。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -1979,7 +2025,9 @@
       "utterance_size": 4,
       "utterance_emotion": "專業簡報",
       "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -2015,7 +2063,9 @@
       "utterance_size": 4,
       "utterance_emotion": "專業簡報",
       "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -2051,7 +2101,9 @@
       "utterance_size": 4,
       "utterance_emotion": "專業簡報",
       "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -2087,7 +2139,9 @@
       "utterance_size": 4,
       "utterance_emotion": "專業簡報",
       "utterance_reason": "解釋轉換率並一路提出貨架高度與視線對齊的建議，是同一段平穩的專業說明。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -2121,7 +2175,9 @@
       "utterance_size": 2,
       "utterance_emotion": "被術語淹沒",
       "utterance_reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -2155,7 +2211,9 @@
       "utterance_size": 2,
       "utterance_emotion": "被術語淹沒",
       "utterance_reason": "先沉默，再向菲菲求救，是同一個聽不懂的反應。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": null
     },
     {
@@ -2189,7 +2247,9 @@
       "utterance_size": 2,
       "utterance_emotion": "服氣下令",
       "utterance_reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_u030_031_feccca1587f615193e9d.wav",
         "download_url": "assets/audio/s1_030_feccca1587f615193e9d_clip.wav",
@@ -2312,7 +2372,9 @@
       "utterance_size": 2,
       "utterance_emotion": "服氣下令",
       "utterance_reason": "承認聽不懂卻很佩服，順勢決定照做，是同一段從佩服到拍板的話。",
+      "pronunciations": [],
       "text_edit_note": "",
+      "tuning_note": "",
       "audio": {
         "url": "assets/audio/s1_u030_031_feccca1587f615193e9d.wav",
         "download_url": "assets/audio/s1_031_feccca1587f615193e9d_clip.wav",

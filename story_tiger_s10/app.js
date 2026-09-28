@@ -129,6 +129,16 @@ function renderSelected() {
   textWithTags($("tts-text"), current.tts_text);
   $("edit-note").hidden = !current.text_edit_note;
   $("edit-note").textContent = current.text_edit_note;
+  const notes = [
+    ...current.pronunciations.map(rule => `讀音 ${rule.word} → /${rule.ipa}/：${rule.note}`),
+    ...(current.tuning_note ? [`調參：${current.tuning_note}`] : []),
+  ];
+  $("tuning-notes").replaceChildren(...notes.map(text => {
+    const item = document.createElement("li");
+    item.textContent = text;
+    return item;
+  }));
+  $("tuning-notes").hidden = !notes.length;
   $("request-settings").textContent = JSON.stringify({
     mode: current.mode, voice: current.voice_name, voice_settings: current.voice_settings,
     utterance_id: current.utterance_id, line_ids: current.utterance_line_ids,
